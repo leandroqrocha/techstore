@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tech Store</title>
+<meta name="description" content="Uma vitrine de jogos gratuitos e de código aberto.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" href="img/favicon.png">
+<style>
+  :root{
+    --bg: #ffffff;
+    --bg-soft: #f6f8fc;
+    --surface: #ffffff;
+    --surface-2: #f1f4f9;
+    --surface-3: #eef1f7;
+    --text: #171a21;
+    --muted: #6b7280;
+    --blue: #2f6fed;
+    --blue-dark: #1d4fd0;
+    --blue-soft: rgba(47,111,237,0.10);
+    --yellow: #f2b705;
+    --line: #e7eaf0;
+    --line-strong: #d7dce6;
+    --radius: 20px;
+    --radius-sm: 12px;
+    --shadow: 0 4px 18px rgba(20,30,60,0.06);
+    --shadow-hover: 0 10px 28px rgba(20,30,60,0.10);
+    --font-display: 'Baloo 2', sans-serif;
+    --font-body: 'Nunito', sans-serif;
+    --font-mono: 'IBM Plex Mono', monospace;
+    color-scheme: light;
+  }
+
+  html[data-theme="dark"]{
+    --bg: #0a0a0f;
+    --bg-soft: #0a0a0f;
+    --surface: #131318;
+    --surface-2: #1b1b22;
+    --surface-3: #202029;
+    --text: #eef0f6;
+    --muted: #9aa0ad;
+    --blue: #4d8dff;
+    --blue-dark: #6ea1ff;
+    --blue-soft: rgba(77,141,255,0.16);
+    --line: rgba(255,255,255,0.08);
+    --line-strong: rgba(255,255,255,0.16);
+    --shadow: 0 4px 18px rgba(0,0,0,0.35);
+    --shadow-hover: 0 10px 30px rgba(0,0,0,0.5);
+    color-scheme: dark;
+  }
+
+  *{ box-sizing: border-box; }
+
+  html{ scroll-behavior: smooth; }
+
+  body{
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    transition: background .2s ease, color .2s ease;
+  }
+
+  a{ color: inherit; }
+
+  :focus-visible{
+    outline: 3px solid var(--blue);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  /* ---------- Layout shells ---------- */
+  .wrap{
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ---------- Header ---------- */
+  header.marquee{
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+  }
+  .marquee-bar{
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    padding: 16px 0;
+    gap: 16px;
+  }
+  .header-search{
+    max-width: 460px;
+    width: 100%;
+    justify-self: center;
+    background: var(--surface-2);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 10px 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .header-search svg{ flex-shrink: 0; color: var(--muted); width: 17px; height: 17px; }
+  .header-search input{
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: var(--text);
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 0.92rem;
+    padding: 2px 0;
+    min-width: 0;
+  }
+  .header-search input::placeholder{ color: var(--muted); font-weight: 600; }
+  .header-search input:focus{ outline: none; }
+  .header-search:focus-within{ border-color: var(--blue); }
+  .brand{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 20px;
+    letter-spacing: 0.2px;
+    text-decoration: none;
+    white-space: nowrap;
+    color: var(--blue);
+  }
+  .brand .bulb-row{ display:flex; gap:4px; }
+  .bulb{
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--blue);
+    box-shadow: 0 0 6px color-mix(in srgb, var(--blue) 70%, transparent);
+    animation: flicker 2.6s infinite ease-in-out;
+  }
+  .bulb:nth-child(2){ animation-delay: .3s; }
+  .bulb:nth-child(3){ animation-delay: .6s; }
+  @keyframes flicker{
+    0%, 100%{ opacity: 1; }
+    50%{ opacity: .35; }
+  }
+  @media (prefers-reduced-motion: reduce){
+    .bulb{ animation: none; }
+  }
+
+  .header-actions{
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-shrink: 0;
+  }
+  .nav-count{
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+  .nav-count strong{ color: var(--blue); }
+
+  .theme-toggle{
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--surface-2);
+    border: 1px solid var(--line);
+    color: var(--text);
+    font-family: var(--font-mono);
+    font-size: 12px;
+    padding: 8px 12px;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: border-color .15s ease, background .15s ease;
+  }
+  .theme-toggle:hover{ border-color: var(--line-strong); }
+  .theme-toggle svg{ width: 14px; height: 14px; }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    padding: 64px 0 32px;
+    text-align: center;
+    position: relative;
+  }
+  .brand-lockup{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    flex-wrap: wrap;
+    margin-bottom: 22px;
+  }
+  .hero h1{
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(2.4rem, 6.4vw, 4.4rem);
+    line-height: 1;
+    margin: 0;
+    letter-spacing: -0.5px;
+    color: var(--blue);
+  }
+  .hero p.lede-main{
+    max-width: 650px;
+    margin: 0 auto 6px;
+    color: var(--text);
+    font-weight: 800;
+    font-size: clamp(1.15rem, 2.6vw, 1.5rem);
+  }
+  .hero p.lede-main .accent{
+     color: var(--blue); }
+     
+  .hero p.lede{
+    max-width: 560px;
+    margin: 10px auto 0;
+    color: var(--muted);
+    font-size: 1rem;
+  }
+
+  /* ---------- Filter chips ---------- */
+  .filters{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    padding: 28px 0 8px;
+  }
+  .chip{
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 14px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    color: var(--muted);
+    padding: 10px 20px;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: border-color .15s ease, color .15s ease, background .15s ease, box-shadow .15s ease;
+    box-shadow: var(--shadow);
+  }
+  .chip:hover{ border-color: var(--blue); color: var(--text); }
+  .chip[aria-pressed="true"]{
+    background: var(--blue);
+    border-color: var(--blue);
+    color: #ffffff;
+  }
+
+  /* ---------- Grid ---------- */
+  main{ padding: 20px 0 80px; }
+  .count-line{
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--muted);
+    padding: 14px 0 24px;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 28px;
+  }
+  .grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    gap: 26px;
+  }
+
+  /* ---------- Card ---------- */
+  .card{
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--shadow);
+    transition: border-color .15s ease, transform .15s ease, box-shadow .15s ease;
+  }
+  .card:hover{ border-color: var(--line-strong); transform: translateY(-3px); box-shadow: var(--shadow-hover); }
+
+  .card-cover{
+    height: 190px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255,255,255,0.92);
+    overflow: hidden;
+  }
+  .card-cover svg{ width: 46px; height: 46px; opacity: .9; }
+  .card-cover img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .card-cover .ticket-no{
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #fff;
+    background: rgba(10,12,20,0.55);
+    backdrop-filter: blur(4px);
+    padding: 5px 10px;
+    border-radius: 999px;
+  }
+  .card-cover .ticket-no svg{ width: 11px; height: 11px; opacity: 1; }
+
+  .card-body{
+    padding: 20px 20px 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+  }
+  .card-body h3{
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin: 0;
+    letter-spacing: -0.2px;
+  }
+  .card-body p{
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.93rem;
+    flex: 1;
+  }
+  .card-actions{
+    margin-top: 4px;
+  }
+  .btn{
+    font-family: var(--font-body);
+    font-weight: 800;
+    font-size: 14px;
+    text-decoration: none;
+    color: var(--blue);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: gap .15s ease, color .15s ease;
+  }
+  .btn:hover{ gap: 10px; color: var(--blue-dark); }
+
+  .empty-state{
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--muted);
+    font-family: var(--font-mono);
+    font-size: 14px;
+  }
+
+  /* ---------- Footer ---------- */
+  footer{
+    background: linear-gradient(135deg, var(--blue-dark), var(--blue));
+    color: #fff;
+    padding: 48px 0 0;
+    margin-top: 40px;
+  }
+  .footer-top{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: space-between;
+    padding-bottom: 32px;
+  }
+  .footer-brand{
+    max-width: 320px;
+  }
+  .footer-brand .brand{ color: #fff; margin-bottom: 10px; }
+  .footer-brand .bulb{ background: #fff; }
+  .footer-brand p{
+    margin: 0;
+    color: rgba(255,255,255,0.85);
+    font-size: 14px;
+  }
+  .footer-col h4{
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 15px;
+    margin: 0 0 14px;
+  }
+  .footer-col ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .footer-col a{
+    text-decoration: none;
+    color: rgba(255,255,255,0.85);
+    font-size: 14px;
+  }
+  .footer-col a:hover{ color: #fff; text-decoration: underline; }
+
+  .footer-bottom{
+    border-top: 1px solid rgba(255,255,255,0.18);
+    padding: 20px 0 28px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .footer-bottom p{
+    margin: 0;
+    color: rgba(255,255,255,0.75);
+    font-size: 13px;
+    font-family: var(--font-mono);
+  }
+
+.transparent-video{
+  width: 100px;
+  height: 180px;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+/* tema padrão (claro): mostra olho aberto, esconde o de olho fechado */
+.fish-dark{ display: none; }
+.fish-light{ display: block; }
+
+/* tema escuro: inverte */
+html[data-theme="dark"] .fish-dark{ display: block; }
+html[data-theme="dark"] .fish-light{ display: none; }
+
+.brand-lockup video{ 
+    position: absolute;
+    top: 0;
+    left: 25%;
+    width: 10%;
+    height: 65%;
+    object-fit: cover; }
+
+  @media (max-width: 720px){
+    .marquee-bar{ grid-template-columns: auto auto; }
+    .header-search{ display: none; }
+  }
+
+  @media (max-width: 560px){
+    .hero{ padding: 44px 0 24px; }
+    .grid{ grid-template-columns: 1fr; }
+    .footer-bottom{ flex-direction: column; align-items: flex-start; }
+    .nav-count{ display: none; }
+  }
+</style>
+</head>
+<body>
+
+<header class="marquee">
+  <div class="wrap marquee-bar">
+    <a href="#top" class="brand">
+      <span class="bulb-row"><span class="bulb"></span><span class="bulb"></span><span class="bulb"></span></span>
+      Tech Store
+      <span class="bulb-row"><span class="bulb"></span><span class="bulb"></span><span class="bulb"></span></span>
+    </a>
+    
+    <div class="header-search">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input id="searchInput" type="search" placeholder="Buscar por nome ou gêneros" aria-label="Buscar jogos">
+    </div>
+    
+    <div class="header-actions">
+      <span class="nav-count"><strong id="headerCount">0</strong> jogos</span>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Alternar tema claro/escuro">
+        <svg id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg>
+        <span id="themeLabel">Escuro</span>
+      </button>
+      
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="top">
+    <div class="brand-lockup">
+<div class="row"></div>
+
+<div class="col">
+  <video autoplay muted loop playsinline class="transparent-video fish-dark">
+    <source src="img/peixe.webm" type="video/webm">
+  </video>
+</div>
+<div class="col">
+  <video autoplay muted loop playsinline class="transparent-video fish-light">
+    <source src="img/peixe claro.webm" type="video/webm">
+  </video>
+  </div>
+</div>
+      <h1>Tech Store</h1>
+      
+    </div>
+    <p class="lede-main">Seu próximo jogo favorito está a um <span class="accent">clique</span> de distância.</p>
+    <p class="lede">Jogos gratuitos e de código aberto  escolha o gênero e jogue.</p>
+
+    <div class="filters" id="filters" role="group" aria-label="Filtrar por gênero"></div>
+
+ 
+  </section>
+
+  <div class="wrap">
+    <p class="count-line"><span id="resultsCount">0</span> resultado(s)</p>
+    <div class="grid" id="grid"></div>
+    <div class="empty-state" id="emptyState" hidden>Nenhum jogo bate com essa busca. Tenta outro termo ou limpa o filtro.</div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="#top" class="brand">
+          <span class="bulb-row"><span class="bulb"></span></span>
+          Tech Store
+          <span class="bulb-row"><span class="bulb"></span></span>
+        </a>
+        <p>Seu próximo jogo favorito está a um clique de distância. Catálogo de jogos gratuitos e de código aberto.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Explorar</h4>
+        <ul>
+          <li><a href="#top">Início</a></li>
+          <li><a href="#filters">Gêneros</a></li>
+          <li><a href="#grid">Todos os jogos</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Sobre</h4>
+        <ul>
+          <li><a href="#top">Jogos gratuitos</a></li>
+          <li><a href="#top">Código aberto</a></li>
+          <li><a href="#top">Contato</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Tech Store catálogo independente.</p>
+      <p>Links levam aos sites oficiais de cada projeto.</p>
+    </div>
+  </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+<script>
+  // ---------- Tema claro/escuro ----------
+  const root = document.documentElement;
+  const themeToggle = document.getElementById('themeToggle');
+  const themeIcon = document.getElementById('themeIcon');
+  const themeLabel = document.getElementById('themeLabel');
+
+  const sunPath = '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>';
+  const moonPath = '<path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/>';
+
+  function applyTheme(theme){
+    root.setAttribute('data-theme', theme);
+    if(theme === 'dark'){
+      themeIcon.innerHTML = sunPath;
+      themeLabel.textContent = 'Claro';
+    } else {
+      themeIcon.innerHTML = moonPath;
+      themeLabel.textContent = 'Escuro';
+    }
+    localStorage.setItem('techstore-theme', theme);
+  }
+
+  const savedTheme = localStorage.getItem('techstore-theme');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  applyTheme(savedTheme || (prefersDark ? 'dark' : 'light'));
+
+  themeToggle.addEventListener('click', () => {
+    const current = root.getAttribute('data-theme');
+    applyTheme(current === 'dark' ? 'light' : 'dark');
+  });
+
+  // ---------- Ícones de gênero (SVG inline, sem dependências externas) ----------
+  const icons = {
+    corrida: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4v16"/><path d="M4 4h6l1 2h6l1 4h-7l-1-2H4"/><path d="M4 12h6l1 2h6"/></svg>`,
+    estrategia: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h16"/><path d="M9 20V10l3-6 3 6v10"/><circle cx="12" cy="7" r="1.4"/></svg>`,
+    rpg: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4.5l5 5-11 11-5-5z"/><path d="M14 6l4 4"/><path d="M4.5 19.5L3 21"/></svg>`,
+    tiro: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/><circle cx="12" cy="12" r="1.6" fill="currentColor" stroke="none"/></svg>`,
+    sobrevivencia: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.5 5 5.5.8-4 3.9.9 5.5L12 15.8 7.1 18.2l.9-5.5-4-3.9 5.5-.8z"/></svg>`,
+    acao: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="7"/><path d="M12 8v4l3 2"/></svg>`,
+    simulacao: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><ellipse cx="12" cy="12" rx="9" ry="3.6"/></svg>`,
+    quiz: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 2-3 4"/><line x1="12" y1="17" x2="12" y2="17.2"/></svg>`
+  };
+
+  const genreLabels = {
+    corrida: 'Corrida',
+    estrategia: 'Estratégia',
+    rpg: 'RPG',
+    tiro: 'Tiro',
+    sobrevivencia: 'Sobrevivência',
+    acao: 'Ação',
+    quiz: 'Quiz',
+    simulacao: 'Simulação'
+  };
+
+  // cores por genero, aplicadas na capa quando não há imagem
+  const genreColors = {
+    corrida:      ['#2f6fed', '#5a8ff5'],
+    estrategia:   ['#7c5cff', '#a58bff'],
+    rpg:          ['#e5484d', '#f07276'],
+    tiro:         ['#0ea5a5', '#3fd0d0'],
+    sobrevivencia:['#2f9e58', '#5fca82'],
+    acao:         ['#f2b705', '#f6cf4d'],
+    quiz:         ['#2f6fed', '#5a8ff5'],
+    simulacao:    ['#0e7ab0', '#3fa8d8']
+  };
+
+  // pequeno i­cone usado no selo numerado dos cards
+  const badgeIcon = `<svg viewBox="0 0 24 24" fill="var(--yellow)" stroke="none"><path d="M13 2 3 14h7l-1 8 11-14h-8z"/></svg>`;
+
+  // ---------- Dados: jogos gratuitos e de cÃ³digo aberto ----------
+  const games = [
+    // Beatriz
+
+    { id: 1, nome: 'Memory Sunset - Beatriz', genero: 'estrategia', plataformas: 'Navegador', imagem: 'img/beatriz.png',
+      desc: 'Memory Sunset um jogo da memória com o objetivo de encontrar os pares de cartas, acumular pontos e desafiar outros jogadores para alcançar o topo da classificão.',
+      link: 'https://memorysunset.netlify.app/login.html' },
+      { id: 2, nome: 'Snoopy Park - Beatriz', genero: 'estrategia', plataformas: 'Navegador', imagem: 'img/beatriz2.png',
+      desc: 'Um jogo de plataforma e aventura onde personagens precisam cooperar para superar obstaculos e completar as fases.',
+      link: 'https://snoopy-park-play.base44.app/' },
+      { id: 3, nome: 'Bolt Escape - Beatriz', genero: 'estrategia', plataformas: 'Navegador', imagem: 'img/beatriz3.png',
+      desc: 'Um jogo de quebra-cabeça onde o jogador deve remover os parafusos na ordem correta para liberar as peças.  ',
+      link: 'https://bolt-escape.base44.app/' },
+
+      // Diego
+    { id: 4, nome: 'Brasil Simulator - Diego', genero: 'estrategia', plataformas: 'Navegador', imagem: 'img/diego.png',
+      desc: 'Brasil Simulator é um jogo clicker online onde os jogadores evoluem seus beneficios e programas governamentais para ganhar mais dinheiro e subir no ranking.',
+      link: 'https://game-virtual-zeta.vercel.app/' },
+       { id: 5, nome: 'Letraço - Diego', genero: 'estrategia', plataformas: 'Navegador', imagem: 'img/diego3.png',
+      desc: 'Letraço é um jogo de palavras inspirado no clássico Stop, onde você precisa completar as categorias com a letra sorteada antes do tempo acabar e desafiar seus amigos para ver quem faz mais pontos.',
+      link: 'https://letraco-game.lovable.app' },
+    { id: 6, nome: 'Quiz Blast - Diego', genero: 'quiz', plataformas: 'Navegador', imagem: 'img/diego1.png',
+      desc: 'QuizBlast é um jogo de quiz online onde os jogadores respondem perguntas de diferentes categorias para ganhar pontos, subir no ranking e competir com amigos em uma experiência divertida e desafiadora.',
+      link: 'https://tidy-quiz-live-play.base44.app/' },
+    { id: 7 , nome: 'LUDO - Diego', genero: 'estrategia', plataformas: 'Navegador', imagem: 'img/diego2.png',
+      desc: 'Ludo é um divertido jogo de tabuleiro clássico para até 4 jogadores! Escolha sua cor, lance os dados e mova suas peças pelo tabuleiro até chegar ao destino. Mas cuidado: seus adversários podem capturar suas peças!',
+      link: 'https://ludo-star.base44.app/' },
+
+      // Diogo
+    { id: 8, nome: 'Batalha de Reflexo - Diogo', genero: 'corrida', plataformas: 'Navegador', imagem: 'img/diogo.png',
+      desc: 'Um jogo multiplayer sobre quem tem mais reflexo pra ser o primeiro a clicar e garantir a vitória.',
+      link: 'https://batalha-de-reflexo1.onrender.com/' },
+
+      //Franmarys
+    { id: 9, nome: 'PURA Play - Franmarys', genero: 'quiz', plataformas: 'Navegador', imagem: 'img/franmarys.png',
+      desc: '4X por turnos de construção de império, do início da civilização até a era espacial, jogável sozinho ou em rede.',
+      link: 'https://multiple-play-2d551.web.app/' },
+
+      // Giulia
+    { id: 10, nome: 'Piano - Giulia', genero: 'simulacao', plataformas: 'Navegador', imagem: 'img/giulia.png',
+      desc: '4X por turnos de construção de império, do início da civilização até a era espacial, jogável sozinho ou em rede.',
+      link: 'https://giuliazanutto.github.io/piano-game/' },
+
+      // João
+    { id: 11, nome: 'Minerador Pro - João', genero: 'simulacao', plataformas: 'Navegador',  imagem: 'img/joao.png',
+      desc: 'Nesse jogo, você explora as profundezas, descobre minérios raros, aprimora seus equipamentos e se torne o maior minerador em uma aventura cheia de desafios, tesouros e descobertas',
+      link: 'https://minerador-86d39.web.app/' },
+      { id: 11, nome: 'BlockDrops - João', genero: 'simulacao', plataformas: 'Navegador',  imagem: 'img/joao2.png',
+      desc: 'Encaixe os blocos, use poderes incríveis e mostre sua habilidade! Jogue agora, suba de nível e garanta o seu lugar no Top 10 mundial!',
+      link: 'https://lambent-speculoos-b2e5cd.netlify.app/' },
+
+      //Leandro
+    { id: 12, nome: 'Pedra, Papel e Tesoura - Leandro', genero: 'estrategia', plataformas: 'Navegador', imagem: 'img/leandro.png',
+      desc: '4X por turnos de construção de império, do início da civilização até a era espacial, jogável sozinho ou em rede.',
+      link: 'https://ppt-online-lzbr.onrender.com/' },
+      { id: 12, nome: 'Sudoku - Leandro', genero: 'estrategia', plataformas: 'Navegador', imagem: 'img/leandro2.png',
+      desc: 'O clássico quebra-cabeça de lógica: preencha a grade 9×9 de forma que cada linha, coluna e bloco 3×3 contenha os números de 1 a 9 sem repetir. Use as notas para marcar possibilidades, acompanhe seu tempo e erros, e veja os números ficarem verdes conforme você completa cada um. Escolha um nível e comece a jogar!',
+      link: 'https://play-sudoku-pro.base44.app/' },
+
+      //Miguel
+    { id: 13, nome: 'PicDraw - Miguel', genero: 'simulacao', plataformas: 'Navegador', imagem: 'img/miguel.png',
+      desc: 'Jogue um novo gartic! Pratique suas habilidade de desenho e se divirta com seus amigos',
+      link: 'https://draw-connect-play.base44.app/' },
+    { id: 14, nome: 'InfiniteCraft - Miguel', genero: 'simulacao', plataformas: 'Navegador', imagem: 'img/miguel2.png',
+      desc: 'Combine elementos, descubra coisas novas, experimente combinações inesperadas e tente encontrar todos os elementos escondidos. Você pode criar animais, objetos, lugares, personagens, conceitos e até coisas completamente absurdas!',
+      link: 'https://infinitecaft-fyzmnevb.manus.space/' },
+
+      //Naara
+    { id: 15, nome: 'Naara', genero: 'simulacao', plataformas: 'Navegador',  imagem: 'img/naara.png',
+      desc: 'Um jogo da velha super fofo com tema de cafeteria! Escolha seu lado entre a Xícara de Café e o Bolinho de Chocolate e divirta-se em um tabuleiro que parece um pratinho.',
+      link: 'https://cafe-bolinho.base44.app/menu' },
+      { id: 16, nome: 'Bola Vermelha - Naara', genero: 'simulacao', plataformas: 'Navegador',  imagem: 'img/naara2.png',
+      desc: 'REDBALL4 é um jogo bastante conhecido, principalmente por ser antigo. Que tal dificultar esse jogo? Experimente a dificuldade extrema dessa outra versão do jogo!',
+      link: 'https://fanatic-red-roll-quest.base44.app' },
+
+      //Nicolas
+    { id: 17, nome: 'JIBOIA - Nicolas', genero: 'estrategia', plataformas: 'Navegador', imagem: 'img/nicolas.png',
+      desc: 'Entre no campo de batalha como uma esfera colorida, cresça comendo prolas do mapa e elimine seus adversarios para se tornar a maior orbe do mapa!',
+      link: 'https://jiboia.onrender.com/' },
+      { id: 17, nome: 'Jetiski - Nicolas', genero: 'estrategia', plataformas: 'Navegador', imagem: 'img/nicolas.png',
+      desc: 'jetiski um jogo de desenhar e adivinhar a figura!',
+      link: 'https://garticgame-xmknmjby.manus.space/' },
+
+      //Rebeka
+    { id: 18, nome: 'PetTec - Rebeca', genero: 'estrategia', plataformas: 'Navegador', imagem: 'img/rebeca.png',
+      desc: 'PetTEC é um bichinho virtual estilo Tamagotchi onde você cuida de um pet (alimenta, brinca, dá banho e coloca pra dormir), ganha moedas, compra roupas e acessórios, e disputa um ranking com outros jogadores.',
+      link: 'https://pet-tec.vercel.app/' },
+    { id: 19, nome: 'Mochi - Rebeca', genero: 'estrategia', plataformas: 'Navegador', imagem: 'img/rebeca1.png',
+      desc: 'Mochi é um jogo de cartas coloridas, use poderes e vença zerando a mão.',
+      link: 'https://mochi-uno.vercel.app/' },
+
+      //Outros
+    { id: 21, nome: 'SuperTuxKart', genero: 'corrida', plataformas: 'Win / Mac / Linux',
+      desc: 'Corrida de kart em 3D com dezenas de pistas, itens ofensivos e modo carreira, no espírito de clássicos de kart arcade.',
+      link: 'https://supertuxkart.net' },
+    { id: 21, nome: '0 A.D.', genero: 'estrategia', plataformas: 'Win / Mac / Linux',
+      desc: 'RTS histórico ambientado antes de Cristo, com gestão de economia, cerco de cidades e civilizações jogáveis distintas.',
+      link: 'https://play0ad.com' },
+    { id: 22, nome: 'Battle for Wesnoth', genero: 'estrategia', plataformas: 'Win / Mac / Linux / Android',
+      desc: 'Estrategia tatica por turnos em um mundo de fantasia, com campanhas extensas e forte foco em terreno e vantagem de classe.',
+      link: 'https://www.wesnoth.org' },
+    { id: 23, nome: 'Veloren', genero: 'rpg', plataformas: 'Win / Mac / Linux',
+      desc: 'Mundo aberto voxel inspirado em RPGs de sobrevivência, com exploração, crafting e combate em tempo real cooperativo.',
+      link: 'https://veloren.net' },
+    { id: 24, nome: 'OpenRA', genero: 'estrategia', plataformas: 'Win / Mac / Linux',
+      desc: 'Engine moderna que reconstrói RTS clássicos dos anos 90, com multiplayer estável e ritmo acelerado de construção de base.',
+      link: 'https://www.openra.net' },
+    { id: 25, nome: 'Xonotic', genero: 'tiro', plataformas: 'Win / Mac / Linux',
+      desc: 'FPS de arena rápido, focado em movimentação aérea e combate competitivo, herdeiro direto da era dos shooters old-school.',
+      link: 'https://xonotic.org' },
+    { id: 26, nome: 'Mindustry', genero: 'estrategia', plataformas: 'Win / Mac / Linux / Android',
+      desc: 'Mistura de fabrica automatizada com defesa de torres: projete linhas de produção enquanto resiste a ondas inimigas.',
+      link: 'https://mindustrygame.github.io' },
+    { id: 27, nome: 'Cataclysm: Dark Days Ahead', genero: 'sobrevivencia', plataformas: 'Win / Mac / Linux',
+      desc: 'Roguelike pos-apocaliptico de sobrevivencia extremamente detalhado, com crafting profundo e simulação de mundo aberto.',
+      link: 'https://cataclysmdda.org' },
+    { id: 28, nome: 'Endless Sky', genero: 'simulacao', plataformas: 'Win / Mac / Linux',
+      desc: 'Simulador de comércio e combate espacial em 2D, com exploração de sistemas estelares e campanha ramificada.',
+      link: 'https://endless-sky.github.io' },
+    { id: 29, nome: 'Hedgewars', genero: 'acao', plataformas: 'Win / Mac / Linux',
+      desc: 'Artilharia por turnos com humor exagerado e ouriços armados, na linha de jogos de destruição de terreno em 2D.',
+      link: 'https://hedgewars.org' },
+    { id: 30, nome: 'Teeworlds', genero: 'tiro', plataformas: 'Win / Mac / Linux / Android',
+      desc: 'Plataforma 2D com tiro multiplayer, gancho de escalada e mapas compactos voltados para partidas rápidas.',
+      link: 'https://teeworlds.com' },
+    { id: 31, nome: 'Freeciv', genero: 'estrategia', plataformas: 'Win / Mac / Linux / Navegador',
+      desc: '4X por turnos de construção de império, do início da civilização até a era espacial, jogável sozinho ou em rede.',
+      link: 'https://www.freeciv.org' }
+  ];
+
+  // ---------- Estado ----------
+  let activeGenre = 'todos';
+  let searchTerm = '';
+
+  const grid = document.getElementById('grid');
+  const filtersEl = document.getElementById('filters');
+  const emptyState = document.getElementById('emptyState');
+  const resultsCount = document.getElementById('resultsCount');
+  const headerCount = document.getElementById('headerCount');
+
+  headerCount.textContent = games.length;
+
+  // ---------- Monta chips de filtro ----------
+  const genresPresent = ['todos', ...Object.keys(genreLabels).filter(g => games.some(game => game.genero === g))];
+  genresPresent.forEach(g => {
+    const chip = document.createElement('button');
+    chip.className = 'chip';
+    chip.type = 'button';
+    chip.setAttribute('aria-pressed', g === activeGenre ? 'true' : 'false');
+    chip.textContent = g === 'todos' ? 'Todos' : genreLabels[g];
+    chip.addEventListener('click', () => {
+      activeGenre = g;
+      document.querySelectorAll('.chip').forEach(c => c.setAttribute('aria-pressed', 'false'));
+      chip.setAttribute('aria-pressed', 'true');
+      render();
+    });
+    filtersEl.appendChild(chip);
+  });
+
+  document.getElementById('searchInput').addEventListener('input', (e) => {
+    searchTerm = e.target.value.trim().toLowerCase();
+    render();
+  });
+
+  function cardTemplate(game){
+    const [c1, c2] = genreColors[game.genero];
+    const ticketNo = String(game.id).padStart(3, '0');
+    const coverContent = game.imagem
+      ? `<img src="${game.imagem}" alt="Capa de ${game.nome}" loading="lazy">`
+      : icons[game.genero];
+    const coverStyle = game.imagem ? '' : `style="background: linear-gradient(135deg, ${c1}, ${c2});"`;
+    return `
+      <article class="card">
+        <div class="card-cover" ${coverStyle}>
+          ${coverContent}
+          <span class="ticket-no">${badgeIcon} Nº ${ticketNo}</span>
+        </div>
+        <div class="card-body">
+          <h3>${game.nome}</h3>
+          <p>${game.desc}</p>
+          <div class="card-actions">
+            <a class="btn" href="${game.link}" target="_blank" rel="noopener noreferrer">Jogar</a>
+          </div>
+        </div>
+      </article>
+    `;
+  }
+
+  
+
+  function render(){
+    const filtered = games.filter(g => {
+      const matchGenre = activeGenre === 'todos' || g.genero === activeGenre;
+      const matchSearch = !searchTerm ||
+        g.nome.toLowerCase().includes(searchTerm) ||
+        genreLabels[g.genero].toLowerCase().includes(searchTerm);
+      return matchGenre && matchSearch;
+    });
+
+    resultsCount.textContent = filtered.length;
+    grid.innerHTML = filtered.map(cardTemplate).join('');
+    emptyState.hidden = filtered.length !== 0;
+  }
+
+  render();
+</script>
+
+</body>
+</html>
