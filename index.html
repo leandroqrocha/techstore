@@ -7,30 +7,21 @@
 
   <title>Tech Store</title>
 
-  <meta
-    name="description"
-    content="Uma vitrine de jogos gratuitos e de código aberto."
-  >
+  <meta name="description"
+    content="Uma vitrine de jogos gratuitos e de código aberto.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
-
-  <link
-    rel="preconnect"
-    href="https://fonts.gstatic.com"
-    crossorigin
-  >
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
     rel="stylesheet"
     integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
-    crossorigin="anonymous"
-  >
+    crossorigin="anonymous">
 
   <link
     href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,600&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
-    rel="stylesheet"
-  >
+    rel="stylesheet">
 
   <link rel="icon" href="img/favicon.png">
 
@@ -43,7 +34,6 @@
     :root {
       --bg: #ffffff;
       --bg-soft: #f6f8fc;
-
       --surface: #ffffff;
       --surface-2: #f1f4f9;
       --surface-3: #eef1f7;
@@ -92,6 +82,7 @@
 
       --blue: #4d8dff;
       --blue-dark: #6ea1ff;
+
       --blue-soft: rgba(77, 141, 255, 0.16);
 
       --line: rgba(255, 255, 255, 0.08);
@@ -105,7 +96,7 @@
 
 
     /* =========================================================
-       CONFIGURAÇÕES GERAIS
+       RESET
     ========================================================= */
 
     * {
@@ -123,7 +114,6 @@
       color: var(--text);
 
       font-family: var(--font-body);
-
       line-height: 1.55;
 
       -webkit-font-smoothing: antialiased;
@@ -150,9 +140,7 @@
 
     .wrap {
       max-width: 1180px;
-
       margin: 0 auto;
-
       padding: 0 24px;
     }
 
@@ -162,28 +150,23 @@
     ========================================================= */
 
     header.marquee {
-
       position: sticky;
-
       top: 0;
 
       z-index: 20;
 
-      background:
-        color-mix(
-          in srgb,
-          var(--bg) 88%,
-          transparent
-        );
+      background: color-mix(
+        in srgb,
+        var(--bg) 88%,
+        transparent
+      );
 
       backdrop-filter: blur(10px);
 
       border-bottom: 1px solid var(--line);
     }
 
-
     .marquee-bar {
-
       display: grid;
 
       grid-template-columns:
@@ -204,7 +187,6 @@
     ========================================================= */
 
     .brand {
-
       display: flex;
 
       align-items: center;
@@ -226,17 +208,12 @@
       color: var(--blue);
     }
 
-
-    .brand .bulb-row {
-
+    .bulb-row {
       display: flex;
-
       gap: 4px;
     }
 
-
     .bulb {
-
       width: 6px;
       height: 6px;
 
@@ -253,12 +230,8 @@
         );
 
       animation:
-        flicker
-        2.6s
-        infinite
-        ease-in-out;
+        flicker 2.6s infinite ease-in-out;
     }
-
 
     .bulb:nth-child(2) {
       animation-delay: .3s;
@@ -267,7 +240,6 @@
     .bulb:nth-child(3) {
       animation-delay: .6s;
     }
-
 
     @keyframes flicker {
 
@@ -280,7 +252,6 @@
         opacity: .35;
       }
     }
-
 
     @media (prefers-reduced-motion: reduce) {
 
@@ -295,7 +266,6 @@
     ========================================================= */
 
     .header-search {
-
       max-width: 460px;
 
       width: 100%;
@@ -317,21 +287,16 @@
       gap: 10px;
     }
 
-
     .header-search svg {
-
       flex-shrink: 0;
 
       color: var(--muted);
 
       width: 17px;
-
       height: 17px;
     }
 
-
     .header-search input {
-
       flex: 1;
 
       background: transparent;
@@ -351,19 +316,15 @@
       min-width: 0;
     }
 
-
     .header-search input::placeholder {
-
       color: var(--muted);
 
       font-weight: 600;
     }
 
-
     .header-search input:focus {
       outline: none;
     }
-
 
     .header-search:focus-within {
       border-color: var(--blue);
@@ -375,7 +336,6 @@
     ========================================================= */
 
     .header-actions {
-
       display: flex;
 
       align-items: center;
@@ -385,9 +345,7 @@
       flex-shrink: 0;
     }
 
-
     .nav-count {
-
       font-family: var(--font-mono);
 
       font-size: 13px;
@@ -397,18 +355,11 @@
       white-space: nowrap;
     }
 
-
     .nav-count strong {
       color: var(--blue);
     }
 
-
-    /* =========================================================
-       BOTÃO DE TEMA
-    ========================================================= */
-
     .theme-toggle {
-
       display: inline-flex;
 
       align-items: center;
@@ -436,16 +387,12 @@
         background .15s ease;
     }
 
-
     .theme-toggle:hover {
       border-color: var(--line-strong);
     }
 
-
     .theme-toggle svg {
-
       width: 14px;
-
       height: 14px;
     }
 
@@ -455,7 +402,6 @@
     ========================================================= */
 
     .hero {
-
       padding: 64px 0 32px;
 
       text-align: center;
@@ -464,14 +410,9 @@
     }
 
 
-    /*
-      IMPORTANTE:
-
-      O bonequinho e o título agora ficam dentro
-      do MESMO flex container.
-
-      Não usamos position:absolute.
-    */
+    /* =========================================================
+       TÍTULO + BONEQUINHO
+    ========================================================= */
 
     .brand-lockup {
 
@@ -483,19 +424,35 @@
 
       gap: 18px;
 
+      flex-wrap: nowrap;
+
       margin-bottom: 22px;
-
-      position: relative;
-
-      width: 100%;
     }
 
 
-    /* =========================================================
-       BONEQUINHO
-    ========================================================= */
+    /*
+       IMPORTANTE:
 
-    .transparent-video {
+       Os dois vídeos ficam exatamente no mesmo lugar.
+       Somente um deles aparece dependendo do tema.
+    */
+
+    .fish-wrapper {
+
+      width: 125px;
+
+      height: 125px;
+
+      flex-shrink: 0;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+    }
+
+    .fish-video {
 
       width: 125px;
 
@@ -503,49 +460,27 @@
 
       object-fit: contain;
 
+      display: none;
+
       pointer-events: none;
+    }
 
-      flex-shrink: 0;
 
+    /* Tema claro */
+
+    html:not([data-theme="dark"])
+      .fish-light {
       display: block;
     }
 
 
-    /*
-      TEMA CLARO
+    /* Tema escuro */
 
-      Apenas o peixe claro aparece.
-    */
-
-    .fish-dark {
-      display: none !important;
+    html[data-theme="dark"]
+      .fish-dark {
+      display: block;
     }
 
-
-    .fish-light {
-      display: block !important;
-    }
-
-
-    /*
-      TEMA ESCURO
-
-      Apenas o peixe escuro aparece.
-    */
-
-    html[data-theme="dark"] .fish-dark {
-      display: block !important;
-    }
-
-
-    html[data-theme="dark"] .fish-light {
-      display: none !important;
-    }
-
-
-    /* =========================================================
-       TÍTULO
-    ========================================================= */
 
     .hero h1 {
 
@@ -569,11 +504,6 @@
       color: var(--blue);
     }
 
-
-    /* =========================================================
-       TEXTOS DO HERO
-    ========================================================= */
-
     .hero p.lede-main {
 
       max-width: 650px;
@@ -592,11 +522,9 @@
         );
     }
 
-
     .hero p.lede-main .accent {
       color: var(--blue);
     }
-
 
     .hero p.lede {
 
@@ -627,7 +555,6 @@
       padding: 28px 0 8px;
     }
 
-
     .chip {
 
       font-family: var(--font-body);
@@ -657,14 +584,12 @@
       box-shadow: var(--shadow);
     }
 
-
     .chip:hover {
 
       border-color: var(--blue);
 
       color: var(--text);
     }
-
 
     .chip[aria-pressed="true"] {
 
@@ -684,7 +609,6 @@
       padding: 20px 0 80px;
     }
 
-
     .count-line {
 
       font-family: var(--font-mono);
@@ -699,7 +623,6 @@
 
       margin-bottom: 28px;
     }
-
 
     .grid {
 
@@ -716,7 +639,7 @@
 
 
     /* =========================================================
-       CARDS
+       CARD
     ========================================================= */
 
     .card {
@@ -741,7 +664,6 @@
         box-shadow .15s ease;
     }
 
-
     .card:hover {
 
       border-color: var(--line-strong);
@@ -750,7 +672,6 @@
 
       box-shadow: var(--shadow-hover);
     }
-
 
     .card-cover {
 
@@ -769,7 +690,6 @@
       overflow: hidden;
     }
 
-
     .card-cover svg {
 
       width: 46px;
@@ -778,7 +698,6 @@
 
       opacity: .9;
     }
-
 
     .card-cover img {
 
@@ -790,7 +709,6 @@
 
       display: block;
     }
-
 
     .card-cover .ticket-no {
 
@@ -825,7 +743,6 @@
       border-radius: 999px;
     }
 
-
     .card-cover .ticket-no svg {
 
       width: 11px;
@@ -834,7 +751,6 @@
 
       opacity: 1;
     }
-
 
     .card-body {
 
@@ -849,7 +765,6 @@
       flex: 1;
     }
 
-
     .card-body h3 {
 
       font-family: var(--font-display);
@@ -863,7 +778,6 @@
       letter-spacing: -0.2px;
     }
 
-
     .card-body p {
 
       margin: 0;
@@ -875,12 +789,10 @@
       flex: 1;
     }
 
-
     .card-actions {
 
       margin-top: 4px;
     }
-
 
     .btn {
 
@@ -905,12 +817,91 @@
         color .15s ease;
     }
 
-
     .btn:hover {
 
       gap: 10px;
 
       color: var(--blue-dark);
+    }
+
+
+    /* =========================================================
+       PAGINAÇÃO
+    ========================================================= */
+
+    .pagination-container {
+
+      display: flex;
+
+      justify-content: center;
+
+      align-items: center;
+
+      gap: 8px;
+
+      margin-top: 40px;
+
+      flex-wrap: wrap;
+    }
+
+    .pagination-btn {
+
+      min-width: 42px;
+
+      height: 42px;
+
+      padding: 0 14px;
+
+      border-radius: 12px;
+
+      border: 1px solid var(--line);
+
+      background: var(--surface);
+
+      color: var(--muted);
+
+      font-family: var(--font-mono);
+
+      font-size: 13px;
+
+      font-weight: 600;
+
+      cursor: pointer;
+
+      transition:
+        background .15s ease,
+        color .15s ease,
+        border-color .15s ease,
+        transform .15s ease;
+    }
+
+    .pagination-btn:hover:not(:disabled) {
+
+      border-color: var(--blue);
+
+      color: var(--blue);
+
+      transform: translateY(-2px);
+    }
+
+    .pagination-btn.active {
+
+      background: var(--blue);
+
+      color: #ffffff;
+
+      border-color: var(--blue);
+
+      box-shadow:
+        0 4px 14px
+        rgba(47, 111, 237, 0.25);
+    }
+
+    .pagination-btn:disabled {
+
+      opacity: .4;
+
+      cursor: not-allowed;
     }
 
 
@@ -952,7 +943,6 @@
       margin-top: 40px;
     }
 
-
     .footer-top {
 
       display: flex;
@@ -966,12 +956,10 @@
       padding-bottom: 32px;
     }
 
-
     .footer-brand {
 
       max-width: 320px;
     }
-
 
     .footer-brand .brand {
 
@@ -980,12 +968,10 @@
       margin-bottom: 10px;
     }
 
-
     .footer-brand .bulb {
 
       background: #fff;
     }
-
 
     .footer-brand p {
 
@@ -995,7 +981,6 @@
 
       font-size: 14px;
     }
-
 
     .footer-col h4 {
 
@@ -1007,7 +992,6 @@
 
       margin: 0 0 14px;
     }
-
 
     .footer-col ul {
 
@@ -1024,7 +1008,6 @@
       gap: 10px;
     }
 
-
     .footer-col a {
 
       text-decoration: none;
@@ -1034,14 +1017,12 @@
       font-size: 14px;
     }
 
-
     .footer-col a:hover {
 
       color: #fff;
 
       text-decoration: underline;
     }
-
 
     .footer-bottom {
 
@@ -1062,13 +1043,11 @@
       justify-content: space-between;
     }
 
-
     .footer-bottom p {
 
       margin: 0;
 
-      color:
-        rgba(255, 255, 255, 0.75);
+      color: rgba(255, 255, 255, 0.75);
 
       font-size: 13px;
 
@@ -1089,23 +1068,30 @@
           auto;
       }
 
-
       .header-search {
         display: none;
       }
 
-
       .brand-lockup {
-
-        gap: 12px;
+        gap: 10px;
       }
 
+      .fish-wrapper {
 
-      .transparent-video {
+        width: 90px;
 
-        width: 105px;
+        height: 90px;
+      }
 
-        height: 105px;
+      .fish-video {
+
+        width: 90px;
+
+        height: 90px;
+      }
+
+      .hero h1 {
+        font-size: 3rem;
       }
     }
 
@@ -1113,16 +1099,12 @@
     @media (max-width: 560px) {
 
       .hero {
-
         padding: 44px 0 24px;
       }
 
-
       .grid {
-
         grid-template-columns: 1fr;
       }
-
 
       .footer-bottom {
 
@@ -1131,58 +1113,39 @@
         align-items: flex-start;
       }
 
-
       .nav-count {
         display: none;
       }
 
-
-      /*
-        No celular, reduzimos um pouco
-        o bonequinho para manter o título
-        e o personagem lado a lado.
-      */
-
-      .transparent-video {
-
-        width: 82px;
-
-        height: 82px;
-      }
-
-
       .brand-lockup {
-
-        gap: 8px;
+        gap: 6px;
       }
 
+      .fish-wrapper {
+
+        width: 75px;
+
+        height: 75px;
+      }
+
+      .fish-video {
+
+        width: 75px;
+
+        height: 75px;
+      }
 
       .hero h1 {
-
-        font-size: 3rem;
-      }
-    }
-
-
-    @media (max-width: 400px) {
-
-      .transparent-video {
-
-        width: 68px;
-
-        height: 68px;
+        font-size: 2.5rem;
       }
 
+      .pagination-btn {
 
-      .hero h1 {
+        min-width: 38px;
 
-        font-size: 2.6rem;
-      }
+        height: 38px;
 
-
-      .brand-lockup {
-
-        gap: 5px;
+        padding: 0 10px;
       }
     }
 
@@ -1200,6 +1163,7 @@
   <header class="marquee">
 
     <div class="wrap marquee-bar">
+
 
       <a href="#top" class="brand">
 
@@ -1224,8 +1188,6 @@
       </a>
 
 
-      <!-- Busca -->
-
       <div class="header-search">
 
         <svg
@@ -1236,21 +1198,20 @@
           stroke="currentColor"
           stroke-width="2"
           stroke-linecap="round"
-          stroke-linejoin="round"
-        >
+          stroke-linejoin="round">
 
           <circle
             cx="11"
             cy="11"
-            r="7"
-          />
+            r="7">
+          </circle>
 
           <line
             x1="21"
             y1="21"
             x2="16.65"
-            y2="16.65"
-          />
+            y2="16.65">
+          </line>
 
         </svg>
 
@@ -1258,14 +1219,11 @@
         <input
           id="searchInput"
           type="search"
-          placeholder="Buscar por nome ou gêneros"
-          aria-label="Buscar jogos"
-        >
+          placeholder="Buscar por nome ou gênero..."
+          aria-label="Buscar jogos">
 
       </div>
 
-
-      <!-- Ações -->
 
       <div class="header-actions">
 
@@ -1281,8 +1239,7 @@
           class="theme-toggle"
           id="themeToggle"
           type="button"
-          aria-label="Alternar tema claro/escuro"
-        >
+          aria-label="Alternar tema claro/escuro">
 
           <svg
             id="themeIcon"
@@ -1291,8 +1248,8 @@
             stroke="currentColor"
             stroke-width="2"
             stroke-linecap="round"
-            stroke-linejoin="round"
-          ></svg>
+            stroke-linejoin="round">
+          </svg>
 
           <span id="themeLabel">
             Escuro
@@ -1314,71 +1271,54 @@
 
   <main>
 
-
-    <!-- HERO -->
-
     <section
       class="hero"
-      id="top"
-    >
+      id="top">
 
 
-      <!--
-        ======================================================
-        BONEQUINHO + TÍTULO
-
-        Os dois vídeos estão no mesmo container.
-
-        Tema claro:
-        - peixe claro aparece
-        - peixe escuro fica escondido
-
-        Tema escuro:
-        - peixe escuro aparece
-        - peixe claro fica escondido
-        ======================================================
-      -->
+      <!-- ===================================================
+           BONEQUINHO + TÍTULO
+      ==================================================== -->
 
       <div class="brand-lockup">
 
 
-        <!-- Peixe do tema escuro -->
+        <!--
+          Os dois vídeos estão no mesmo lugar.
+          O CSS escolhe automaticamente apenas um.
+        -->
 
-        <video
-          autoplay
-          muted
-          loop
-          playsinline
-          class="transparent-video fish-dark"
-        >
+        <div class="fish-wrapper">
 
-          <source
-            src="img/peixe.webm"
-            type="video/webm"
-          >
+          <video
+            autoplay
+            muted
+            loop
+            playsinline
+            class="fish-video fish-dark">
 
-        </video>
+            <source
+              src="img/peixe.webm"
+              type="video/webm">
 
-
-        <!-- Peixe do tema claro -->
-
-        <video
-          autoplay
-          muted
-          loop
-          playsinline
-          class="transparent-video fish-light"
-        >
-
-          <source
-            src="img/peixe claro.webm"
-            type="video/webm"
-          >
-
-        </video>
+          </video>
 
 
-        <!-- Título -->
+          <video
+            autoplay
+            muted
+            loop
+            playsinline
+            class="fish-video fish-light">
+
+            <source
+              src="img/peixe claro.webm"
+              type="video/webm">
+
+          </video>
+
+        </div>
+
 
         <h1>
           Tech Store
@@ -1387,8 +1327,6 @@
 
       </div>
 
-
-      <!-- Texto principal -->
 
       <p class="lede-main">
 
@@ -1411,14 +1349,14 @@
       </p>
 
 
-      <!-- Filtros -->
+      <!-- FILTROS -->
 
       <div
         class="filters"
         id="filters"
         role="group"
-        aria-label="Filtrar por gênero"
-      ></div>
+        aria-label="Filtrar por gênero">
+      </div>
 
 
     </section>
@@ -1426,7 +1364,7 @@
 
 
     <!-- =====================================================
-         LISTAGEM DE JOGOS
+         JOGOS
     ====================================================== -->
 
     <div class="wrap">
@@ -1445,19 +1383,30 @@
 
       <div
         class="grid"
-        id="grid"
-      ></div>
+        id="grid">
+      </div>
 
+
+      <!-- ESTADO VAZIO -->
 
       <div
         class="empty-state"
         id="emptyState"
-        hidden
-      >
+        hidden>
 
         Nenhum jogo bate com essa busca.
         Tenta outro termo ou limpa o filtro.
 
+      </div>
+
+
+      <!-- ===================================================
+           PAGINAÇÃO
+      ==================================================== -->
+
+      <div
+        class="pagination-container"
+        id="pagination">
       </div>
 
 
@@ -1475,6 +1424,7 @@
 
     <div class="wrap">
 
+
       <div class="footer-top">
 
 
@@ -1482,21 +1432,16 @@
 
           <a
             href="#top"
-            class="brand"
-          >
+            class="brand">
 
             <span class="bulb-row">
-
               <span class="bulb"></span>
-
             </span>
 
             Tech Store
 
             <span class="bulb-row">
-
               <span class="bulb"></span>
-
             </span>
 
           </a>
@@ -1504,8 +1449,10 @@
 
           <p>
 
-            Seu próximo jogo favorito está a um clique
-            de distância. Catálogo de jogos gratuitos
+            Seu próximo jogo favorito está
+            a um clique de distância.
+
+            Catálogo de jogos gratuitos
             e de código aberto.
 
           </p>
@@ -1519,7 +1466,6 @@
           <h4>
             Explorar
           </h4>
-
 
           <ul>
 
@@ -1552,7 +1498,6 @@
           <h4>
             Sobre
           </h4>
-
 
           <ul>
 
@@ -1595,6 +1540,7 @@
 
       </div>
 
+
     </div>
 
   </footer>
@@ -1608,13 +1554,12 @@
   <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-    crossorigin="anonymous"
-  ></script>
+    crossorigin="anonymous">
+  </script>
 
 
 
   <script>
-
 
     /* =========================================================
        TEMA CLARO / ESCURO
@@ -1643,32 +1588,29 @@
       <circle
         cx="12"
         cy="12"
-        r="4"
-      />
+        r="4">
+      </circle>
 
       <path
-        d="
-          M12 2v2
-          M12 20v2
-          M4.9 4.9l1.4 1.4
-          M17.7 17.7l1.4 1.4
-          M2 12h2
-          M20 12h2
-          M4.9 19.1l1.4-1.4
-          M17.7 6.3l1.4-1.4
-        "
-      />
+        d="M12 2v2
+           M12 20v2
+           M4.9 4.9l1.4 1.4
+           M17.7 17.7l1.4 1.4
+           M2 12h2
+           M20 12h2
+           M4.9 19.1l1.4-1.4
+           M17.7 6.3l1.4-1.4">
+      </path>
     `;
 
 
     const moonPath = `
       <path
-        d="
-          M21 12.8
-          A9 9 0 1 1 11.2 3
-          a7 7 0 0 0 9.8 9.8z
-        "
-      />
+        d="M21 12.8A9 9 0 1 1
+           11.2 3
+           a7 7 0 0 0
+           9.8 9.8z">
+      </path>
     `;
 
 
@@ -1712,11 +1654,9 @@
 
 
     const prefersDark =
-      window
-        .matchMedia(
-          '(prefers-color-scheme: dark)'
-        )
-        .matches;
+      window.matchMedia(
+        '(prefers-color-scheme: dark)'
+      ).matches;
 
 
     applyTheme(
@@ -1736,7 +1676,6 @@
             'data-theme'
           );
 
-
         applyTheme(
           current === 'dark'
             ? 'light'
@@ -1754,7 +1693,6 @@
 
     const icons = {
 
-
       corrida: `
         <svg
           viewBox="0 0 24 24"
@@ -1762,21 +1700,11 @@
           stroke="currentColor"
           stroke-width="1.6"
           stroke-linecap="round"
-          stroke-linejoin="round"
-        >
+          stroke-linejoin="round">
 
           <path d="M4 4v16"/>
-
-          <path
-            d="
-              M4 4h6l1 2h6l1 4h-7
-              l-1-2H4
-            "
-          />
-
-          <path
-            d="M4 12h6l1 2h6"
-          />
+          <path d="M4 4h6l1 2h6l1 4h-7l-1-2H4"/>
+          <path d="M4 12h6l1 2h6"/>
 
         </svg>
       `,
@@ -1789,23 +1717,15 @@
           stroke="currentColor"
           stroke-width="1.6"
           stroke-linecap="round"
-          stroke-linejoin="round"
-        >
+          stroke-linejoin="round">
 
           <path d="M4 20h16"/>
-
-          <path
-            d="
-              M9 20V10l3-6
-              3 6v10
-            "
-          />
-
+          <path d="M9 20V10l3-6 3 6v10"/>
           <circle
             cx="12"
             cy="7"
-            r="1.4"
-          />
+            r="1.4">
+          </circle>
 
         </svg>
       `,
@@ -1818,20 +1738,11 @@
           stroke="currentColor"
           stroke-width="1.6"
           stroke-linecap="round"
-          stroke-linejoin="round"
-        >
+          stroke-linejoin="round">
 
-          <path
-            d="
-              M14.5 4.5l5 5-11 11-5-5z
-            "
-          />
-
+          <path d="M14.5 4.5l5 5-11 11-5-5z"/>
           <path d="M14 6l4 4"/>
-
-          <path
-            d="M4.5 19.5L3 21"
-          />
+          <path d="M4.5 19.5L3 21"/>
 
         </svg>
       `,
@@ -1844,50 +1755,49 @@
           stroke="currentColor"
           stroke-width="1.6"
           stroke-linecap="round"
-          stroke-linejoin="round"
-        >
+          stroke-linejoin="round">
 
           <circle
             cx="12"
             cy="12"
-            r="8"
-          />
+            r="8">
+          </circle>
 
           <line
             x1="12"
             y1="2"
             x2="12"
-            y2="6"
-          />
+            y2="6">
+          </line>
 
           <line
             x1="12"
             y1="18"
             x2="12"
-            y2="22"
-          />
+            y2="22">
+          </line>
 
           <line
             x1="2"
             y1="12"
             x2="6"
-            y2="12"
-          />
+            y2="12">
+          </line>
 
           <line
             x1="18"
             y1="12"
             x2="22"
-            y2="12"
-          />
+            y2="12">
+          </line>
 
           <circle
             cx="12"
             cy="12"
             r="1.6"
             fill="currentColor"
-            stroke="none"
-          />
+            stroke="none">
+          </circle>
 
         </svg>
       `,
@@ -1900,18 +1810,20 @@
           stroke="currentColor"
           stroke-width="1.6"
           stroke-linecap="round"
-          stroke-linejoin="round"
-        >
+          stroke-linejoin="round">
 
           <path
-            d="
-              M12 3l2.5 5
-              5.5.8-4 3.9
-              .9 5.5L12 15.8
-              7.1 18.2l.9-5.5
-              -4-3.9 5.5-.8z
-            "
-          />
+            d="M12 3
+               l2.5 5
+               5.5.8
+               -4 3.9
+               .9 5.5
+               L12 15.8
+               7.1 18.2
+               l.9-5.5
+               -4-3.9
+               5.5-.8z">
+          </path>
 
         </svg>
       `,
@@ -1924,18 +1836,17 @@
           stroke="currentColor"
           stroke-width="1.6"
           stroke-linecap="round"
-          stroke-linejoin="round"
-        >
+          stroke-linejoin="round">
 
           <circle
             cx="12"
             cy="12"
-            r="7"
-          />
+            r="7">
+          </circle>
 
           <path
-            d="M12 8v4l3 2"
-          />
+            d="M12 8v4l3 2">
+          </path>
 
         </svg>
       `,
@@ -1948,21 +1859,20 @@
           stroke="currentColor"
           stroke-width="1.6"
           stroke-linecap="round"
-          stroke-linejoin="round"
-        >
+          stroke-linejoin="round">
 
           <circle
             cx="12"
             cy="12"
-            r="4"
-          />
+            r="4">
+          </circle>
 
           <ellipse
             cx="12"
             cy="12"
             rx="9"
-            ry="3.6"
-          />
+            ry="3.6">
+          </ellipse>
 
         </svg>
       `,
@@ -1975,28 +1885,26 @@
           stroke="currentColor"
           stroke-width="1.6"
           stroke-linecap="round"
-          stroke-linejoin="round"
-        >
+          stroke-linejoin="round">
 
           <circle
             cx="12"
             cy="12"
-            r="9"
-          />
+            r="9">
+          </circle>
 
           <path
-            d="
-              M9.1 9a3 3 0 0 1 5.8 1
-              c0 2-3 2-3 4
-            "
-          />
+            d="M9.1 9a3 3 0 0 1
+               5.8 1
+               c0 2-3 2-3 4">
+          </path>
 
           <line
             x1="12"
             y1="17"
             x2="12"
-            y2="17.2"
-          />
+            y2="17.2">
+          </line>
 
         </svg>
       `
@@ -2010,29 +1918,22 @@
 
     const genreLabels = {
 
-      corrida:
-        'Corrida',
+      corrida: 'Corrida',
 
-      estrategia:
-        'Estratégia',
+      estrategia: 'Estratégia',
 
-      rpg:
-        'RPG',
+      rpg: 'RPG',
 
-      tiro:
-        'Tiro',
+      tiro: 'Tiro',
 
-      sobrevivencia:
-        'Sobrevivência',
+      sobrevivencia: 'Sobrevivência',
 
-      acao:
-        'Ação',
+      acao: 'Ação',
 
-      quiz:
-        'Quiz',
+      quiz: 'Quiz',
 
-      simulacao:
-        'Simulação'
+      simulacao: 'Simulação'
+
     };
 
 
@@ -2066,31 +1967,29 @@
 
       simulacao:
         ['#0e7ab0', '#3fa8d8']
+
     };
 
 
 
     /* =========================================================
-       ÍCONE DOS CARDS
+       ÍCONE DO BADGE
     ========================================================= */
 
     const badgeIcon = `
       <svg
         viewBox="0 0 24 24"
         fill="var(--yellow)"
-        stroke="none"
-      >
+        stroke="none">
 
         <path
-          d="
-            M13 2
-            3 14
-            h7
-            l-1 8
-            11-14
-            h-8z
-          "
-        />
+          d="M13 2
+             3 14
+             h7
+             l-1 8
+             11-14
+             h-8z">
+        </path>
 
       </svg>
     `;
@@ -2103,9 +2002,7 @@
 
     const games = [
 
-      /* =====================================================
-         BEATRIZ
-      ===================================================== */
+      /* ================= BEATRIZ ================= */
 
       {
         id: 1,
@@ -2152,9 +2049,7 @@
       },
 
 
-      /* =====================================================
-         DIEGO
-      ===================================================== */
+      /* ================= DIEGO ================= */
 
       {
         id: 4,
@@ -2179,7 +2074,7 @@
         imagem: 'img/diego3.png',
 
         desc:
-          'Letraço é um jogo de palavras inspirado no clássico Stop, onde você precisa completar as categorias com a letra sorteada antes do tempo acabar e desafiar seus amigos para ver quem faz mais pontos.',
+          'Letraço é um jogo de palavras inspirado no clássico Stop, onde você precisa completar as categorias com a letra sorteada antes do tempo acabar e desafiar seus amigos.',
 
         link:
           'https://letraco-game.lovable.app'
@@ -2209,16 +2104,14 @@
         imagem: 'img/diego2.png',
 
         desc:
-          'Ludo é um divertido jogo de tabuleiro clássico para até 4 jogadores! Escolha sua cor, lance os dados e mova suas peças pelo tabuleiro até chegar ao destino.',
+          'Ludo é um divertido jogo de tabuleiro clássico para até 4 jogadores! Escolha sua cor, lance os dados e mova suas peças pelo tabuleiro.',
 
         link:
           'https://ludo-star.base44.app/'
       },
 
 
-      /* =====================================================
-         DIOGO
-      ===================================================== */
+      /* ================= DIOGO ================= */
 
       {
         id: 8,
@@ -2235,9 +2128,7 @@
       },
 
 
-      /* =====================================================
-         FRANMARYS
-      ===================================================== */
+      /* ================= FRANMARYS ================= */
 
       {
         id: 9,
@@ -2254,9 +2145,7 @@
       },
 
 
-      /* =====================================================
-         GIULIA
-      ===================================================== */
+      /* ================= GIULIA ================= */
 
       {
         id: 10,
@@ -2266,16 +2155,14 @@
         imagem: 'img/giulia.png',
 
         desc:
-          'Um jogo de piano interativo para tocar e experimentar diferentes notas no navegador.',
+          'Um jogo de piano interativo para tocar músicas e explorar diferentes notas.',
 
         link:
           'https://giuliazanutto.github.io/piano-game/'
       },
 
 
-      /* =====================================================
-         JOÃO
-      ===================================================== */
+      /* ================= JOÃO ================= */
 
       {
         id: 11,
@@ -2285,7 +2172,7 @@
         imagem: 'img/joao.png',
 
         desc:
-          'Nesse jogo, você explora as profundezas, descobre minérios raros, aprimora seus equipamentos e se torna o maior minerador em uma aventura cheia de desafios, tesouros e descobertas.',
+          'Explore as profundezas, descubra minérios raros, aprimore seus equipamentos e torne-se o maior minerador em uma aventura cheia de desafios.',
 
         link:
           'https://minerador-86d39.web.app/'
@@ -2300,16 +2187,14 @@
         imagem: 'img/joao2.png',
 
         desc:
-          'Encaixe os blocos, use poderes incríveis e mostre sua habilidade! Jogue agora, suba de nível e garanta seu lugar no Top 10 mundial!',
+          'Encaixe os blocos, use poderes incríveis e mostre sua habilidade! Jogue agora, suba de nível e garanta seu lugar no Top 10 mundial.',
 
         link:
           'https://lambent-speculoos-b2e5cd.netlify.app/'
       },
 
 
-      /* =====================================================
-         LEANDRO
-      ===================================================== */
+      /* ================= LEANDRO ================= */
 
       {
         id: 13,
@@ -2319,7 +2204,7 @@
         imagem: 'img/leandro.png',
 
         desc:
-          'Um jogo clássico de Pedra, Papel e Tesoura para jogar diretamente pelo navegador.',
+          'Jogo online de Pedra, Papel e Tesoura para desafiar seus adversários e descobrir quem possui a melhor estratégia.',
 
         link:
           'https://ppt-online-lzbr.onrender.com/'
@@ -2334,16 +2219,14 @@
         imagem: 'img/leandro2.png',
 
         desc:
-          'O clássico quebra-cabeça de lógica: preencha a grade 9×9 de forma que cada linha, coluna e bloco 3×3 contenha os números de 1 a 9 sem repetir. Use as notas para marcar possibilidades, acompanhe seu tempo e erros e escolha um nível para começar a jogar.',
+          'O clássico quebra-cabeça de lógica: preencha a grade 9×9 de forma que cada linha, coluna e bloco 3×3 contenha os números de 1 a 9 sem repetir.',
 
         link:
           'https://play-sudoku-pro.base44.app/'
       },
 
 
-      /* =====================================================
-         MIGUEL
-      ===================================================== */
+      /* ================= MIGUEL ================= */
 
       {
         id: 15,
@@ -2353,7 +2236,7 @@
         imagem: 'img/miguel.png',
 
         desc:
-          'Jogue um novo Gartic! Pratique suas habilidades de desenho e se divirta com seus amigos.',
+          'Jogue um novo Gartic! Pratique suas habilidades de desenho e divirta-se com seus amigos.',
 
         link:
           'https://draw-connect-play.base44.app/'
@@ -2375,9 +2258,7 @@
       },
 
 
-      /* =====================================================
-         NAARA
-      ===================================================== */
+      /* ================= NAARA ================= */
 
       {
         id: 17,
@@ -2409,9 +2290,7 @@
       },
 
 
-      /* =====================================================
-         NICOLAS
-      ===================================================== */
+      /* ================= NICOLAS ================= */
 
       {
         id: 19,
@@ -2421,7 +2300,7 @@
         imagem: 'img/nicolas.png',
 
         desc:
-          'Entre no campo de batalha como uma esfera colorida, cresça comendo pérolas do mapa e elimine seus adversários para se tornar a maior orbe do mapa!',
+          'Entre no campo de batalha como uma esfera colorida, cresça comendo pérolas do mapa e elimine seus adversários para se tornar a maior orbe.',
 
         link:
           'https://jiboia.onrender.com/'
@@ -2436,16 +2315,14 @@
         imagem: 'img/nicolas.png',
 
         desc:
-          'Jetiski é um jogo de desenhar e adivinhar a figura!',
+          'Jetiski é um jogo de desenhar e adivinhar a figura.',
 
         link:
           'https://garticgame-xmknmjby.manus.space/'
       },
 
 
-      /* =====================================================
-         REBECA
-      ===================================================== */
+      /* ================= REBECA ================= */
 
       {
         id: 21,
@@ -2455,7 +2332,7 @@
         imagem: 'img/rebeca.png',
 
         desc:
-          'PetTEC é um bichinho virtual estilo Tamagotchi onde você cuida de um pet, ganha moedas, compra roupas e acessórios e disputa um ranking com outros jogadores.',
+          'PetTEC é um bichinho virtual estilo Tamagotchi onde você cuida de um pet, ganha moedas, compra roupas e acessórios e disputa um ranking.',
 
         link:
           'https://pet-tec.vercel.app/'
@@ -2470,16 +2347,14 @@
         imagem: 'img/rebeca1.png',
 
         desc:
-          'Mochi é um jogo de cartas coloridas. Use poderes e vença zerando a mão.',
+          'Mochi é um jogo de cartas coloridas. Use poderes e vença zerando sua mão.',
 
         link:
           'https://mochi-uno.vercel.app/'
       },
 
 
-      /* =====================================================
-         OUTROS
-      ===================================================== */
+      /* ================= OUTROS ================= */
 
       {
         id: 23,
@@ -2653,15 +2528,22 @@
 
 
     /* =========================================================
-       ESTADO
+       CONFIGURAÇÃO DA PAGINAÇÃO
     ========================================================= */
 
-    let activeGenre =
-      'todos';
+    const GAMES_PER_PAGE = 6;
 
-    let searchTerm =
-      '';
+    let currentPage = 1;
 
+    let activeGenre = 'todos';
+
+    let searchTerm = '';
+
+
+
+    /* =========================================================
+       ELEMENTOS
+    ========================================================= */
 
     const grid =
       document.getElementById(
@@ -2688,6 +2570,21 @@
         'headerCount'
       );
 
+    const pagination =
+      document.getElementById(
+        'pagination'
+      );
+
+    const searchInput =
+      document.getElementById(
+        'searchInput'
+      );
+
+
+
+    /* =========================================================
+       TOTAL DE JOGOS
+    ========================================================= */
 
     headerCount.textContent =
       games.length;
@@ -2695,7 +2592,7 @@
 
 
     /* =========================================================
-       MONTA OS FILTROS
+       CRIA OS FILTROS
     ========================================================= */
 
     const genresPresent = [
@@ -2723,23 +2620,18 @@
             'button'
           );
 
-
         chip.className =
           'chip';
-
 
         chip.type =
           'button';
 
-
         chip.setAttribute(
           'aria-pressed',
-
           genre === activeGenre
             ? 'true'
             : 'false'
         );
-
 
         chip.textContent =
           genre === 'todos'
@@ -2754,14 +2646,16 @@
             activeGenre =
               genre;
 
+            currentPage = 1;
+
 
             document
               .querySelectorAll(
                 '.chip'
               )
               .forEach(
-                c =>
-                  c.setAttribute(
+                button =>
+                  button.setAttribute(
                     'aria-pressed',
                     'false'
                   )
@@ -2790,27 +2684,24 @@
 
 
     /* =========================================================
-       PESQUISA
+       BUSCA
     ========================================================= */
 
-    document
-      .getElementById(
-        'searchInput'
-      )
-      .addEventListener(
-        'input',
-        event => {
+    searchInput.addEventListener(
+      'input',
+      event => {
 
-          searchTerm =
-            event.target.value
-              .trim()
-              .toLowerCase();
+        searchTerm =
+          event.target.value
+            .trim()
+            .toLowerCase();
 
+        currentPage = 1;
 
-          render();
+        render();
 
-        }
-      );
+      }
+    );
 
 
 
@@ -2820,21 +2711,19 @@
 
     function cardTemplate(game) {
 
-      const [
-        c1,
-        c2
-      ] =
-        genreColors[
-          game.genero
-        ];
+      const colors =
+        genreColors[game.genero];
+
+      const c1 =
+        colors[0];
+
+      const c2 =
+        colors[1];
 
 
       const ticketNo =
         String(game.id)
-          .padStart(
-            3,
-            '0'
-          );
+          .padStart(3, '0');
 
 
       const coverContent =
@@ -2844,13 +2733,10 @@
             <img
               src="${game.imagem}"
               alt="Capa de ${game.nome}"
-              loading="lazy"
-            >
+              loading="lazy">
           `
 
-          : icons[
-              game.genero
-            ];
+          : icons[game.genero];
 
 
       const coverStyle =
@@ -2861,11 +2747,11 @@
           : `
             style="
               background:
-              linear-gradient(
-                135deg,
-                ${c1},
-                ${c2}
-              );
+                linear-gradient(
+                  135deg,
+                  ${c1},
+                  ${c2}
+                );
             "
           `;
 
@@ -2874,10 +2760,10 @@
 
         <article class="card">
 
+
           <div
             class="card-cover"
-            ${coverStyle}
-          >
+            ${coverStyle}>
 
             ${coverContent}
 
@@ -2893,7 +2779,9 @@
           </div>
 
 
+
           <div class="card-body">
+
 
             <h3>
               ${game.nome}
@@ -2911,14 +2799,14 @@
                 class="btn"
                 href="${game.link}"
                 target="_blank"
-                rel="noopener noreferrer"
-              >
+                rel="noopener noreferrer">
 
                 Jogar
 
               </a>
 
             </div>
+
 
           </div>
 
@@ -2930,64 +2818,345 @@
 
 
     /* =========================================================
-       RENDERIZAÇÃO
+       FILTRAR JOGOS
     ========================================================= */
 
-    function render() {
+    function getFilteredGames() {
 
-      const filtered =
-        games.filter(
-          game => {
+      return games.filter(
+        game => {
 
-            const matchGenre =
-              activeGenre === 'todos' ||
-              game.genero === activeGenre;
-
-
-            const matchSearch =
-              !searchTerm ||
-
-              game.nome
-                .toLowerCase()
-                .includes(
-                  searchTerm
-                ) ||
-
-              genreLabels[
-                game.genero
-              ]
-                .toLowerCase()
-                .includes(
-                  searchTerm
-                );
+          const matchGenre =
+            activeGenre === 'todos' ||
+            game.genero === activeGenre;
 
 
-            return (
-              matchGenre &&
-              matchSearch
-            );
-          }
-        );
+          const matchSearch =
+            !searchTerm ||
+
+            game.nome
+              .toLowerCase()
+              .includes(searchTerm) ||
+
+            genreLabels[
+              game.genero
+            ]
+              .toLowerCase()
+              .includes(searchTerm);
 
 
-      resultsCount.textContent =
-        filtered.length;
+          return (
+            matchGenre &&
+            matchSearch
+          );
 
+        }
+      );
 
-      grid.innerHTML =
-        filtered
-          .map(cardTemplate)
-          .join('');
-
-
-      emptyState.hidden =
-        filtered.length !== 0;
     }
 
 
 
     /* =========================================================
-       INICIALIZA
+       PAGINAÇÃO
+    ========================================================= */
+
+    function renderPagination(
+      totalGames
+    ) {
+
+      pagination.innerHTML =
+        '';
+
+
+      const totalPages =
+        Math.ceil(
+          totalGames /
+          GAMES_PER_PAGE
+        );
+
+
+      /*
+        Se só existir uma página,
+        não mostramos a paginação.
+      */
+
+      if (totalPages <= 1) {
+
+        return;
+
+      }
+
+
+      /* BOTÃO ANTERIOR */
+
+      const previousButton =
+        document.createElement(
+          'button'
+        );
+
+      previousButton.className =
+        'pagination-btn';
+
+      previousButton.textContent =
+        '‹ Anterior';
+
+      previousButton.disabled =
+        currentPage === 1;
+
+
+      previousButton.addEventListener(
+        'click',
+        () => {
+
+          if (
+            currentPage > 1
+          ) {
+
+            currentPage--;
+
+            render();
+
+            window.scrollTo({
+              top: 0,
+              behavior: 'smooth'
+            });
+
+          }
+
+        }
+      );
+
+
+      pagination.appendChild(
+        previousButton
+      );
+
+
+
+      /* NÚMEROS DAS PÁGINAS */
+
+      for (
+        let page = 1;
+        page <= totalPages;
+        page++
+      ) {
+
+        const pageButton =
+          document.createElement(
+            'button'
+          );
+
+        pageButton.className =
+          'pagination-btn';
+
+
+        if (
+          page === currentPage
+        ) {
+
+          pageButton.classList.add(
+            'active'
+          );
+
+        }
+
+
+        pageButton.textContent =
+          page;
+
+
+        pageButton.setAttribute(
+          'aria-label',
+          `Ir para página ${page}`
+        );
+
+
+        pageButton.addEventListener(
+          'click',
+          () => {
+
+            currentPage =
+              page;
+
+            render();
+
+            window.scrollTo({
+              top: 0,
+              behavior: 'smooth'
+            });
+
+          }
+        );
+
+
+        pagination.appendChild(
+          pageButton
+        );
+
+      }
+
+
+
+      /* BOTÃO PRÓXIMO */
+
+      const nextButton =
+        document.createElement(
+          'button'
+        );
+
+      nextButton.className =
+        'pagination-btn';
+
+      nextButton.textContent =
+        'Próxima ›';
+
+
+      nextButton.disabled =
+        currentPage ===
+        totalPages;
+
+
+      nextButton.addEventListener(
+        'click',
+        () => {
+
+          if (
+            currentPage <
+            totalPages
+          ) {
+
+            currentPage++;
+
+            render();
+
+            window.scrollTo({
+              top: 0,
+              behavior: 'smooth'
+            });
+
+          }
+
+        }
+      );
+
+
+      pagination.appendChild(
+        nextButton
+      );
+
+    }
+
+
+
+    /* =========================================================
+       RENDERIZAÇÃO
+    ========================================================= */
+
+    function render() {
+
+
+      /*
+        Primeiro pegamos todos os jogos
+        que correspondem à pesquisa
+        e ao gênero.
+      */
+
+      const filtered =
+        getFilteredGames();
+
+
+      /*
+        Atualiza contador.
+      */
+
+      resultsCount.textContent =
+        filtered.length;
+
+
+      /*
+        Caso a página atual tenha
+        ficado fora do limite depois
+        de uma filtragem.
+      */
+
+      const totalPages =
+        Math.max(
+          1,
+          Math.ceil(
+            filtered.length /
+            GAMES_PER_PAGE
+          )
+        );
+
+
+      if (
+        currentPage >
+        totalPages
+      ) {
+
+        currentPage =
+          totalPages;
+
+      }
+
+
+      /*
+        Descobre quais 6 jogos
+        devem aparecer.
+      */
+
+      const startIndex =
+        (currentPage - 1) *
+        GAMES_PER_PAGE;
+
+
+      const endIndex =
+        startIndex +
+        GAMES_PER_PAGE;
+
+
+      const gamesToShow =
+        filtered.slice(
+          startIndex,
+          endIndex
+        );
+
+
+      /*
+        Renderiza os cards.
+      */
+
+      grid.innerHTML =
+        gamesToShow
+          .map(cardTemplate)
+          .join('');
+
+
+      /*
+        Mostra ou esconde a
+        mensagem de nenhum resultado.
+      */
+
+      emptyState.hidden =
+        filtered.length !== 0;
+
+
+      /*
+        Renderiza os controles
+        da paginação.
+      */
+
+      renderPagination(
+        filtered.length
+      );
+
+    }
+
+
+
+    /* =========================================================
+       PRIMEIRA RENDERIZAÇÃO
     ========================================================= */
 
     render();
