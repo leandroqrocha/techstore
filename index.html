@@ -7,21 +7,25 @@
 
   <title>Tech Store</title>
 
-  <meta name="description"
-    content="Uma vitrine de jogos gratuitos e de código aberto.">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <meta
+    name="description"
+    content="Uma vitrine de jogos gratuitos e de código aberto."
+  >
 
   <link
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
     rel="stylesheet"
     integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
-    crossorigin="anonymous">
+    crossorigin="anonymous"
+  >
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link
     href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,600&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
-    rel="stylesheet">
+    rel="stylesheet"
+  >
 
   <link rel="icon" href="img/favicon.png">
 
@@ -43,7 +47,7 @@
 
       --blue: #2f6fed;
       --blue-dark: #1d4fd0;
-      --blue-soft: rgba(47, 111, 237, 0.10);
+      --blue-soft: rgba(47,111,237,0.10);
 
       --yellow: #f2b705;
 
@@ -53,8 +57,8 @@
       --radius: 20px;
       --radius-sm: 12px;
 
-      --shadow: 0 4px 18px rgba(20, 30, 60, 0.06);
-      --shadow-hover: 0 10px 28px rgba(20, 30, 60, 0.10);
+      --shadow: 0 4px 18px rgba(20,30,60,0.06);
+      --shadow-hover: 0 10px 28px rgba(20,30,60,0.10);
 
       --font-display: 'Baloo 2', sans-serif;
       --font-body: 'Nunito', sans-serif;
@@ -82,14 +86,13 @@
 
       --blue: #4d8dff;
       --blue-dark: #6ea1ff;
+      --blue-soft: rgba(77,141,255,0.16);
 
-      --blue-soft: rgba(77, 141, 255, 0.16);
+      --line: rgba(255,255,255,0.08);
+      --line-strong: rgba(255,255,255,0.16);
 
-      --line: rgba(255, 255, 255, 0.08);
-      --line-strong: rgba(255, 255, 255, 0.16);
-
-      --shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
-      --shadow-hover: 0 10px 30px rgba(0, 0, 0, 0.5);
+      --shadow: 0 4px 18px rgba(0,0,0,0.35);
+      --shadow-hover: 0 10px 30px rgba(0,0,0,0.5);
 
       color-scheme: dark;
     }
@@ -109,7 +112,6 @@
 
     body {
       margin: 0;
-
       background: var(--bg);
       color: var(--text);
 
@@ -150,23 +152,27 @@
     ========================================================= */
 
     header.marquee {
+
       position: sticky;
       top: 0;
 
       z-index: 20;
 
-      background: color-mix(
-        in srgb,
-        var(--bg) 88%,
-        transparent
-      );
+      background:
+        color-mix(
+          in srgb,
+          var(--bg) 88%,
+          transparent
+        );
 
       backdrop-filter: blur(10px);
 
       border-bottom: 1px solid var(--line);
     }
 
+
     .marquee-bar {
+
       display: grid;
 
       grid-template-columns:
@@ -183,10 +189,11 @@
 
 
     /* =========================================================
-       LOGO DO HEADER
+       LOGO HEADER
     ========================================================= */
 
     .brand {
+
       display: flex;
 
       align-items: center;
@@ -199,7 +206,7 @@
 
       font-size: 20px;
 
-      letter-spacing: 0.2px;
+      letter-spacing: .2px;
 
       text-decoration: none;
 
@@ -208,12 +215,17 @@
       color: var(--blue);
     }
 
+
     .bulb-row {
+
       display: flex;
+
       gap: 4px;
     }
 
+
     .bulb {
+
       width: 6px;
       height: 6px;
 
@@ -233,6 +245,7 @@
         flicker 2.6s infinite ease-in-out;
     }
 
+
     .bulb:nth-child(2) {
       animation-delay: .3s;
     }
@@ -240,6 +253,7 @@
     .bulb:nth-child(3) {
       animation-delay: .6s;
     }
+
 
     @keyframes flicker {
 
@@ -252,6 +266,7 @@
         opacity: .35;
       }
     }
+
 
     @media (prefers-reduced-motion: reduce) {
 
@@ -266,6 +281,7 @@
     ========================================================= */
 
     .header-search {
+
       max-width: 460px;
 
       width: 100%;
@@ -287,7 +303,9 @@
       gap: 10px;
     }
 
+
     .header-search svg {
+
       flex-shrink: 0;
 
       color: var(--muted);
@@ -296,7 +314,9 @@
       height: 17px;
     }
 
+
     .header-search input {
+
       flex: 1;
 
       background: transparent;
@@ -309,24 +329,29 @@
 
       font-weight: 600;
 
-      font-size: 0.92rem;
+      font-size: .92rem;
 
       padding: 2px 0;
 
       min-width: 0;
     }
 
+
     .header-search input::placeholder {
+
       color: var(--muted);
 
       font-weight: 600;
     }
 
+
     .header-search input:focus {
       outline: none;
     }
 
+
     .header-search:focus-within {
+
       border-color: var(--blue);
     }
 
@@ -336,6 +361,7 @@
     ========================================================= */
 
     .header-actions {
+
       display: flex;
 
       align-items: center;
@@ -345,7 +371,9 @@
       flex-shrink: 0;
     }
 
+
     .nav-count {
+
       font-family: var(--font-mono);
 
       font-size: 13px;
@@ -355,14 +383,23 @@
       white-space: nowrap;
     }
 
+
     .nav-count strong {
       color: var(--blue);
     }
 
+
+    /* =========================================================
+       BOTÃO TEMA
+    ========================================================= */
+
     .theme-toggle {
+
       display: inline-flex;
 
       align-items: center;
+
+      justify-content: center;
 
       gap: 6px;
 
@@ -387,11 +424,15 @@
         background .15s ease;
     }
 
+
     .theme-toggle:hover {
+
       border-color: var(--line-strong);
     }
 
+
     .theme-toggle svg {
+
       width: 14px;
       height: 14px;
     }
@@ -402,6 +443,7 @@
     ========================================================= */
 
     .hero {
+
       padding: 64px 0 32px;
 
       text-align: center;
@@ -410,9 +452,14 @@
     }
 
 
-    /* =========================================================
-       TÍTULO + BONEQUINHO
-    ========================================================= */
+    /*
+      IMPORTANTE:
+
+      O bonequinho agora fica dentro do brand-lockup,
+      junto ao título.
+
+      Não usamos position:absolute.
+    */
 
     .brand-lockup {
 
@@ -422,65 +469,59 @@
 
       justify-content: center;
 
-      gap: 18px;
-
-      flex-wrap: nowrap;
+      gap: 14px;
 
       margin-bottom: 22px;
+
+      padding: 0 16px;
     }
 
 
-    /*
-       IMPORTANTE:
+    /* =========================================================
+       BONEQUINHO
+    ========================================================= */
 
-       Os dois vídeos ficam exatamente no mesmo lugar.
-       Somente um deles aparece dependendo do tema.
-    */
+    .mascot-video {
 
-    .fish-wrapper {
+      width: 100px;
 
-      width: 125px;
-
-      height: 125px;
-
-      flex-shrink: 0;
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content: center;
-    }
-
-    .fish-video {
-
-      width: 125px;
-
-      height: 125px;
+      height: 100px;
 
       object-fit: contain;
 
-      display: none;
+      display: block;
+
+      flex-shrink: 0;
 
       pointer-events: none;
     }
 
 
-    /* Tema claro */
+    /*
+      Somente um vídeo aparece de cada vez.
+    */
 
-    html:not([data-theme="dark"])
-      .fish-light {
+    .fish-dark {
+      display: none;
+    }
+
+    .fish-light {
       display: block;
     }
 
 
-    /* Tema escuro */
-
-    html[data-theme="dark"]
-      .fish-dark {
+    html[data-theme="dark"] .fish-dark {
       display: block;
     }
 
+    html[data-theme="dark"] .fish-light {
+      display: none;
+    }
+
+
+    /* =========================================================
+       TÍTULO
+    ========================================================= */
 
     .hero h1 {
 
@@ -489,20 +530,17 @@
       font-weight: 700;
 
       font-size:
-        clamp(
-          2.4rem,
-          6.4vw,
-          4.4rem
-        );
+        clamp(2.4rem, 6.4vw, 4.4rem);
 
       line-height: 1;
 
       margin: 0;
 
-      letter-spacing: -0.5px;
+      letter-spacing: -.5px;
 
       color: var(--blue);
     }
+
 
     .hero p.lede-main {
 
@@ -515,16 +553,16 @@
       font-weight: 800;
 
       font-size:
-        clamp(
-          1.15rem,
-          2.6vw,
-          1.5rem
-        );
+        clamp(1.15rem, 2.6vw, 1.5rem);
+
+      padding: 0 16px;
     }
+
 
     .hero p.lede-main .accent {
       color: var(--blue);
     }
+
 
     .hero p.lede {
 
@@ -535,6 +573,8 @@
       color: var(--muted);
 
       font-size: 1rem;
+
+      padding: 0 16px;
     }
 
 
@@ -552,8 +592,9 @@
 
       justify-content: center;
 
-      padding: 28px 0 8px;
+      padding: 28px 12px 8px;
     }
+
 
     .chip {
 
@@ -584,6 +625,7 @@
       box-shadow: var(--shadow);
     }
 
+
     .chip:hover {
 
       border-color: var(--blue);
@@ -591,23 +633,26 @@
       color: var(--text);
     }
 
+
     .chip[aria-pressed="true"] {
 
       background: var(--blue);
 
       border-color: var(--blue);
 
-      color: #ffffff;
+      color: #fff;
     }
 
 
     /* =========================================================
-       GRID
+       MAIN
     ========================================================= */
 
     main {
+
       padding: 20px 0 80px;
     }
+
 
     .count-line {
 
@@ -623,6 +668,11 @@
 
       margin-bottom: 28px;
     }
+
+
+    /* =========================================================
+       GRID
+    ========================================================= */
 
     .grid {
 
@@ -664,6 +714,7 @@
         box-shadow .15s ease;
     }
 
+
     .card:hover {
 
       border-color: var(--line-strong);
@@ -672,6 +723,7 @@
 
       box-shadow: var(--shadow-hover);
     }
+
 
     .card-cover {
 
@@ -685,10 +737,11 @@
 
       justify-content: center;
 
-      color: rgba(255, 255, 255, 0.92);
+      color: rgba(255,255,255,.92);
 
       overflow: hidden;
     }
+
 
     .card-cover svg {
 
@@ -698,6 +751,7 @@
 
       opacity: .9;
     }
+
 
     .card-cover img {
 
@@ -710,7 +764,8 @@
       display: block;
     }
 
-    .card-cover .ticket-no {
+
+    .ticket-no {
 
       position: absolute;
 
@@ -734,7 +789,8 @@
 
       color: #fff;
 
-      background: rgba(10, 12, 20, 0.55);
+      background:
+        rgba(10,12,20,.55);
 
       backdrop-filter: blur(4px);
 
@@ -743,7 +799,8 @@
       border-radius: 999px;
     }
 
-    .card-cover .ticket-no svg {
+
+    .ticket-no svg {
 
       width: 11px;
 
@@ -751,6 +808,7 @@
 
       opacity: 1;
     }
+
 
     .card-body {
 
@@ -765,6 +823,7 @@
       flex: 1;
     }
 
+
     .card-body h3 {
 
       font-family: var(--font-display);
@@ -775,8 +834,9 @@
 
       margin: 0;
 
-      letter-spacing: -0.2px;
+      letter-spacing: -.2px;
     }
+
 
     .card-body p {
 
@@ -784,17 +844,19 @@
 
       color: var(--muted);
 
-      font-size: 0.93rem;
+      font-size: .93rem;
 
       flex: 1;
     }
+
 
     .card-actions {
 
       margin-top: 4px;
     }
 
-    .btn {
+
+    .btn-game {
 
       font-family: var(--font-body);
 
@@ -817,7 +879,8 @@
         color .15s ease;
     }
 
-    .btn:hover {
+
+    .btn-game:hover {
 
       gap: 10px;
 
@@ -839,20 +902,21 @@
 
       gap: 8px;
 
-      margin-top: 40px;
+      margin-top: 42px;
 
       flex-wrap: wrap;
     }
 
-    .pagination-btn {
+
+    .page-btn {
 
       min-width: 42px;
 
       height: 42px;
 
-      padding: 0 14px;
+      padding: 0 12px;
 
-      border-radius: 12px;
+      border-radius: 10px;
 
       border: 1px solid var(--line);
 
@@ -864,40 +928,37 @@
 
       font-size: 13px;
 
-      font-weight: 600;
-
       cursor: pointer;
 
       transition:
         background .15s ease,
-        color .15s ease,
         border-color .15s ease,
+        color .15s ease,
         transform .15s ease;
     }
 
-    .pagination-btn:hover:not(:disabled) {
+
+    .page-btn:hover:not(:disabled) {
 
       border-color: var(--blue);
 
       color: var(--blue);
 
-      transform: translateY(-2px);
+      transform: translateY(-1px);
     }
 
-    .pagination-btn.active {
+
+    .page-btn.active {
 
       background: var(--blue);
 
-      color: #ffffff;
-
       border-color: var(--blue);
 
-      box-shadow:
-        0 4px 14px
-        rgba(47, 111, 237, 0.25);
+      color: #fff;
     }
 
-    .pagination-btn:disabled {
+
+    .page-btn:disabled {
 
       opacity: .4;
 
@@ -943,6 +1004,7 @@
       margin-top: 40px;
     }
 
+
     .footer-top {
 
       display: flex;
@@ -956,10 +1018,12 @@
       padding-bottom: 32px;
     }
 
+
     .footer-brand {
 
       max-width: 320px;
     }
+
 
     .footer-brand .brand {
 
@@ -968,19 +1032,22 @@
       margin-bottom: 10px;
     }
 
+
     .footer-brand .bulb {
 
       background: #fff;
     }
 
+
     .footer-brand p {
 
       margin: 0;
 
-      color: rgba(255, 255, 255, 0.85);
+      color: rgba(255,255,255,.85);
 
       font-size: 14px;
     }
+
 
     .footer-col h4 {
 
@@ -992,6 +1059,7 @@
 
       margin: 0 0 14px;
     }
+
 
     .footer-col ul {
 
@@ -1008,14 +1076,16 @@
       gap: 10px;
     }
 
+
     .footer-col a {
 
       text-decoration: none;
 
-      color: rgba(255, 255, 255, 0.85);
+      color: rgba(255,255,255,.85);
 
       font-size: 14px;
     }
+
 
     .footer-col a:hover {
 
@@ -1024,11 +1094,12 @@
       text-decoration: underline;
     }
 
+
     .footer-bottom {
 
       border-top:
         1px solid
-        rgba(255, 255, 255, 0.18);
+        rgba(255,255,255,.18);
 
       padding: 20px 0 28px;
 
@@ -1043,11 +1114,12 @@
       justify-content: space-between;
     }
 
+
     .footer-bottom p {
 
       margin: 0;
 
-      color: rgba(255, 255, 255, 0.75);
+      color: rgba(255,255,255,.75);
 
       font-size: 13px;
 
@@ -1056,96 +1128,365 @@
 
 
     /* =========================================================
-       RESPONSIVIDADE
+       RESPONSIVIDADE - TABLET
     ========================================================= */
 
-    @media (max-width: 720px) {
+    @media (max-width: 900px) {
 
-      .marquee-bar {
+      .grid {
 
         grid-template-columns:
-          auto
-          auto;
+          repeat(
+            2,
+            minmax(0, 1fr)
+          );
+
+        gap: 20px;
       }
 
-      .header-search {
-        display: none;
-      }
 
-      .brand-lockup {
-        gap: 10px;
-      }
+      .card-cover {
 
-      .fish-wrapper {
-
-        width: 90px;
-
-        height: 90px;
-      }
-
-      .fish-video {
-
-        width: 90px;
-
-        height: 90px;
-      }
-
-      .hero h1 {
-        font-size: 3rem;
+        height: 180px;
       }
     }
 
 
+    /* =========================================================
+       RESPONSIVIDADE - CELULAR
+    ========================================================= */
+
+    @media (max-width: 720px) {
+
+      /*
+        HEADER
+
+        Primeira coluna:
+        Tech Store
+
+        Segunda coluna:
+        Claro/Escuro
+      */
+
+      .marquee-bar {
+
+        grid-template-columns: 1fr auto;
+
+        gap: 12px;
+
+        padding:
+          12px
+          18px;
+      }
+
+
+      .marquee-bar .brand {
+
+        margin-left: 4px;
+
+        font-size: 18px;
+
+        gap: 8px;
+      }
+
+
+      .header-actions {
+
+        justify-self: end;
+
+        margin-right: 4px;
+
+        gap: 0;
+      }
+
+
+      .theme-toggle {
+
+        white-space: nowrap;
+
+        padding:
+          8px
+          12px;
+      }
+
+
+      .header-search {
+
+        display: none;
+      }
+
+
+      .nav-count {
+
+        display: none;
+      }
+
+
+      /*
+        HERO
+      */
+
+      .hero {
+
+        padding:
+          44px
+          8px
+          24px;
+      }
+
+
+      .brand-lockup {
+
+        gap: 8px;
+
+        padding:
+          0
+          12px;
+
+        margin-bottom: 22px;
+      }
+
+
+      .mascot-video {
+
+        width: 68px;
+
+        height: 68px;
+      }
+
+
+      .hero h1 {
+
+        font-size:
+          clamp(
+            2.2rem,
+            10vw,
+            3.2rem
+          );
+
+        margin:
+          0
+          8px;
+      }
+
+
+      .hero p.lede-main {
+
+        padding:
+          0
+          12px;
+      }
+
+
+      .hero p.lede {
+
+        padding:
+          0
+          12px;
+      }
+
+
+      /*
+        FILTROS
+      */
+
+      .filters {
+
+        padding:
+          24px
+          8px
+          8px;
+      }
+
+
+      .chip {
+
+        padding:
+          9px
+          17px;
+      }
+
+
+      /*
+        CONTEÚDO
+      */
+
+      .wrap {
+
+        padding-left: 18px;
+
+        padding-right: 18px;
+      }
+
+
+      /*
+        GRID
+      */
+
+      .grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+      }
+
+
+      .card-cover {
+
+        height: 190px;
+      }
+
+
+      /*
+        PAGINAÇÃO
+      */
+
+      .pagination-container {
+
+        margin-top: 32px;
+
+        gap: 6px;
+      }
+
+
+      .page-btn {
+
+        min-width: 38px;
+
+        height: 38px;
+
+        padding:
+          0
+          9px;
+
+        font-size: 12px;
+      }
+    }
+
+
+    /* =========================================================
+       CELULARES PEQUENOS
+    ========================================================= */
+
     @media (max-width: 560px) {
 
       .hero {
-        padding: 44px 0 24px;
+
+        padding:
+          38px
+          6px
+          22px;
       }
 
-      .grid {
-        grid-template-columns: 1fr;
+
+      .brand-lockup {
+
+        gap: 5px;
+
+        padding:
+          0
+          10px;
       }
+
+
+      .mascot-video {
+
+        width: 58px;
+
+        height: 58px;
+      }
+
+
+      .hero h1 {
+
+        font-size:
+          clamp(
+            2rem,
+            9.5vw,
+            2.8rem
+          );
+
+        margin:
+          0
+          6px;
+      }
+
+
+      .hero p.lede-main {
+
+        font-size: 1.1rem;
+
+        padding:
+          0
+          10px;
+      }
+
+
+      .hero p.lede {
+
+        font-size: .95rem;
+
+        padding:
+          0
+          10px;
+      }
+
+
+      .filters {
+
+        gap: 8px;
+
+        padding:
+          20px
+          6px
+          8px;
+      }
+
+
+      .chip {
+
+        font-size: 13px;
+
+        padding:
+          8px
+          14px;
+      }
+
+
+      .count-line {
+
+        margin-bottom: 22px;
+      }
+
+
+      .card-body {
+
+        padding:
+          18px
+          18px
+          20px;
+      }
+
+
+      .pagination-container {
+
+        gap: 5px;
+      }
+
+
+      .page-btn {
+
+        min-width: 36px;
+
+        height: 36px;
+      }
+
 
       .footer-bottom {
 
         flex-direction: column;
 
         align-items: flex-start;
-      }
-
-      .nav-count {
-        display: none;
-      }
-
-      .brand-lockup {
-        gap: 6px;
-      }
-
-      .fish-wrapper {
-
-        width: 75px;
-
-        height: 75px;
-      }
-
-      .fish-video {
-
-        width: 75px;
-
-        height: 75px;
-      }
-
-      .hero h1 {
-        font-size: 2.5rem;
-      }
-
-      .pagination-btn {
-
-        min-width: 38px;
-
-        height: 38px;
-
-        padding: 0 10px;
       }
     }
 
@@ -1165,28 +1506,28 @@
     <div class="wrap marquee-bar">
 
 
+      <!-- LOGO -->
+
       <a href="#top" class="brand">
 
         <span class="bulb-row">
-
           <span class="bulb"></span>
           <span class="bulb"></span>
           <span class="bulb"></span>
-
         </span>
 
         Tech Store
 
         <span class="bulb-row">
-
           <span class="bulb"></span>
           <span class="bulb"></span>
           <span class="bulb"></span>
-
         </span>
 
       </a>
 
+
+      <!-- BUSCA -->
 
       <div class="header-search">
 
@@ -1198,20 +1539,21 @@
           stroke="currentColor"
           stroke-width="2"
           stroke-linecap="round"
-          stroke-linejoin="round">
+          stroke-linejoin="round"
+        >
 
           <circle
             cx="11"
             cy="11"
-            r="7">
-          </circle>
+            r="7"
+          ></circle>
 
           <line
             x1="21"
             y1="21"
             x2="16.65"
-            y2="16.65">
-          </line>
+            y2="16.65"
+          ></line>
 
         </svg>
 
@@ -1219,11 +1561,14 @@
         <input
           id="searchInput"
           type="search"
-          placeholder="Buscar por nome ou gênero..."
-          aria-label="Buscar jogos">
+          placeholder="Buscar por nome ou gêneros"
+          aria-label="Buscar jogos"
+        >
 
       </div>
 
+
+      <!-- AÇÕES -->
 
       <div class="header-actions">
 
@@ -1239,7 +1584,8 @@
           class="theme-toggle"
           id="themeToggle"
           type="button"
-          aria-label="Alternar tema claro/escuro">
+          aria-label="Alternar tema claro/escuro"
+        >
 
           <svg
             id="themeIcon"
@@ -1248,8 +1594,8 @@
             stroke="currentColor"
             stroke-width="2"
             stroke-linecap="round"
-            stroke-linejoin="round">
-          </svg>
+            stroke-linejoin="round"
+          ></svg>
 
           <span id="themeLabel">
             Escuro
@@ -1266,64 +1612,69 @@
 
 
   <!-- =======================================================
-       CONTEÚDO PRINCIPAL
+       CONTEÚDO
   ======================================================== -->
 
   <main>
 
+
+    <!-- HERO -->
+
     <section
       class="hero"
-      id="top">
+      id="top"
+    >
 
 
-      <!-- ===================================================
-           BONEQUINHO + TÍTULO
-      ==================================================== -->
+      <!--
+        BONEQUINHO + TÍTULO
+
+        Apenas um vídeo aparece de acordo
+        com o tema escolhido.
+      -->
 
       <div class="brand-lockup">
 
 
-        <!--
-          Os dois vídeos estão no mesmo lugar.
-          O CSS escolhe automaticamente apenas um.
-        -->
+        <!-- Tema escuro -->
 
-        <div class="fish-wrapper">
+        <video
+          autoplay
+          muted
+          loop
+          playsinline
+          class="mascot-video fish-dark"
+        >
 
-          <video
-            autoplay
-            muted
-            loop
-            playsinline
-            class="fish-video fish-dark">
+          <source
+            src="img/peixe.webm"
+            type="video/webm"
+          >
 
-            <source
-              src="img/peixe.webm"
-              type="video/webm">
-
-          </video>
+        </video>
 
 
-          <video
-            autoplay
-            muted
-            loop
-            playsinline
-            class="fish-video fish-light">
+        <!-- Tema claro -->
 
-            <source
-              src="img/peixe claro.webm"
-              type="video/webm">
+        <video
+          autoplay
+          muted
+          loop
+          playsinline
+          class="mascot-video fish-light"
+        >
 
-          </video>
+          <source
+            src="img/peixe claro.webm"
+            type="video/webm"
+          >
 
-        </div>
+        </video>
 
 
         <h1>
           Tech Store
         </h1>
-
 
       </div>
 
@@ -1355,17 +1706,15 @@
         class="filters"
         id="filters"
         role="group"
-        aria-label="Filtrar por gênero">
-      </div>
+        aria-label="Filtrar por gênero"
+      ></div>
 
 
     </section>
 
 
 
-    <!-- =====================================================
-         JOGOS
-    ====================================================== -->
+    <!-- LISTAGEM -->
 
     <div class="wrap">
 
@@ -1381,10 +1730,20 @@
       </p>
 
 
+      <!-- JOGOS -->
+
       <div
         class="grid"
-        id="grid">
-      </div>
+        id="grid"
+      ></div>
+
+
+      <!-- PAGINAÇÃO -->
+
+      <div
+        class="pagination-container"
+        id="pagination"
+      ></div>
 
 
       <!-- ESTADO VAZIO -->
@@ -1392,23 +1751,13 @@
       <div
         class="empty-state"
         id="emptyState"
-        hidden>
+        hidden
+      >
 
         Nenhum jogo bate com essa busca.
         Tenta outro termo ou limpa o filtro.
 
       </div>
-
-
-      <!-- ===================================================
-           PAGINAÇÃO
-      ==================================================== -->
-
-      <div
-        class="pagination-container"
-        id="pagination">
-      </div>
-
 
     </div>
 
@@ -1428,11 +1777,14 @@
       <div class="footer-top">
 
 
+        <!-- MARCA -->
+
         <div class="footer-brand">
 
           <a
             href="#top"
-            class="brand">
+            class="brand"
+          >
 
             <span class="bulb-row">
               <span class="bulb"></span>
@@ -1451,7 +1803,6 @@
 
             Seu próximo jogo favorito está
             a um clique de distância.
-
             Catálogo de jogos gratuitos
             e de código aberto.
 
@@ -1460,6 +1811,7 @@
         </div>
 
 
+        <!-- EXPLORAR -->
 
         <div class="footer-col">
 
@@ -1492,6 +1844,7 @@
         </div>
 
 
+        <!-- SOBRE -->
 
         <div class="footer-col">
 
@@ -1523,9 +1876,7 @@
 
         </div>
 
-
       </div>
-
 
 
       <div class="footer-bottom">
@@ -1540,22 +1891,17 @@
 
       </div>
 
-
     </div>
 
   </footer>
 
 
 
-  <!-- =======================================================
-       BOOTSTRAP
-  ======================================================== -->
-
   <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-    crossorigin="anonymous">
-  </script>
+    crossorigin="anonymous"
+  ></script>
 
 
 
@@ -1588,29 +1934,32 @@
       <circle
         cx="12"
         cy="12"
-        r="4">
-      </circle>
+        r="4"
+      ></circle>
 
       <path
-        d="M12 2v2
-           M12 20v2
-           M4.9 4.9l1.4 1.4
-           M17.7 17.7l1.4 1.4
-           M2 12h2
-           M20 12h2
-           M4.9 19.1l1.4-1.4
-           M17.7 6.3l1.4-1.4">
-      </path>
+        d="
+          M12 2v2
+          M12 20v2
+          M4.9 4.9l1.4 1.4
+          M17.7 17.7l1.4 1.4
+          M2 12h2
+          M20 12h2
+          M4.9 19.1l1.4-1.4
+          M17.7 6.3l1.4-1.4
+        "
+      ></path>
     `;
 
 
     const moonPath = `
       <path
-        d="M21 12.8A9 9 0 1 1
-           11.2 3
-           a7 7 0 0 0
-           9.8 9.8z">
-      </path>
+        d="
+          M21 12.8
+          A9 9 0 1 1 11.2 3
+          a7 7 0 0 0 9.8 9.8z
+        "
+      ></path>
     `;
 
 
@@ -1654,9 +2003,11 @@
 
 
     const prefersDark =
-      window.matchMedia(
-        '(prefers-color-scheme: dark)'
-      ).matches;
+      window
+        .matchMedia(
+          '(prefers-color-scheme: dark)'
+        )
+        .matches;
 
 
     applyTheme(
@@ -1686,7 +2037,6 @@
     );
 
 
-
     /* =========================================================
        ÍCONES DOS GÊNEROS
     ========================================================= */
@@ -1700,12 +2050,11 @@
           stroke="currentColor"
           stroke-width="1.6"
           stroke-linecap="round"
-          stroke-linejoin="round">
-
+          stroke-linejoin="round"
+        >
           <path d="M4 4v16"/>
           <path d="M4 4h6l1 2h6l1 4h-7l-1-2H4"/>
           <path d="M4 12h6l1 2h6"/>
-
         </svg>
       `,
 
@@ -1717,16 +2066,15 @@
           stroke="currentColor"
           stroke-width="1.6"
           stroke-linecap="round"
-          stroke-linejoin="round">
-
+          stroke-linejoin="round"
+        >
           <path d="M4 20h16"/>
           <path d="M9 20V10l3-6 3 6v10"/>
           <circle
             cx="12"
             cy="7"
-            r="1.4">
-          </circle>
-
+            r="1.4"
+          />
         </svg>
       `,
 
@@ -1738,12 +2086,11 @@
           stroke="currentColor"
           stroke-width="1.6"
           stroke-linecap="round"
-          stroke-linejoin="round">
-
+          stroke-linejoin="round"
+        >
           <path d="M14.5 4.5l5 5-11 11-5-5z"/>
           <path d="M14 6l4 4"/>
           <path d="M4.5 19.5L3 21"/>
-
         </svg>
       `,
 
@@ -1755,50 +2102,49 @@
           stroke="currentColor"
           stroke-width="1.6"
           stroke-linecap="round"
-          stroke-linejoin="round">
-
+          stroke-linejoin="round"
+        >
           <circle
             cx="12"
             cy="12"
-            r="8">
-          </circle>
+            r="8"
+          />
 
           <line
             x1="12"
             y1="2"
             x2="12"
-            y2="6">
-          </line>
+            y2="6"
+          />
 
           <line
             x1="12"
             y1="18"
             x2="12"
-            y2="22">
-          </line>
+            y2="22"
+          />
 
           <line
             x1="2"
             y1="12"
             x2="6"
-            y2="12">
-          </line>
+            y2="12"
+          />
 
           <line
             x1="18"
             y1="12"
             x2="22"
-            y2="12">
-          </line>
+            y2="12"
+          />
 
           <circle
             cx="12"
             cy="12"
             r="1.6"
             fill="currentColor"
-            stroke="none">
-          </circle>
-
+            stroke="none"
+          />
         </svg>
       `,
 
@@ -1810,21 +2156,22 @@
           stroke="currentColor"
           stroke-width="1.6"
           stroke-linecap="round"
-          stroke-linejoin="round">
-
+          stroke-linejoin="round"
+        >
           <path
-            d="M12 3
-               l2.5 5
-               5.5.8
-               -4 3.9
-               .9 5.5
-               L12 15.8
-               7.1 18.2
-               l.9-5.5
-               -4-3.9
-               5.5-.8z">
-          </path>
-
+            d="
+              M12 3
+              l2.5 5
+              5.5.8
+              -4 3.9
+              .9 5.5
+              L12 15.8
+              7.1 18.2
+              l.9-5.5
+              -4-3.9
+              5.5-.8z
+            "
+          />
         </svg>
       `,
 
@@ -1836,18 +2183,17 @@
           stroke="currentColor"
           stroke-width="1.6"
           stroke-linecap="round"
-          stroke-linejoin="round">
-
+          stroke-linejoin="round"
+        >
           <circle
             cx="12"
             cy="12"
-            r="7">
-          </circle>
+            r="7"
+          />
 
           <path
-            d="M12 8v4l3 2">
-          </path>
-
+            d="M12 8v4l3 2"
+          />
         </svg>
       `,
 
@@ -1859,21 +2205,20 @@
           stroke="currentColor"
           stroke-width="1.6"
           stroke-linecap="round"
-          stroke-linejoin="round">
-
+          stroke-linejoin="round"
+        >
           <circle
             cx="12"
             cy="12"
-            r="4">
-          </circle>
+            r="4"
+          />
 
           <ellipse
             cx="12"
             cy="12"
             rx="9"
-            ry="3.6">
-          </ellipse>
-
+            ry="3.6"
+          />
         </svg>
       `,
 
@@ -1885,31 +2230,31 @@
           stroke="currentColor"
           stroke-width="1.6"
           stroke-linecap="round"
-          stroke-linejoin="round">
-
+          stroke-linejoin="round"
+        >
           <circle
             cx="12"
             cy="12"
-            r="9">
-          </circle>
+            r="9"
+          />
 
           <path
-            d="M9.1 9a3 3 0 0 1
-               5.8 1
-               c0 2-3 2-3 4">
-          </path>
+            d="
+              M9.1 9
+              a3 3 0 0 1 5.8 1
+              c0 2-3 2-3 4
+            "
+          />
 
           <line
             x1="12"
             y1="17"
             x2="12"
-            y2="17.2">
-          </line>
-
+            y2="17.2"
+          />
         </svg>
       `
     };
-
 
 
     /* =========================================================
@@ -1918,24 +2263,30 @@
 
     const genreLabels = {
 
-      corrida: 'Corrida',
+      corrida:
+        'Corrida',
 
-      estrategia: 'Estratégia',
+      estrategia:
+        'Estratégia',
 
-      rpg: 'RPG',
+      rpg:
+        'RPG',
 
-      tiro: 'Tiro',
+      tiro:
+        'Tiro',
 
-      sobrevivencia: 'Sobrevivência',
+      sobrevivencia:
+        'Sobrevivência',
 
-      acao: 'Ação',
+      acao:
+        'Ação',
 
-      quiz: 'Quiz',
+      quiz:
+        'Quiz',
 
-      simulacao: 'Simulação'
-
+      simulacao:
+        'Simulação'
     };
-
 
 
     /* =========================================================
@@ -1967,33 +2318,31 @@
 
       simulacao:
         ['#0e7ab0', '#3fa8d8']
-
     };
 
 
-
     /* =========================================================
-       ÍCONE DO BADGE
+       ÍCONE DO SELO
     ========================================================= */
 
     const badgeIcon = `
       <svg
         viewBox="0 0 24 24"
         fill="var(--yellow)"
-        stroke="none">
-
+        stroke="none"
+      >
         <path
-          d="M13 2
-             3 14
-             h7
-             l-1 8
-             11-14
-             h-8z">
-        </path>
-
+          d="
+            M13 2
+            3 14
+            h7
+            l-1 8
+            11-14
+            h-8z
+          "
+        />
       </svg>
     `;
-
 
 
     /* =========================================================
@@ -2002,7 +2351,9 @@
 
     const games = [
 
-      /* ================= BEATRIZ ================= */
+      /* =========================
+         BEATRIZ
+      ========================= */
 
       {
         id: 1,
@@ -2049,7 +2400,9 @@
       },
 
 
-      /* ================= DIEGO ================= */
+      /* =========================
+         DIEGO
+      ========================= */
 
       {
         id: 4,
@@ -2104,14 +2457,16 @@
         imagem: 'img/diego2.png',
 
         desc:
-          'Ludo é um divertido jogo de tabuleiro clássico para até 4 jogadores! Escolha sua cor, lance os dados e mova suas peças pelo tabuleiro.',
+          'Ludo é um divertido jogo de tabuleiro clássico para até 4 jogadores. Escolha sua cor, lance os dados e mova suas peças pelo tabuleiro até chegar ao destino.',
 
         link:
           'https://ludo-star.base44.app/'
       },
 
 
-      /* ================= DIOGO ================= */
+      /* =========================
+         DIOGO
+      ========================= */
 
       {
         id: 8,
@@ -2128,7 +2483,9 @@
       },
 
 
-      /* ================= FRANMARYS ================= */
+      /* =========================
+         FRANMARYS
+      ========================= */
 
       {
         id: 9,
@@ -2145,7 +2502,9 @@
       },
 
 
-      /* ================= GIULIA ================= */
+      /* =========================
+         GIULIA
+      ========================= */
 
       {
         id: 10,
@@ -2155,14 +2514,16 @@
         imagem: 'img/giulia.png',
 
         desc:
-          'Um jogo de piano interativo para tocar músicas e explorar diferentes notas.',
+          'Um jogo de piano interativo para tocar notas e experimentar diferentes melodias diretamente no navegador.',
 
         link:
           'https://giuliazanutto.github.io/piano-game/'
       },
 
 
-      /* ================= JOÃO ================= */
+      /* =========================
+         JOÃO
+      ========================= */
 
       {
         id: 11,
@@ -2172,7 +2533,7 @@
         imagem: 'img/joao.png',
 
         desc:
-          'Explore as profundezas, descubra minérios raros, aprimore seus equipamentos e torne-se o maior minerador em uma aventura cheia de desafios.',
+          'Nesse jogo, você explora as profundezas, descobre minérios raros, aprimora seus equipamentos e se torna o maior minerador em uma aventura cheia de desafios, tesouros e descobertas.',
 
         link:
           'https://minerador-86d39.web.app/'
@@ -2187,14 +2548,16 @@
         imagem: 'img/joao2.png',
 
         desc:
-          'Encaixe os blocos, use poderes incríveis e mostre sua habilidade! Jogue agora, suba de nível e garanta seu lugar no Top 10 mundial.',
+          'Encaixe os blocos, use poderes incríveis e mostre sua habilidade. Jogue agora, suba de nível e garanta seu lugar no Top 10 mundial.',
 
         link:
           'https://lambent-speculoos-b2e5cd.netlify.app/'
       },
 
 
-      /* ================= LEANDRO ================= */
+      /* =========================
+         LEANDRO
+      ========================= */
 
       {
         id: 13,
@@ -2204,7 +2567,7 @@
         imagem: 'img/leandro.png',
 
         desc:
-          'Jogo online de Pedra, Papel e Tesoura para desafiar seus adversários e descobrir quem possui a melhor estratégia.',
+          'Jogo clássico de Pedra, Papel e Tesoura para disputar partidas rápidas e testar suas escolhas contra o adversário.',
 
         link:
           'https://ppt-online-lzbr.onrender.com/'
@@ -2226,7 +2589,9 @@
       },
 
 
-      /* ================= MIGUEL ================= */
+      /* =========================
+         MIGUEL
+      ========================= */
 
       {
         id: 15,
@@ -2236,7 +2601,7 @@
         imagem: 'img/miguel.png',
 
         desc:
-          'Jogue um novo Gartic! Pratique suas habilidades de desenho e divirta-se com seus amigos.',
+          'Jogue um novo Gartic. Pratique suas habilidades de desenho e se divirta com seus amigos.',
 
         link:
           'https://draw-connect-play.base44.app/'
@@ -2258,7 +2623,9 @@
       },
 
 
-      /* ================= NAARA ================= */
+      /* =========================
+         NAARA
+      ========================= */
 
       {
         id: 17,
@@ -2268,7 +2635,7 @@
         imagem: 'img/naara.png',
 
         desc:
-          'Um jogo da velha super fofo com tema de cafeteria! Escolha seu lado entre a Xícara de Café e o Bolinho de Chocolate.',
+          'Um jogo da velha super fofo com tema de cafeteria. Escolha seu lado entre a Xícara de Café e o Bolinho de Chocolate.',
 
         link:
           'https://cafe-bolinho.base44.app/menu'
@@ -2290,7 +2657,9 @@
       },
 
 
-      /* ================= NICOLAS ================= */
+      /* =========================
+         NICOLAS
+      ========================= */
 
       {
         id: 19,
@@ -2300,7 +2669,7 @@
         imagem: 'img/nicolas.png',
 
         desc:
-          'Entre no campo de batalha como uma esfera colorida, cresça comendo pérolas do mapa e elimine seus adversários para se tornar a maior orbe.',
+          'Entre no campo de batalha como uma esfera colorida, cresça comendo pérolas do mapa e elimine seus adversários para se tornar a maior orbe do mapa.',
 
         link:
           'https://jiboia.onrender.com/'
@@ -2322,7 +2691,9 @@
       },
 
 
-      /* ================= REBECA ================= */
+      /* =========================
+         REBECA
+      ========================= */
 
       {
         id: 21,
@@ -2347,14 +2718,16 @@
         imagem: 'img/rebeca1.png',
 
         desc:
-          'Mochi é um jogo de cartas coloridas. Use poderes e vença zerando sua mão.',
+          'Mochi é um jogo de cartas coloridas. Use poderes e vença zerando a mão.',
 
         link:
           'https://mochi-uno.vercel.app/'
       },
 
 
-      /* ================= OUTROS ================= */
+      /* =========================
+         OUTROS
+      ========================= */
 
       {
         id: 23,
@@ -2388,7 +2761,8 @@
         id: 25,
         nome: 'Battle for Wesnoth',
         genero: 'estrategia',
-        plataformas: 'Win / Mac / Linux / Android',
+        plataformas:
+          'Win / Mac / Linux / Android',
 
         desc:
           'Estratégia tática por turnos em um mundo de fantasia, com campanhas extensas e forte foco em terreno e vantagem de classe.',
@@ -2402,7 +2776,8 @@
         id: 26,
         nome: 'Veloren',
         genero: 'rpg',
-        plataformas: 'Win / Mac / Linux',
+        plataformas:
+          'Win / Mac / Linux',
 
         desc:
           'Mundo aberto voxel inspirado em RPGs de sobrevivência, com exploração, crafting e combate em tempo real cooperativo.',
@@ -2416,7 +2791,8 @@
         id: 27,
         nome: 'OpenRA',
         genero: 'estrategia',
-        plataformas: 'Win / Mac / Linux',
+        plataformas:
+          'Win / Mac / Linux',
 
         desc:
           'Engine moderna que reconstrói RTS clássicos dos anos 90, com multiplayer estável e ritmo acelerado de construção de base.',
@@ -2430,7 +2806,8 @@
         id: 28,
         nome: 'Xonotic',
         genero: 'tiro',
-        plataformas: 'Win / Mac / Linux',
+        plataformas:
+          'Win / Mac / Linux',
 
         desc:
           'FPS de arena rápido, focado em movimentação aérea e combate competitivo, herdeiro direto da era dos shooters old-school.',
@@ -2444,7 +2821,8 @@
         id: 29,
         nome: 'Mindustry',
         genero: 'estrategia',
-        plataformas: 'Win / Mac / Linux / Android',
+        plataformas:
+          'Win / Mac / Linux / Android',
 
         desc:
           'Mistura de fábrica automatizada com defesa de torres: projete linhas de produção enquanto resiste a ondas inimigas.',
@@ -2458,7 +2836,8 @@
         id: 30,
         nome: 'Cataclysm: Dark Days Ahead',
         genero: 'sobrevivencia',
-        plataformas: 'Win / Mac / Linux',
+        plataformas:
+          'Win / Mac / Linux',
 
         desc:
           'Roguelike pós-apocalíptico de sobrevivência extremamente detalhado, com crafting profundo e simulação de mundo aberto.',
@@ -2472,7 +2851,8 @@
         id: 31,
         nome: 'Endless Sky',
         genero: 'simulacao',
-        plataformas: 'Win / Mac / Linux',
+        plataformas:
+          'Win / Mac / Linux',
 
         desc:
           'Simulador de comércio e combate espacial em 2D, com exploração de sistemas estelares e campanha ramificada.',
@@ -2486,7 +2866,8 @@
         id: 32,
         nome: 'Hedgewars',
         genero: 'acao',
-        plataformas: 'Win / Mac / Linux',
+        plataformas:
+          'Win / Mac / Linux',
 
         desc:
           'Artilharia por turnos com humor exagerado e ouriços armados, na linha de jogos de destruição de terreno em 2D.',
@@ -2500,7 +2881,8 @@
         id: 33,
         nome: 'Teeworlds',
         genero: 'tiro',
-        plataformas: 'Win / Mac / Linux / Android',
+        plataformas:
+          'Win / Mac / Linux / Android',
 
         desc:
           'Plataforma 2D com tiro multiplayer, gancho de escalada e mapas compactos voltados para partidas rápidas.',
@@ -2514,7 +2896,8 @@
         id: 34,
         nome: 'Freeciv',
         genero: 'estrategia',
-        plataformas: 'Win / Mac / Linux / Navegador',
+        plataformas:
+          'Win / Mac / Linux / Navegador',
 
         desc:
           '4X por turnos de construção de império, do início da civilização até a era espacial, jogável sozinho ou em rede.',
@@ -2526,9 +2909,8 @@
     ];
 
 
-
     /* =========================================================
-       CONFIGURAÇÃO DA PAGINAÇÃO
+       PAGINAÇÃO
     ========================================================= */
 
     const GAMES_PER_PAGE = 6;
@@ -2538,7 +2920,6 @@
     let activeGenre = 'todos';
 
     let searchTerm = '';
-
 
 
     /* =========================================================
@@ -2581,34 +2962,31 @@
       );
 
 
-
     /* =========================================================
-       TOTAL DE JOGOS
+       CONTADOR TOTAL
     ========================================================= */
 
     headerCount.textContent =
       games.length;
 
 
-
     /* =========================================================
-       CRIA OS FILTROS
+       FILTROS
     ========================================================= */
 
     const genresPresent = [
 
       'todos',
 
-      ...Object.keys(
-        genreLabels
-      ).filter(
-        genre =>
-          games.some(
-            game =>
-              game.genero === genre
-          )
-      )
-
+      ...Object
+        .keys(genreLabels)
+        .filter(
+          genre =>
+            games.some(
+              game =>
+                game.genero === genre
+            )
+        )
     ];
 
 
@@ -2620,11 +2998,14 @@
             'button'
           );
 
+
         chip.className =
           'chip';
 
+
         chip.type =
           'button';
+
 
         chip.setAttribute(
           'aria-pressed',
@@ -2632,6 +3013,7 @@
             ? 'true'
             : 'false'
         );
+
 
         chip.textContent =
           genre === 'todos'
@@ -2646,7 +3028,8 @@
             activeGenre =
               genre;
 
-            currentPage = 1;
+            currentPage =
+              1;
 
 
             document
@@ -2682,7 +3065,6 @@
     );
 
 
-
     /* =========================================================
        BUSCA
     ========================================================= */
@@ -2696,7 +3078,10 @@
             .trim()
             .toLowerCase();
 
-        currentPage = 1;
+
+        currentPage =
+          1;
+
 
         render();
 
@@ -2704,21 +3089,16 @@
     );
 
 
-
     /* =========================================================
-       TEMPLATE DOS CARDS
+       TEMPLATE DO CARD
     ========================================================= */
 
     function cardTemplate(game) {
 
-      const colors =
-        genreColors[game.genero];
-
-      const c1 =
-        colors[0];
-
-      const c2 =
-        colors[1];
+      const [c1, c2] =
+        genreColors[
+          game.genero
+        ];
 
 
       const ticketNo =
@@ -2733,10 +3113,13 @@
             <img
               src="${game.imagem}"
               alt="Capa de ${game.nome}"
-              loading="lazy">
+              loading="lazy"
+            >
           `
 
-          : icons[game.genero];
+          : icons[
+              game.genero
+            ];
 
 
       const coverStyle =
@@ -2760,10 +3143,10 @@
 
         <article class="card">
 
-
           <div
             class="card-cover"
-            ${coverStyle}>
+            ${coverStyle}
+          >
 
             ${coverContent}
 
@@ -2779,9 +3162,7 @@
           </div>
 
 
-
           <div class="card-body">
-
 
             <h3>
               ${game.nome}
@@ -2796,17 +3177,21 @@
             <div class="card-actions">
 
               <a
-                class="btn"
+                class="btn-game"
                 href="${game.link}"
                 target="_blank"
-                rel="noopener noreferrer">
+                rel="noopener noreferrer"
+              >
 
                 Jogar
+
+                <span>
+                  →
+                </span>
 
               </a>
 
             </div>
-
 
           </div>
 
@@ -2816,9 +3201,8 @@
     }
 
 
-
     /* =========================================================
-       FILTRAR JOGOS
+       FILTRAGEM
     ========================================================= */
 
     function getFilteredGames() {
@@ -2849,12 +3233,10 @@
             matchGenre &&
             matchSearch
           );
-
         }
       );
 
     }
-
 
 
     /* =========================================================
@@ -2876,15 +3258,9 @@
         );
 
 
-      /*
-        Se só existir uma página,
-        não mostramos a paginação.
-      */
-
       if (totalPages <= 1) {
 
         return;
-
       }
 
 
@@ -2895,11 +3271,20 @@
           'button'
         );
 
+
       previousButton.className =
-        'pagination-btn';
+        'page-btn';
+
 
       previousButton.textContent =
-        '‹ Anterior';
+        '‹';
+
+
+      previousButton.setAttribute(
+        'aria-label',
+        'Página anterior'
+      );
+
 
       previousButton.disabled =
         currentPage === 1;
@@ -2921,7 +3306,6 @@
               top: 0,
               behavior: 'smooth'
             });
-
           }
 
         }
@@ -2933,8 +3317,7 @@
       );
 
 
-
-      /* NÚMEROS DAS PÁGINAS */
+      /* NÚMEROS */
 
       for (
         let page = 1;
@@ -2947,8 +3330,19 @@
             'button'
           );
 
+
         pageButton.className =
-          'pagination-btn';
+          'page-btn';
+
+
+        pageButton.textContent =
+          page;
+
+
+        pageButton.setAttribute(
+          'aria-label',
+          `Ir para página ${page}`
+        );
 
 
         if (
@@ -2960,16 +3354,6 @@
           );
 
         }
-
-
-        pageButton.textContent =
-          page;
-
-
-        pageButton.setAttribute(
-          'aria-label',
-          `Ir para página ${page}`
-        );
 
 
         pageButton.addEventListener(
@@ -2997,7 +3381,6 @@
       }
 
 
-
       /* BOTÃO PRÓXIMO */
 
       const nextButton =
@@ -3005,16 +3388,23 @@
           'button'
         );
 
+
       nextButton.className =
-        'pagination-btn';
+        'page-btn';
+
 
       nextButton.textContent =
-        'Próxima ›';
+        '›';
+
+
+      nextButton.setAttribute(
+        'aria-label',
+        'Próxima página'
+      );
 
 
       nextButton.disabled =
-        currentPage ===
-        totalPages;
+        currentPage === totalPages;
 
 
       nextButton.addEventListener(
@@ -3048,66 +3438,72 @@
     }
 
 
-
     /* =========================================================
        RENDERIZAÇÃO
     ========================================================= */
 
     function render() {
 
-
-      /*
-        Primeiro pegamos todos os jogos
-        que correspondem à pesquisa
-        e ao gênero.
-      */
-
       const filtered =
         getFilteredGames();
 
 
       /*
-        Atualiza contador.
+        Caso a página atual fique
+        maior que o número de páginas
       */
+
+      const totalPages =
+        Math.ceil(
+          filtered.length /
+          GAMES_PER_PAGE
+        );
+
+
+      if (
+        totalPages > 0 &&
+        currentPage > totalPages
+      ) {
+
+        currentPage =
+          totalPages;
+      }
+
 
       resultsCount.textContent =
         filtered.length;
 
 
-      /*
-        Caso a página atual tenha
-        ficado fora do limite depois
-        de uma filtragem.
-      */
-
-      const totalPages =
-        Math.max(
-          1,
-          Math.ceil(
-            filtered.length /
-            GAMES_PER_PAGE
-          )
-        );
-
+      /* ESTADO VAZIO */
 
       if (
-        currentPage >
-        totalPages
+        filtered.length === 0
       ) {
 
-        currentPage =
-          totalPages;
+        grid.innerHTML =
+          '';
+
+        pagination.innerHTML =
+          '';
+
+        emptyState.hidden =
+          false;
+
+        return;
 
       }
 
 
-      /*
-        Descobre quais 6 jogos
-        devem aparecer.
-      */
+      emptyState.hidden =
+        true;
+
+
+      /* CALCULA OS 6 DA PÁGINA */
 
       const startIndex =
-        (currentPage - 1) *
+        (
+          currentPage - 1
+        ) *
         GAMES_PER_PAGE;
 
 
@@ -3116,36 +3512,24 @@
         GAMES_PER_PAGE;
 
 
-      const gamesToShow =
+      const pageGames =
         filtered.slice(
           startIndex,
           endIndex
         );
 
 
-      /*
-        Renderiza os cards.
-      */
+      /* RENDERIZA */
 
       grid.innerHTML =
-        gamesToShow
-          .map(cardTemplate)
+        pageGames
+          .map(
+            cardTemplate
+          )
           .join('');
 
 
-      /*
-        Mostra ou esconde a
-        mensagem de nenhum resultado.
-      */
-
-      emptyState.hidden =
-        filtered.length !== 0;
-
-
-      /*
-        Renderiza os controles
-        da paginação.
-      */
+      /* PAGINAÇÃO */
 
       renderPagination(
         filtered.length
@@ -3154,9 +3538,8 @@
     }
 
 
-
     /* =========================================================
-       PRIMEIRA RENDERIZAÇÃO
+       INICIALIZAÇÃO
     ========================================================= */
 
     render();
