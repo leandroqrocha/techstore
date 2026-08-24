@@ -126,6 +126,18 @@
         cursive;
 
 
+      /*
+        Tamanho do peixe (mascote).
+        Usado também na grid do brand-lockup
+        para manter o título centralizado
+        de verdade, com uma coluna "espelho"
+        do lado direito do mesmo tamanho
+        do peixe.
+      */
+
+      --fish-size: 230px;
+
+
       color-scheme: light;
     }
 
@@ -708,12 +720,13 @@
     .hero {
 
       /*
-        Subimos um pouco o título,
-        aproximando-o do header.
+        Título/peixe agora ficam bem
+        próximos da barra de pesquisa
+        do header.
       */
 
       padding:
-        48px 0 32px;
+        20px 0 28px;
 
       text-align:
         center;
@@ -732,8 +745,47 @@
     .brand-lockup {
 
       /*
-        O conjunto inteiro fica centralizado.
+        Grid com 3 colunas: peixe | título | espelho.
+        A coluna da direita tem a MESMA largura do
+        peixe (var(--fish-size)), então o título fica
+        realmente centralizado na página, mesmo com
+        o peixe ocupando espaço à esquerda.
       */
+
+      display:
+        grid;
+
+      grid-template-columns:
+        var(--fish-size)
+        1fr
+        var(--fish-size);
+
+      align-items:
+        center;
+
+      /*
+        "Um dedo" de distância entre peixe e texto.
+      */
+
+      gap:
+        16px;
+
+      margin:
+        0 auto 18px;
+
+      padding:
+        0 20px;
+
+      max-width:
+        100%;
+
+    }
+
+
+    .brand-lockup .fish-slot {
+
+      grid-column:
+        1;
 
       display:
         flex;
@@ -742,27 +794,15 @@
         center;
 
       justify-content:
-        center;
+        flex-end;
 
-      /*
-        Aproximadamente "um dedo"
-        de distância entre peixe e texto.
-      */
+    }
 
-      gap:
-        16px;
 
-      margin:
-        0 auto 24px;
+    .brand-lockup h1 {
 
-      padding:
-        0 20px;
-
-      width:
-        fit-content;
-
-      max-width:
-        100%;
+      grid-column:
+        2;
 
     }
 
@@ -775,14 +815,14 @@
     .mascot-video {
 
       /*
-        Mantido grande como na imagem enviada.
+        O peixe agora é maior que o título.
       */
 
       width:
-        150px;
+        var(--fish-size);
 
       height:
-        150px;
+        var(--fish-size);
 
       object-fit:
         contain;
@@ -790,8 +830,8 @@
       display:
         block;
 
-      flex:
-        0 0 150px;
+      flex-shrink:
+        0;
 
       pointer-events:
         none;
@@ -852,14 +892,14 @@
         400;
 
       /*
-        Tamanho grande, proporcional ao peixe.
+        Tamanho grande, porém menor que o peixe.
       */
 
       font-size:
         clamp(
-          3.2rem,
-          6vw,
-          5.4rem
+          2.6rem,
+          5vw,
+          4.4rem
         );
 
       line-height:
@@ -1748,6 +1788,14 @@
 
     @media (max-width: 900px) {
 
+      :root {
+
+        --fish-size:
+          190px;
+
+      }
+
+
       .grid {
 
         grid-template-columns:
@@ -1770,27 +1818,13 @@
       }
 
 
-      .mascot-video {
-
-        width:
-          135px;
-
-        height:
-          135px;
-
-        flex-basis:
-          135px;
-
-      }
-
-
       .hero h1 {
 
         font-size:
           clamp(
-            3rem,
-            7vw,
-            4.6rem
+            2.3rem,
+            6vw,
+            3.6rem
           );
 
       }
@@ -1879,38 +1913,37 @@
 
       /* HERO */
 
+      :root {
+
+        --fish-size:
+          150px;
+
+      }
+
+
       .hero {
 
         padding:
-          38px 8px 24px;
+          16px 8px 22px;
 
       }
 
 
       .brand-lockup {
 
+        grid-template-columns:
+          var(--fish-size)
+          1fr
+          0;
+
         gap:
-          16px;
+          14px;
 
         padding:
           0 12px;
 
         margin-bottom:
-          22px;
-
-      }
-
-
-      .mascot-video {
-
-        width:
-          105px;
-
-        height:
-          105px;
-
-        flex-basis:
-          105px;
+          16px;
 
       }
 
@@ -1919,10 +1952,13 @@
 
         font-size:
           clamp(
-            2.5rem,
-            10vw,
-            3.6rem
+            1.9rem,
+            9vw,
+            2.9rem
           );
+
+        white-space:
+          normal;
 
       }
 
@@ -2041,10 +2077,18 @@
 
     @media (max-width: 560px) {
 
+      :root {
+
+        --fish-size:
+          120px;
+
+      }
+
+
       .hero {
 
         padding:
-          34px 6px 22px;
+          14px 6px 20px;
 
       }
 
@@ -2052,24 +2096,10 @@
       .brand-lockup {
 
         gap:
-          14px;
+          12px;
 
         padding:
           0 8px;
-
-      }
-
-
-      .mascot-video {
-
-        width:
-          90px;
-
-        height:
-          90px;
-
-        flex-basis:
-          90px;
 
       }
 
@@ -2078,9 +2108,9 @@
 
         font-size:
           clamp(
-            2.2rem,
-            10vw,
-            3rem
+            1.6rem,
+            9vw,
+            2.4rem
           );
 
       }
@@ -2339,47 +2369,55 @@
       <!--
         PEIXE + TÍTULO
 
-        Os dois ficam centralizados juntos.
-        O peixe fica separado do texto por 16px.
+        Grid de 3 colunas: peixe | título | espelho
+        (mesma largura do peixe), para o título ficar
+        realmente centralizado na página.
       -->
 
       <div class="brand-lockup">
 
 
-        <!-- PEIXE MODO ESCURO -->
+        <!-- COLUNA DO PEIXE -->
 
-        <video
-          autoplay
-          muted
-          loop
-          playsinline
-          class="mascot-video fish-dark"
-        >
+        <div class="fish-slot">
 
-          <source
-            src="img/peixe.webm"
-            type="video/webm"
+          <!-- PEIXE MODO ESCURO -->
+
+          <video
+            autoplay
+            muted
+            loop
+            playsinline
+            class="mascot-video fish-dark"
           >
 
-        </video>
+            <source
+              src="img/peixe.webm"
+              type="video/webm"
+            >
+
+          </video>
 
 
-        <!-- PEIXE MODO CLARO -->
+          <!-- PEIXE MODO CLARO -->
 
-        <video
-          autoplay
-          muted
-          loop
-          playsinline
-          class="mascot-video fish-light"
-        >
-
-          <source
-            src="img/peixe claro.webm"
-            type="video/webm"
+          <video
+            autoplay
+            muted
+            loop
+            playsinline
+            class="mascot-video fish-light"
           >
 
-        </video>
+            <source
+              src="img/peixe claro.webm"
+              type="video/webm"
+            >
+
+          </video>
+
+        </div>
+
 
 
         <!-- TÍTULO -->
