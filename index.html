@@ -17,6 +17,7 @@
     content="Uma vitrine de jogos gratuitos e de código aberto."
   >
 
+
   <!-- =========================================================
        BOOTSTRAP
   ========================================================= -->
@@ -30,8 +31,7 @@
 
 
   <!-- =========================================================
-       FONTE PRINCIPAL
-       TODO O SITE USA RIDGEOUT
+       FONTE RIGHTEOUS
   ========================================================= -->
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -47,8 +47,6 @@
     rel="stylesheet"
   >
 
-
-  <!-- FAVICON -->
 
   <link
     rel="icon"
@@ -74,54 +72,42 @@
 
       --surface-3: #eef1f7;
 
-
       --text: #171a21;
 
       --muted: #6b7280;
-
 
       --blue: #2f6fed;
 
       --blue-dark: #1d4fd0;
 
-      --blue-soft:
-        rgba(47,111,237,0.10);
-
+      --blue-soft: rgba(47,111,237,0.10);
 
       --yellow: #f2b705;
-
 
       --line: #e7eaf0;
 
       --line-strong: #d7dce6;
 
-
       --radius: 20px;
 
       --radius-sm: 12px;
 
-
       --shadow:
-        0 4px 18px
-        rgba(20,30,60,0.06);
-
+        0 4px 18px rgba(20,30,60,0.06);
 
       --shadow-hover:
-        0 10px 28px
-        rgba(20,30,60,0.10);
+        0 10px 28px rgba(20,30,60,0.10);
 
 
       /*
-        FONTE ÚNICA DO SITE
+        TODA A PÁGINA USA RIGHTEOUS
       */
 
-      --font-main:
-        'Righteous',
-        cursive;
-
+      --font-main: 'Righteous', cursive;
 
       color-scheme: light;
     }
+
 
 
     /* =========================================================
@@ -140,11 +126,9 @@
 
       --surface-3: #202029;
 
-
       --text: #eef0f6;
 
       --muted: #9aa0ad;
-
 
       --blue: #4d8dff;
 
@@ -153,26 +137,21 @@
       --blue-soft:
         rgba(77,141,255,0.16);
 
-
       --line:
         rgba(255,255,255,0.08);
 
       --line-strong:
         rgba(255,255,255,0.16);
 
-
       --shadow:
-        0 4px 18px
-        rgba(0,0,0,0.35);
-
+        0 4px 18px rgba(0,0,0,0.35);
 
       --shadow-hover:
-        0 10px 30px
-        rgba(0,0,0,0.5);
-
+        0 10px 30px rgba(0,0,0,0.5);
 
       color-scheme: dark;
     }
+
 
 
     /* =========================================================
@@ -180,20 +159,11 @@
     ========================================================= */
 
     * {
-
       box-sizing: border-box;
-
-      /*
-        FORÇA RIDGEOUT EM TODO O SITE
-      */
-
-      font-family:
-        var(--font-main);
     }
 
 
     html {
-
       scroll-behavior: smooth;
     }
 
@@ -202,19 +172,15 @@
 
       margin: 0;
 
-      background:
-        var(--bg);
+      background: var(--bg);
 
-      color:
-        var(--text);
+      color: var(--text);
 
-      font-family:
-        var(--font-main);
+      font-family: var(--font-main);
 
       line-height: 1.55;
 
-      -webkit-font-smoothing:
-        antialiased;
+      -webkit-font-smoothing: antialiased;
 
       transition:
         background .2s ease,
@@ -222,18 +188,21 @@
     }
 
 
+    /*
+      GARANTE RIGHTEOUS EM TUDO
+    */
+
+    *,
     button,
     input,
     textarea,
     select {
 
-      font-family:
-        var(--font-main);
+      font-family: var(--font-main);
     }
 
 
     a {
-
       color: inherit;
     }
 
@@ -241,13 +210,13 @@
     :focus-visible {
 
       outline:
-        3px solid
-        var(--blue);
+        3px solid var(--blue);
 
       outline-offset: 3px;
 
       border-radius: 4px;
     }
+
 
 
     /* =========================================================
@@ -258,12 +227,12 @@
 
       max-width: 1180px;
 
-      margin:
-        0 auto;
+      margin: 0 auto;
 
       padding:
         0 24px;
     }
+
 
 
     /* =========================================================
@@ -289,8 +258,7 @@
         blur(10px);
 
       border-bottom:
-        1px solid
-        var(--line);
+        1px solid var(--line);
     }
 
 
@@ -312,6 +280,7 @@
     }
 
 
+
     /* =========================================================
        LOGO HEADER
     ========================================================= */
@@ -324,8 +293,7 @@
 
       gap: 10px;
 
-      font-family:
-        var(--font-main);
+      font-family: var(--font-main);
 
       font-weight: 400;
 
@@ -337,8 +305,7 @@
 
       white-space: nowrap;
 
-      color:
-        var(--blue);
+      color: var(--blue);
     }
 
 
@@ -370,24 +337,18 @@
         );
 
       animation:
-        flicker
-        2.6s
-        infinite
+        flicker 2.6s infinite
         ease-in-out;
     }
 
 
     .bulb:nth-child(2) {
-
-      animation-delay:
-        .3s;
+      animation-delay: .3s;
     }
 
 
     .bulb:nth-child(3) {
-
-      animation-delay:
-        .6s;
+      animation-delay: .6s;
     }
 
 
@@ -395,26 +356,22 @@
 
       0%,
       100% {
-
         opacity: 1;
       }
 
       50% {
-
         opacity: .35;
       }
     }
 
 
-    @media (
-      prefers-reduced-motion: reduce
-    ) {
+    @media (prefers-reduced-motion: reduce) {
 
       .bulb {
-
         animation: none;
       }
     }
+
 
 
     /* =========================================================
@@ -433,11 +390,9 @@
         var(--surface-2);
 
       border:
-        1px solid
-        var(--line);
+        1px solid var(--line);
 
-      border-radius:
-        999px;
+      border-radius: 999px;
 
       padding:
         10px 18px;
@@ -454,8 +409,7 @@
 
       flex-shrink: 0;
 
-      color:
-        var(--muted);
+      color: var(--muted);
 
       width: 17px;
 
@@ -467,21 +421,15 @@
 
       flex: 1;
 
-      background:
-        transparent;
+      background: transparent;
 
       border: none;
 
-      color:
-        var(--text);
-
-      font-family:
-        var(--font-main);
+      color: var(--text);
 
       font-size: .92rem;
 
-      padding:
-        2px 0;
+      padding: 2px 0;
 
       min-width: 0;
     }
@@ -489,13 +437,11 @@
 
     .header-search input::placeholder {
 
-      color:
-        var(--muted);
+      color: var(--muted);
     }
 
 
     .header-search input:focus {
-
       outline: none;
     }
 
@@ -507,8 +453,9 @@
     }
 
 
+
     /* =========================================================
-       AÇÕES HEADER
+       AÇÕES DO HEADER
     ========================================================= */
 
     .header-actions {
@@ -527,8 +474,7 @@
 
       font-size: 13px;
 
-      color:
-        var(--muted);
+      color: var(--muted);
 
       white-space: nowrap;
     }
@@ -539,6 +485,7 @@
       color:
         var(--blue);
     }
+
 
 
     /* =========================================================
@@ -559,22 +506,17 @@
         var(--surface-2);
 
       border:
-        1px solid
-        var(--line);
+        1px solid var(--line);
 
       color:
         var(--text);
-
-      font-family:
-        var(--font-main);
 
       font-size: 12px;
 
       padding:
         8px 12px;
 
-      border-radius:
-        999px;
+      border-radius: 999px;
 
       cursor: pointer;
 
@@ -599,6 +541,7 @@
     }
 
 
+
     /* =========================================================
        HERO
     ========================================================= */
@@ -614,11 +557,19 @@
     }
 
 
+
     /* =========================================================
-       PEIXE + TÍTULO
+       LOGO PRINCIPAL
+       
+       O TÍTULO FICA EXATAMENTE NO CENTRO
+       DA TELA.
     ========================================================= */
 
     .brand-lockup {
+
+      position: relative;
+
+      width: 100%;
 
       display: flex;
 
@@ -626,63 +577,69 @@
 
       justify-content: center;
 
-      /*
-        Espaçamento proporcional à imagem enviada
-      */
+      min-height: 170px;
 
-      gap: 18px;
-
-      margin-bottom:
-        22px;
+      margin-bottom: 22px;
 
       padding:
-        0 16px;
+        0 20px;
     }
 
 
+
     /* =========================================================
-       PEIXINHO
-
-       A imagem enviada tem aproximadamente:
-
-       Peixe: ~145px de altura
-       Título: ~80px de altura
-
-       Portanto o peixe fica aproximadamente
-       1,7x maior que a altura visual do título.
+       PEIXE
+       
+       GRANDE E MAIOR QUE O TÍTULO.
+       
+       O POSITION ABSOLUTE NÃO MOVE O TÍTULO.
+       ASSIM O TEXTO CONTINUA CENTRALIZADO.
     ========================================================= */
 
     .mascot-video {
 
-      width: 145px;
+      position: absolute;
 
-      height: 145px;
+      width: 170px;
+
+      height: 170px;
 
       object-fit: contain;
 
-      object-position: center;
-
       display: block;
 
-      flex-shrink: 0;
-
       pointer-events: none;
+
+      z-index: 2;
+    }
+
+
+
+    /*
+      PEIXE NO MODO CLARO
+
+      Fica à esquerda do título.
+    */
+
+    .fish-light {
+
+      left:
+        calc(50% - 360px);
+
+      display: block;
     }
 
 
     /*
-      Somente um peixe aparece por vez.
+      PEIXE NO MODO ESCURO
     */
 
     .fish-dark {
 
+      left:
+        calc(50% - 360px);
+
       display: none;
-    }
-
-
-    .fish-light {
-
-      display: block;
     }
 
 
@@ -698,6 +655,7 @@
 
       display: none;
     }
+
 
 
     /* =========================================================
@@ -706,24 +664,23 @@
 
     .hero h1 {
 
+      position: relative;
+
+      z-index: 1;
+
       font-family:
         var(--font-main);
 
       font-weight: 400;
 
-      /*
-        Tamanho aumentado para acompanhar
-        a proporção da imagem enviada.
-      */
-
       font-size:
         clamp(
-          3.4rem,
+          4rem,
           7vw,
-          5rem
+          6rem
         );
 
-      line-height: .95;
+      line-height: 1;
 
       margin: 0;
 
@@ -732,17 +689,20 @@
       color:
         var(--blue);
 
+      text-align: center;
+
       white-space: nowrap;
     }
 
 
+
     /* =========================================================
-       TEXTO PRINCIPAL
+       FRASE PRINCIPAL
     ========================================================= */
 
     .hero p.lede-main {
 
-      max-width: 650px;
+      max-width: 760px;
 
       margin:
         0 auto 6px;
@@ -752,9 +712,9 @@
 
       font-size:
         clamp(
-          1.1rem,
-          2.4vw,
-          1.4rem
+          1.2rem,
+          2.5vw,
+          1.55rem
         );
 
       padding:
@@ -771,7 +731,7 @@
 
     .hero p.lede {
 
-      max-width: 560px;
+      max-width: 600px;
 
       margin:
         10px auto 0;
@@ -779,12 +739,12 @@
       color:
         var(--muted);
 
-      font-size:
-        1rem;
+      font-size: 1rem;
 
       padding:
         0 16px;
     }
+
 
 
     /* =========================================================
@@ -808,17 +768,13 @@
 
     .chip {
 
-      font-family:
-        var(--font-main);
-
       font-size: 14px;
 
       background:
         var(--surface);
 
       border:
-        1px solid
-        var(--line);
+        1px solid var(--line);
 
       color:
         var(--muted);
@@ -826,8 +782,7 @@
       padding:
         10px 20px;
 
-      border-radius:
-        999px;
+      border-radius: 999px;
 
       cursor: pointer;
 
@@ -860,9 +815,9 @@
       border-color:
         var(--blue);
 
-      color:
-        #fff;
+      color: #fff;
     }
+
 
 
     /* =========================================================
@@ -887,17 +842,16 @@
         14px 0 24px;
 
       border-bottom:
-        1px solid
-        var(--line);
+        1px solid var(--line);
 
-      margin-bottom:
-        28px;
+      margin-bottom: 28px;
     }
+
 
 
     /* =========================================================
        GRID
-
+       
        2 JOGOS POR FILEIRA
     ========================================================= */
 
@@ -912,6 +866,7 @@
     }
 
 
+
     /* =========================================================
        CARD
     ========================================================= */
@@ -922,8 +877,7 @@
         var(--surface);
 
       border:
-        1px solid
-        var(--line);
+        1px solid var(--line);
 
       border-radius:
         var(--radius);
@@ -957,9 +911,14 @@
     }
 
 
+
+    /* =========================================================
+       CAPA
+    ========================================================= */
+
     .card-cover {
 
-      height: 220px;
+      height: 210px;
 
       position: relative;
 
@@ -998,6 +957,7 @@
     }
 
 
+
     /* =========================================================
        NÚMERO DO CARD
     ========================================================= */
@@ -1018,8 +978,6 @@
 
       font-size: 11px;
 
-      letter-spacing: 1px;
-
       color: #fff;
 
       background:
@@ -1031,8 +989,7 @@
       padding:
         5px 10px;
 
-      border-radius:
-        999px;
+      border-radius: 999px;
     }
 
 
@@ -1046,8 +1003,9 @@
     }
 
 
+
     /* =========================================================
-       CORPO CARD
+       CORPO DO CARD
     ========================================================= */
 
     .card-body {
@@ -1067,13 +1025,8 @@
 
     .card-body h3 {
 
-      font-family:
-        var(--font-main);
-
-      font-weight: 400;
-
       font-size:
-        1.35rem;
+        1.3rem;
 
       margin: 0;
 
@@ -1085,15 +1038,14 @@
 
 
     /*
-      NO TEMA ESCURO:
-      TÍTULO DOS JOGOS FICA BRANCO
+      IMPORTANTE:
+      NO TEMA ESCURO O TÍTULO FICA BRANCO.
     */
 
     html[data-theme="dark"]
     .card-body h3 {
 
-      color:
-        #ffffff;
+      color: #ffffff;
     }
 
 
@@ -1118,9 +1070,6 @@
 
 
     .btn-game {
-
-      font-family:
-        var(--font-main);
 
       font-size: 14px;
 
@@ -1148,6 +1097,7 @@
       color:
         var(--blue-dark);
     }
+
 
 
     /* =========================================================
@@ -1179,21 +1129,16 @@
       padding:
         0 12px;
 
-      border-radius:
-        10px;
+      border-radius: 10px;
 
       border:
-        1px solid
-        var(--line);
+        1px solid var(--line);
 
       background:
         var(--surface);
 
       color:
         var(--muted);
-
-      font-family:
-        var(--font-main);
 
       font-size: 13px;
 
@@ -1228,8 +1173,7 @@
       border-color:
         var(--blue);
 
-      color:
-        #fff;
+      color: #fff;
     }
 
 
@@ -1239,6 +1183,7 @@
 
       cursor: not-allowed;
     }
+
 
 
     /* =========================================================
@@ -1259,6 +1204,7 @@
     }
 
 
+
     /* =========================================================
        FOOTER
     ========================================================= */
@@ -1272,14 +1218,12 @@
           var(--blue)
         );
 
-      color:
-        #fff;
+      color: #fff;
 
       padding:
         48px 0 0;
 
-      margin-top:
-        40px;
+      margin-top: 40px;
     }
 
 
@@ -1294,32 +1238,27 @@
       justify-content:
         space-between;
 
-      padding-bottom:
-        32px;
+      padding-bottom: 32px;
     }
 
 
     .footer-brand {
 
-      max-width:
-        320px;
+      max-width: 320px;
     }
 
 
     .footer-brand .brand {
 
-      color:
-        #fff;
+      color: #fff;
 
-      margin-bottom:
-        10px;
+      margin-bottom: 10px;
     }
 
 
     .footer-brand .bulb {
 
-      background:
-        #fff;
+      background: #fff;
     }
 
 
@@ -1330,20 +1269,13 @@
       color:
         rgba(255,255,255,.85);
 
-      font-size:
-        14px;
+      font-size: 14px;
     }
 
 
     .footer-col h4 {
 
-      font-family:
-        var(--font-main);
-
-      font-weight: 400;
-
-      font-size:
-        15px;
+      font-size: 15px;
 
       margin:
         0 0 14px;
@@ -1352,8 +1284,7 @@
 
     .footer-col ul {
 
-      list-style:
-        none;
+      list-style: none;
 
       margin: 0;
 
@@ -1369,21 +1300,18 @@
 
     .footer-col a {
 
-      text-decoration:
-        none;
+      text-decoration: none;
 
       color:
         rgba(255,255,255,.85);
 
-      font-size:
-        14px;
+      font-size: 14px;
     }
 
 
     .footer-col a:hover {
 
-      color:
-        #fff;
+      color: #fff;
 
       text-decoration:
         underline;
@@ -1419,9 +1347,9 @@
       color:
         rgba(255,255,255,.75);
 
-      font-size:
-        13px;
+      font-size: 13px;
     }
+
 
 
     /* =========================================================
@@ -1447,22 +1375,20 @@
 
       .mascot-video {
 
-        width: 125px;
+        width: 155px;
 
-        height: 125px;
+        height: 155px;
       }
 
 
-      .hero h1 {
+      .fish-light,
+      .fish-dark {
 
-        font-size:
-          clamp(
-            3rem,
-            8vw,
-            4.4rem
-          );
+        left:
+          calc(50% - 320px);
       }
     }
+
 
 
     /* =========================================================
@@ -1470,6 +1396,7 @@
     ========================================================= */
 
     @media (max-width: 720px) {
+
 
       /* HEADER */
 
@@ -1487,11 +1414,9 @@
 
       .marquee-bar .brand {
 
-        margin-left:
-          4px;
+        margin-left: 4px;
 
-        font-size:
-          18px;
+        font-size: 18px;
 
         gap: 8px;
       }
@@ -1499,11 +1424,9 @@
 
       .header-actions {
 
-        justify-self:
-          end;
+        justify-self: end;
 
-        margin-right:
-          4px;
+        margin-right: 4px;
 
         gap: 0;
       }
@@ -1511,8 +1434,7 @@
 
       .theme-toggle {
 
-        white-space:
-          nowrap;
+        white-space: nowrap;
 
         padding:
           8px 12px;
@@ -1531,50 +1453,46 @@
       }
 
 
+
       /* HERO */
 
       .hero {
 
         padding:
-          42px 8px 24px;
-      }
-
-
-      .brand-lockup {
-
-        gap:
-          8px;
-
-        padding:
-          0 10px;
-
-        margin-bottom:
-          22px;
+          35px 8px 24px;
       }
 
 
       /*
-        PEIXE NO CELULAR
-
-        Mantém a mesma proporção,
-        mas reduz para caber na tela.
+        No celular o peixe continua grande,
+        mas é reposicionado para não sair
+        da tela.
       */
+
+      .brand-lockup {
+
+        min-height: 145px;
+
+        padding:
+          0 10px;
+
+        margin-bottom: 22px;
+      }
+
 
       .mascot-video {
 
-        width:
-          clamp(
-            92px,
-            25vw,
-            120px
-          );
+        width: 135px;
 
-        height:
-          clamp(
-            92px,
-            25vw,
-            120px
-          );
+        height: 135px;
+      }
+
+
+      .fish-light,
+      .fish-dark {
+
+        left:
+          calc(50% - 255px);
       }
 
 
@@ -1582,15 +1500,13 @@
 
         font-size:
           clamp(
-            2.4rem,
-            10vw,
-            3.6rem
+            3rem,
+            13vw,
+            4.2rem
           );
 
-        margin: 0;
-
-        line-height:
-          .95;
+        white-space:
+          nowrap;
       }
 
 
@@ -1606,6 +1522,7 @@
         padding:
           0 12px;
       }
+
 
 
       /* FILTROS */
@@ -1624,7 +1541,8 @@
       }
 
 
-      /* CONTEÚDO */
+
+      /* CONTAINER */
 
       .wrap {
 
@@ -1636,89 +1554,73 @@
       }
 
 
-      /*
-        CONTINUA COM 2 JOGOS
-        POR FILEIRA
-      */
+
+      /* GRID */
 
       .grid {
 
         grid-template-columns:
           repeat(2, minmax(0, 1fr));
 
-        gap:
-          16px;
+        gap: 16px;
       }
 
 
       .card-cover {
 
-        height:
-          160px;
+        height: 170px;
       }
 
 
       .card-body {
 
         padding:
-          16px 15px 18px;
-
-        gap: 8px;
+          16px;
       }
 
 
       .card-body h3 {
 
         font-size:
-          1.15rem;
+          1.1rem;
       }
 
 
       .card-body p {
 
         font-size:
-          .85rem;
+          .88rem;
       }
 
-
-      .btn-game {
-
-        font-size:
-          13px;
-      }
 
 
       /* PAGINAÇÃO */
 
       .pagination-container {
 
-        margin-top:
-          32px;
+        margin-top: 32px;
 
-        gap:
-          6px;
+        gap: 6px;
       }
 
 
       .page-btn {
 
-        min-width:
-          38px;
+        min-width: 38px;
 
-        height:
-          38px;
+        height: 38px;
 
         padding:
           0 9px;
 
-        font-size:
-          12px;
+        font-size: 12px;
       }
     }
 
 
+
     /* =========================================================
-       CELULARES MUITO PEQUENOS
+       CELULARES PEQUENOS
     ========================================================= */
 
     @media (max-width: 560px) {
@@ -1726,32 +1628,34 @@
       .hero {
 
         padding:
-          36px 6px 22px;
+          30px 6px 22px;
       }
 
 
       .brand-lockup {
 
-        gap:
-          4px;
-
-        padding:
-          0 6px;
+        min-height:
+          120px;
       }
 
 
       /*
-        PEIXE AINDA GRANDE,
-        MAS PROPORCIONAL AO TÍTULO
+        PEIXE AINDA GRANDE.
       */
 
       .mascot-video {
 
-        width:
-          88px;
+        width: 115px;
 
-        height:
-          88px;
+        height: 115px;
+      }
+
+
+      .fish-light,
+      .fish-dark {
+
+        left:
+          calc(50% - 215px);
       }
 
 
@@ -1759,9 +1663,9 @@
 
         font-size:
           clamp(
-            2.05rem,
-            10vw,
-            2.8rem
+            2.5rem,
+            12vw,
+            3.5rem
           );
       }
 
@@ -1769,7 +1673,7 @@
       .hero p.lede-main {
 
         font-size:
-          1.05rem;
+          1.1rem;
 
         padding:
           0 10px;
@@ -1779,7 +1683,7 @@
       .hero p.lede {
 
         font-size:
-          .92rem;
+          .95rem;
 
         padding:
           0 10px;
@@ -1788,8 +1692,7 @@
 
       .filters {
 
-        gap:
-          8px;
+        gap: 8px;
 
         padding:
           20px 6px 8px;
@@ -1798,8 +1701,7 @@
 
       .chip {
 
-        font-size:
-          13px;
+        font-size: 13px;
 
         padding:
           8px 14px;
@@ -1814,8 +1716,8 @@
 
 
       /*
-        Em celulares pequenos:
-        continua 2 por fileira.
+        Continua com 2 por fileira,
+        conforme solicitado.
       */
 
       .grid {
@@ -1823,8 +1725,7 @@
         grid-template-columns:
           repeat(2, minmax(0, 1fr));
 
-        gap:
-          12px;
+        gap: 12px;
       }
 
 
@@ -1837,15 +1738,14 @@
 
       .card-cover {
 
-        height:
-          125px;
+        height: 135px;
       }
 
 
       .card-body {
 
         padding:
-          14px 12px 16px;
+          14px;
       }
 
 
@@ -1859,38 +1759,28 @@
       .card-body p {
 
         font-size:
-          .78rem;
+          .82rem;
       }
 
 
-      .ticket-no {
-
-        top: 8px;
-
-        left: 8px;
+      .btn-game {
 
         font-size:
-          9px;
-
-        padding:
-          4px 7px;
+          12px;
       }
 
 
       .pagination-container {
 
-        gap:
-          5px;
+        gap: 5px;
       }
 
 
       .page-btn {
 
-        min-width:
-          36px;
+        min-width: 36px;
 
-        height:
-          36px;
+        height: 36px;
       }
 
 
@@ -1904,68 +1794,10 @@
       }
     }
 
-
-    /* =========================================================
-       CELULARES EXTREMAMENTE PEQUENOS
-    ========================================================= */
-
-    @media (max-width: 400px) {
-
-      .brand-lockup {
-
-        gap:
-          2px;
-      }
-
-
-      .mascot-video {
-
-        width:
-          78px;
-
-        height:
-          78px;
-      }
-
-
-      .hero h1 {
-
-        font-size:
-          1.95rem;
-      }
-
-
-      .grid {
-
-        gap:
-          10px;
-      }
-
-
-      .card-cover {
-
-        height:
-          110px;
-      }
-
-
-      .card-body h3 {
-
-        font-size:
-          .9rem;
-      }
-
-
-      .card-body p {
-
-        font-size:
-          .72rem;
-      }
-    }
-
   </style>
 
 </head>
+
 
 
 <body>
@@ -2012,6 +1844,7 @@
       </a>
 
 
+
       <!-- BUSCA -->
 
       <div class="header-search">
@@ -2051,6 +1884,7 @@
         >
 
       </div>
+
 
 
       <!-- AÇÕES -->
@@ -2107,7 +1941,9 @@
   <main>
 
 
-    <!-- HERO -->
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
 
     <section
       class="hero"
@@ -2115,12 +1951,10 @@
     >
 
 
-      <!-- PEIXE + TÍTULO -->
-
       <div class="brand-lockup">
 
 
-        <!-- PEIXE TEMA ESCURO -->
+        <!-- PEIXE MODO ESCURO -->
 
         <video
           autoplay
@@ -2138,7 +1972,8 @@
         </video>
 
 
-        <!-- PEIXE TEMA CLARO -->
+
+        <!-- PEIXE MODO CLARO -->
 
         <video
           autoplay
@@ -2156,13 +1991,15 @@
         </video>
 
 
-        <!-- TÍTULO -->
+
+        <!-- TÍTULO CENTRAL -->
 
         <h1>
           Tech Store
         </h1>
 
       </div>
+
 
 
       <p class="lede-main">
@@ -2186,6 +2023,7 @@
       </p>
 
 
+
       <!-- FILTROS -->
 
       <div
@@ -2199,7 +2037,9 @@
 
 
 
-    <!-- LISTAGEM -->
+    <!-- =====================================================
+         LISTAGEM
+    ====================================================== -->
 
     <div class="wrap">
 
@@ -2215,6 +2055,7 @@
       </p>
 
 
+
       <!-- JOGOS -->
 
       <div
@@ -2223,12 +2064,14 @@
       ></div>
 
 
+
       <!-- PAGINAÇÃO -->
 
       <div
         class="pagination-container"
         id="pagination"
       ></div>
+
 
 
       <!-- ESTADO VAZIO -->
@@ -2300,6 +2143,7 @@
         </div>
 
 
+
         <!-- EXPLORAR -->
 
         <div class="footer-col">
@@ -2311,29 +2155,37 @@
           <ul>
 
             <li>
+
               <a href="#top">
                 Início
               </a>
+
             </li>
 
+
             <li>
+
               <a href="#filters">
                 Gêneros
               </a>
+
             </li>
 
+
             <li>
+
               <a href="#grid">
                 Todos os jogos
               </a>
+
             </li>
 
           </ul>
 
         </div>
 
-
       </div>
+
 
 
       <div class="footer-bottom">
@@ -2341,6 +2193,7 @@
         <p>
           © 2026 Tech Store catálogo independente.
         </p>
+
 
         <p>
           Links levam aos sites oficiais de cada projeto.
@@ -2447,16 +2300,13 @@
         themeLabel.textContent =
           'Claro';
 
-      }
-
-      else {
+      } else {
 
         themeIcon.innerHTML =
           moonPath;
 
         themeLabel.textContent =
           'Escuro';
-
       }
 
 
@@ -2464,7 +2314,6 @@
         'techstore-theme',
         theme
       );
-
     }
 
 
@@ -2483,14 +2332,12 @@
 
 
     applyTheme(
-
       savedTheme ||
       (
         prefersDark
           ? 'dark'
           : 'light'
       )
-
     );
 
 
@@ -2505,15 +2352,14 @@
 
 
         applyTheme(
-
           current === 'dark'
             ? 'light'
             : 'dark'
-
         );
 
       }
     );
+
 
 
     /* =========================================================
@@ -2590,9 +2436,7 @@
         >
 
           <path
-            d="
-              M14.5 4.5l5 5-11 11-5-5z
-            "
+            d="M14.5 4.5l5 5-11 11-5-5z"
           />
 
           <path
@@ -2787,8 +2631,8 @@
         </svg>
 
       `
-
     };
+
 
 
     /* =========================================================
@@ -2820,8 +2664,8 @@
 
       simulacao:
         'Simulação'
-
     };
+
 
 
     /* =========================================================
@@ -2853,8 +2697,8 @@
 
       simulacao:
         ['#0e7ab0', '#3fa8d8']
-
     };
+
 
 
     /* =========================================================
@@ -2885,35 +2729,21 @@
     `;
 
 
+
     /* =========================================================
        JOGOS
-       IDs CORRIGIDOS: 1 ATÉ 34
     ========================================================= */
 
     const games = [
 
-      /* =========================
-         BEATRIZ
-      ========================= */
-
       {
         id: 1,
-
-        nome:
-          'Memory Sunset - Beatriz',
-
-        genero:
-          'estrategia',
-
-        plataformas:
-          'Navegador',
-
-        imagem:
-          'img/beatriz.png',
-
+        nome: 'Memory Sunset - Beatriz',
+        genero: 'estrategia',
+        plataformas: 'Navegador',
+        imagem: 'img/beatriz.png',
         desc:
           'Memory Sunset é um jogo da memória com o objetivo de encontrar os pares de cartas, acumular pontos e desafiar outros jogadores para alcançar o topo da classificação.',
-
         link:
           'https://memorysunset.netlify.app/login.html'
       },
@@ -2921,22 +2751,12 @@
 
       {
         id: 2,
-
-        nome:
-          'Snoopy Park - Beatriz',
-
-        genero:
-          'estrategia',
-
-        plataformas:
-          'Navegador',
-
-        imagem:
-          'img/beatriz2.png',
-
+        nome: 'Snoopy Park - Beatriz',
+        genero: 'estrategia',
+        plataformas: 'Navegador',
+        imagem: 'img/beatriz2.png',
         desc:
           'Um jogo de plataforma e aventura onde personagens precisam cooperar para superar obstáculos e completar as fases.',
-
         link:
           'https://snoopy-park-play.base44.app/'
       },
@@ -2944,49 +2764,25 @@
 
       {
         id: 3,
-
-        nome:
-          'Bolt Escape - Beatriz',
-
-        genero:
-          'estrategia',
-
-        plataformas:
-          'Navegador',
-
-        imagem:
-          'img/beatriz3.png',
-
+        nome: 'Bolt Escape - Beatriz',
+        genero: 'estrategia',
+        plataformas: 'Navegador',
+        imagem: 'img/beatriz3.png',
         desc:
           'Um jogo de quebra-cabeça onde o jogador deve remover os parafusos na ordem correta para liberar as peças.',
-
         link:
           'https://bolt-escape.base44.app/'
       },
 
 
-      /* =========================
-         DIEGO
-      ========================= */
-
       {
         id: 4,
-
-        nome:
-          'Brasil Simulator - Diego',
-
-        genero:
-          'estrategia',
-
-        plataformas:
-          'Navegador',
-
-        imagem:
-          'img/diego.png',
-
+        nome: 'Brasil Simulator - Diego',
+        genero: 'estrategia',
+        plataformas: 'Navegador',
+        imagem: 'img/diego.png',
         desc:
           'Brasil Simulator é um jogo clicker online onde os jogadores evoluem seus benefícios e programas governamentais para ganhar mais dinheiro e subir no ranking.',
-
         link:
           'https://game-virtual-zeta.vercel.app/'
       },
@@ -2994,22 +2790,12 @@
 
       {
         id: 5,
-
-        nome:
-          'Letraço - Diego',
-
-        genero:
-          'estrategia',
-
-        plataformas:
-          'Navegador',
-
-        imagem:
-          'img/diego3.png',
-
+        nome: 'Letraço - Diego',
+        genero: 'estrategia',
+        plataformas: 'Navegador',
+        imagem: 'img/diego3.png',
         desc:
           'Letraço é um jogo de palavras inspirado no clássico Stop, onde você precisa completar as categorias com a letra sorteada antes do tempo acabar e desafiar seus amigos.',
-
         link:
           'https://letraco-game.lovable.app'
       },
@@ -3017,22 +2803,12 @@
 
       {
         id: 6,
-
-        nome:
-          'Quiz Blast - Diego',
-
-        genero:
-          'quiz',
-
-        plataformas:
-          'Navegador',
-
-        imagem:
-          'img/diego1.png',
-
+        nome: 'Quiz Blast - Diego',
+        genero: 'quiz',
+        plataformas: 'Navegador',
+        imagem: 'img/diego1.png',
         desc:
           'QuizBlast é um jogo de quiz online onde os jogadores respondem perguntas de diferentes categorias para ganhar pontos, subir no ranking e competir com amigos.',
-
         link:
           'https://tidy-quiz-live-play.base44.app/'
       },
@@ -3040,103 +2816,51 @@
 
       {
         id: 7,
-
-        nome:
-          'LUDO - Diego',
-
-        genero:
-          'estrategia',
-
-        plataformas:
-          'Navegador',
-
-        imagem:
-          'img/diego2.png',
-
+        nome: 'LUDO - Diego',
+        genero: 'estrategia',
+        plataformas: 'Navegador',
+        imagem: 'img/diego2.png',
         desc:
           'Ludo é um divertido jogo de tabuleiro clássico para até 4 jogadores. Escolha sua cor, lance os dados e mova suas peças pelo tabuleiro até chegar ao destino.',
-
         link:
           'https://ludo-star.base44.app/'
       },
 
 
-      /* =========================
-         DIOGO
-      ========================= */
-
       {
         id: 8,
-
-        nome:
-          'Batalha de Reflexo - Diogo',
-
-        genero:
-          'corrida',
-
-        plataformas:
-          'Navegador',
-
-        imagem:
-          'img/diogo.png',
-
+        nome: 'Batalha de Reflexo - Diogo',
+        genero: 'corrida',
+        plataformas: 'Navegador',
+        imagem: 'img/diogo.png',
         desc:
           'Um jogo multiplayer sobre quem tem mais reflexo para ser o primeiro a clicar e garantir a vitória.',
-
         link:
           'https://batalha-de-reflexo1.onrender.com/'
       },
 
 
-      /* =========================
-         FRANMARYS
-      ========================= */
-
       {
         id: 9,
-
-        nome:
-          'PURA Play - Franmarys',
-
-        genero:
-          'quiz',
-
-        plataformas:
-          'Navegador',
-
-        imagem:
-          'img/franmarys.png',
-
+        nome: 'PURA Play - Franmarys',
+        genero: 'quiz',
+        plataformas: 'Navegador',
+        imagem: 'img/franmarys.png',
         desc:
           '4X por turnos de construção de império, do início da civilização até a era espacial, jogável sozinho ou em rede.',
-
         link:
           'https://multiple-play-2d551.web.app/'
       },
 
 
-      /* =========================
-         GIULIA
-      ========================= */
-
       {
         id: 10,
-
-        nome:
-          'Piano - Giulia',
-
-        genero:
-          'simulacao',
-
-        plataformas:
-          'Navegador',
-
-        imagem:
-          'img/giulia.png',
-
+        nome: 'Piano - Giulia',
+        genero: 'simulacao',
+        plataformas: 'Navegador',
+        imagem: 'img/giulia.png',
         desc:
           'Um jogo de piano interativo para tocar notas e experimentar diferentes melodias diretamente no navegador.',
-
         link:
           'https://giuliazanutto.github.io/piano-game/'
       },
@@ -3144,49 +2868,25 @@
 
       {
         id: 11,
-
-        nome:
-          'Bubble Quest - Giulia',
-
-        genero:
-          'simulacao',
-
-        plataformas:
-          'Navegador',
-
-        imagem:
-          'img/giulia2.png',
-
+        nome: 'Bubble Quest - Giulia',
+        genero: 'simulacao',
+        plataformas: 'Navegador',
+        imagem: 'img/giulia2.png',
         desc:
-          'Um jogo de aventura com desafios e elementos interativos para explorar diretamente pelo navegador.',
-
+          'Um jogo de aventura interativa com desafios e elementos de exploração.',
         link:
           'https://holistic-pop-bubble-quest.base44.app'
       },
 
 
-      /* =========================
-         JOÃO
-      ========================= */
-
       {
         id: 12,
-
-        nome:
-          'Minerador Pro - João',
-
-        genero:
-          'simulacao',
-
-        plataformas:
-          'Navegador',
-
-        imagem:
-          'img/joao.png',
-
+        nome: 'Minerador Pro - João',
+        genero: 'simulacao',
+        plataformas: 'Navegador',
+        imagem: 'img/joao.png',
         desc:
           'Nesse jogo, você explora as profundezas, descobre minérios raros, aprimora seus equipamentos e se torna o maior minerador em uma aventura cheia de desafios, tesouros e descobertas.',
-
         link:
           'https://minerador-86d39.web.app/'
       },
@@ -3194,49 +2894,25 @@
 
       {
         id: 13,
-
-        nome:
-          'BlockDrops - João',
-
-        genero:
-          'simulacao',
-
-        plataformas:
-          'Navegador',
-
-        imagem:
-          'img/joao2.png',
-
+        nome: 'BlockDrops - João',
+        genero: 'simulacao',
+        plataformas: 'Navegador',
+        imagem: 'img/joao2.png',
         desc:
           'Encaixe os blocos, use poderes incríveis e mostre sua habilidade. Jogue agora, suba de nível e garanta seu lugar no Top 10 mundial.',
-
         link:
           'https://lambent-speculoos-b2e5cd.netlify.app/'
       },
 
 
-      /* =========================
-         LEANDRO
-      ========================= */
-
       {
         id: 14,
-
-        nome:
-          'Pedra, Papel e Tesoura - Leandro',
-
-        genero:
-          'estrategia',
-
-        plataformas:
-          'Navegador',
-
-        imagem:
-          'img/leandro.png',
-
+        nome: 'Pedra, Papel e Tesoura - Leandro',
+        genero: 'estrategia',
+        plataformas: 'Navegador',
+        imagem: 'img/leandro.png',
         desc:
           'Jogo clássico de Pedra, Papel e Tesoura para disputar partidas rápidas e testar suas escolhas contra o adversário.',
-
         link:
           'https://ppt-online-lzbr.onrender.com/'
       },
@@ -3244,49 +2920,25 @@
 
       {
         id: 15,
-
-        nome:
-          'Sudoku - Leandro',
-
-        genero:
-          'estrategia',
-
-        plataformas:
-          'Navegador',
-
-        imagem:
-          'img/leandro2.png',
-
+        nome: 'Sudoku - Leandro',
+        genero: 'estrategia',
+        plataformas: 'Navegador',
+        imagem: 'img/leandro2.png',
         desc:
           'O clássico quebra-cabeça de lógica: preencha a grade 9×9 de forma que cada linha, coluna e bloco 3×3 contenha os números de 1 a 9 sem repetir.',
-
         link:
           'https://play-sudoku-pro.base44.app/'
       },
 
 
-      /* =========================
-         MIGUEL
-      ========================= */
-
       {
         id: 16,
-
-        nome:
-          'PicDraw - Miguel',
-
-        genero:
-          'simulacao',
-
-        plataformas:
-          'Navegador',
-
-        imagem:
-          'img/miguel.png',
-
+        nome: 'PicDraw - Miguel',
+        genero: 'simulacao',
+        plataformas: 'Navegador',
+        imagem: 'img/miguel.png',
         desc:
           'Jogue um novo Gartic. Pratique suas habilidades de desenho e se divirta com seus amigos.',
-
         link:
           'https://draw-connect-play.base44.app/'
       },
@@ -3294,49 +2946,25 @@
 
       {
         id: 17,
-
-        nome:
-          'InfiniteCraft - Miguel',
-
-        genero:
-          'simulacao',
-
-        plataformas:
-          'Navegador',
-
-        imagem:
-          'img/miguel2.png',
-
+        nome: 'InfiniteCraft - Miguel',
+        genero: 'simulacao',
+        plataformas: 'Navegador',
+        imagem: 'img/miguel2.png',
         desc:
           'Combine elementos, descubra coisas novas, experimente combinações inesperadas e tente encontrar todos os elementos escondidos.',
-
         link:
           'https://infinitecaft-fyzmnevb.manus.space/'
       },
 
 
-      /* =========================
-         NAARA
-      ========================= */
-
       {
         id: 18,
-
-        nome:
-          'Naara',
-
-        genero:
-          'simulacao',
-
-        plataformas:
-          'Navegador',
-
-        imagem:
-          'img/naara.png',
-
+        nome: 'Naara',
+        genero: 'simulacao',
+        plataformas: 'Navegador',
+        imagem: 'img/naara.png',
         desc:
           'Um jogo da velha super fofo com tema de cafeteria. Escolha seu lado entre a Xícara de Café e o Bolinho de Chocolate.',
-
         link:
           'https://cafe-bolinho.base44.app/menu'
       },
@@ -3344,49 +2972,25 @@
 
       {
         id: 19,
-
-        nome:
-          'Bola Vermelha - Naara',
-
-        genero:
-          'simulacao',
-
-        plataformas:
-          'Navegador',
-
-        imagem:
-          'img/naara2.png',
-
+        nome: 'Bola Vermelha - Naara',
+        genero: 'simulacao',
+        plataformas: 'Navegador',
+        imagem: 'img/naara2.png',
         desc:
           'REDBALL4 é um jogo bastante conhecido. Que tal dificultar esse jogo? Experimente a dificuldade extrema dessa outra versão.',
-
         link:
           'https://fanatic-red-roll-quest.base44.app'
       },
 
 
-      /* =========================
-         NICOLAS
-      ========================= */
-
       {
         id: 20,
-
-        nome:
-          'JIBOIA - Nicolas',
-
-        genero:
-          'estrategia',
-
-        plataformas:
-          'Navegador',
-
-        imagem:
-          'img/nicolas.png',
-
+        nome: 'JIBOIA - Nicolas',
+        genero: 'estrategia',
+        plataformas: 'Navegador',
+        imagem: 'img/nicolas.png',
         desc:
           'Entre no campo de batalha como uma esfera colorida, cresça comendo pérolas do mapa e elimine seus adversários para se tornar a maior orbe do mapa.',
-
         link:
           'https://jiboia.onrender.com/'
       },
@@ -3394,49 +2998,25 @@
 
       {
         id: 21,
-
-        nome:
-          'Jetiski - Nicolas',
-
-        genero:
-          'estrategia',
-
-        plataformas:
-          'Navegador',
-
-        imagem:
-          'img/nicolas.png',
-
+        nome: 'Jetiski - Nicolas',
+        genero: 'estrategia',
+        plataformas: 'Navegador',
+        imagem: 'img/nicolas.png',
         desc:
           'Jetiski é um jogo de desenhar e adivinhar a figura.',
-
         link:
           'https://garticgame-xmknmjby.manus.space/'
       },
 
 
-      /* =========================
-         REBECA
-      ========================= */
-
       {
         id: 22,
-
-        nome:
-          'PetTec - Rebeca',
-
-        genero:
-          'estrategia',
-
-        plataformas:
-          'Navegador',
-
-        imagem:
-          'img/rebeca.png',
-
+        nome: 'PetTec - Rebeca',
+        genero: 'estrategia',
+        plataformas: 'Navegador',
+        imagem: 'img/rebeca.png',
         desc:
           'PetTEC é um bichinho virtual estilo Tamagotchi onde você cuida de um pet, ganha moedas, compra roupas e acessórios e disputa um ranking.',
-
         link:
           'https://pet-tec.vercel.app/'
       },
@@ -3444,46 +3024,24 @@
 
       {
         id: 23,
-
-        nome:
-          'Mochi - Rebeca',
-
-        genero:
-          'estrategia',
-
-        plataformas:
-          'Navegador',
-
-        imagem:
-          'img/rebeca1.png',
-
+        nome: 'Mochi - Rebeca',
+        genero: 'estrategia',
+        plataformas: 'Navegador',
+        imagem: 'img/rebeca1.png',
         desc:
           'Mochi é um jogo de cartas coloridas. Use poderes e vença zerando a mão.',
-
         link:
           'https://mochi-uno.vercel.app/'
       },
 
 
-      /* =========================
-         OUTROS
-      ========================= */
-
       {
         id: 24,
-
-        nome:
-          'SuperTuxKart',
-
-        genero:
-          'corrida',
-
-        plataformas:
-          'Win / Mac / Linux',
-
+        nome: 'SuperTuxKart',
+        genero: 'corrida',
+        plataformas: 'Win / Mac / Linux',
         desc:
           'Corrida de kart em 3D com dezenas de pistas, itens ofensivos e modo carreira, no espírito de clássicos de kart arcade.',
-
         link:
           'https://supertuxkart.net'
       },
@@ -3491,19 +3049,11 @@
 
       {
         id: 25,
-
-        nome:
-          '0 A.D.',
-
-        genero:
-          'estrategia',
-
-        plataformas:
-          'Win / Mac / Linux',
-
+        nome: '0 A.D.',
+        genero: 'estrategia',
+        plataformas: 'Win / Mac / Linux',
         desc:
           'RTS histórico ambientado antes de Cristo, com gestão de economia, cerco de cidades e civilizações jogáveis distintas.',
-
         link:
           'https://play0ad.com'
       },
@@ -3511,19 +3061,12 @@
 
       {
         id: 26,
-
-        nome:
-          'Battle for Wesnoth',
-
-        genero:
-          'estrategia',
-
+        nome: 'Battle for Wesnoth',
+        genero: 'estrategia',
         plataformas:
           'Win / Mac / Linux / Android',
-
         desc:
           'Estratégia tática por turnos em um mundo de fantasia, com campanhas extensas e forte foco em terreno e vantagem de classe.',
-
         link:
           'https://www.wesnoth.org'
       },
@@ -3531,19 +3074,12 @@
 
       {
         id: 27,
-
-        nome:
-          'Veloren',
-
-        genero:
-          'rpg',
-
+        nome: 'Veloren',
+        genero: 'rpg',
         plataformas:
           'Win / Mac / Linux',
-
         desc:
           'Mundo aberto voxel inspirado em RPGs de sobrevivência, com exploração, crafting e combate em tempo real cooperativo.',
-
         link:
           'https://veloren.net'
       },
@@ -3551,19 +3087,12 @@
 
       {
         id: 28,
-
-        nome:
-          'OpenRA',
-
-        genero:
-          'estrategia',
-
+        nome: 'OpenRA',
+        genero: 'estrategia',
         plataformas:
           'Win / Mac / Linux',
-
         desc:
           'Engine moderna que reconstrói RTS clássicos dos anos 90, com multiplayer estável e ritmo acelerado de construção de base.',
-
         link:
           'https://www.openra.net'
       },
@@ -3571,19 +3100,12 @@
 
       {
         id: 29,
-
-        nome:
-          'Xonotic',
-
-        genero:
-          'tiro',
-
+        nome: 'Xonotic',
+        genero: 'tiro',
         plataformas:
           'Win / Mac / Linux',
-
         desc:
           'FPS de arena rápido, focado em movimentação aérea e combate competitivo, herdeiro direto da era dos shooters old-school.',
-
         link:
           'https://xonotic.org'
       },
@@ -3591,19 +3113,12 @@
 
       {
         id: 30,
-
-        nome:
-          'Mindustry',
-
-        genero:
-          'estrategia',
-
+        nome: 'Mindustry',
+        genero: 'estrategia',
         plataformas:
           'Win / Mac / Linux / Android',
-
         desc:
           'Mistura de fábrica automatizada com defesa de torres: projete linhas de produção enquanto resiste a ondas inimigas.',
-
         link:
           'https://mindustrygame.github.io'
       },
@@ -3611,19 +3126,12 @@
 
       {
         id: 31,
-
-        nome:
-          'Cataclysm: Dark Days Ahead',
-
-        genero:
-          'sobrevivencia',
-
+        nome: 'Cataclysm: Dark Days Ahead',
+        genero: 'sobrevivencia',
         plataformas:
           'Win / Mac / Linux',
-
         desc:
           'Roguelike pós-apocalíptico de sobrevivência extremamente detalhado, com crafting profundo e simulação de mundo aberto.',
-
         link:
           'https://cataclysmdda.org'
       },
@@ -3631,19 +3139,12 @@
 
       {
         id: 32,
-
-        nome:
-          'Endless Sky',
-
-        genero:
-          'simulacao',
-
+        nome: 'Endless Sky',
+        genero: 'simulacao',
         plataformas:
           'Win / Mac / Linux',
-
         desc:
           'Simulador de comércio e combate espacial em 2D, com exploração de sistemas estelares e campanha ramificada.',
-
         link:
           'https://endless-sky.github.io'
       },
@@ -3651,19 +3152,12 @@
 
       {
         id: 33,
-
-        nome:
-          'Hedgewars',
-
-        genero:
-          'acao',
-
+        nome: 'Hedgewars',
+        genero: 'acao',
         plataformas:
           'Win / Mac / Linux',
-
         desc:
           'Artilharia por turnos com humor exagerado e ouriços armados, na linha de jogos de destruição de terreno em 2D.',
-
         link:
           'https://hedgewars.org'
       },
@@ -3671,55 +3165,18 @@
 
       {
         id: 34,
-
-        nome:
-          'Teeworlds',
-
-        genero:
-          'tiro',
-
+        nome: 'Teeworlds',
+        genero: 'tiro',
         plataformas:
           'Win / Mac / Linux / Android',
-
         desc:
           'Plataforma 2D com tiro multiplayer, gancho de escalada e mapas compactos voltados para partidas rápidas.',
-
         link:
           'https://teeworlds.com'
-      },
-
-
-      {
-        id: 35,
-
-        nome:
-          'Freeciv',
-
-        genero:
-          'estrategia',
-
-        plataformas:
-          'Win / Mac / Linux / Navegador',
-
-        desc:
-          '4X por turnos de construção de império, do início da civilização até a era espacial, jogável sozinho ou em rede.',
-
-        link:
-          'https://www.freeciv.org'
       }
 
     ];
 
-
-    /*
-      IMPORTANTE:
-
-      Como o catálogo original possui 35 objetos,
-      o último jogo é o Nº 35.
-
-      Se você quiser exatamente 34 jogos,
-      basta remover o Freeciv ou outro jogo.
-    */
 
 
     /* =========================================================
@@ -3728,16 +3185,12 @@
 
     const GAMES_PER_PAGE = 6;
 
-
     let currentPage = 1;
 
+    let activeGenre = 'todos';
 
-    let activeGenre =
-      'todos';
+    let searchTerm = '';
 
-
-    let searchTerm =
-      '';
 
 
     /* =========================================================
@@ -3786,12 +3239,14 @@
       );
 
 
+
     /* =========================================================
        CONTADOR
     ========================================================= */
 
     headerCount.textContent =
       games.length;
+
 
 
     /* =========================================================
@@ -3811,7 +3266,6 @@
                 game.genero === genre
             )
         )
-
     ];
 
 
@@ -3834,7 +3288,6 @@
 
         chip.setAttribute(
           'aria-pressed',
-
           genre === activeGenre
             ? 'true'
             : 'false'
@@ -3842,7 +3295,6 @@
 
 
         chip.textContent =
-
           genre === 'todos'
             ? 'Todos'
             : genreLabels[genre];
@@ -3854,7 +3306,6 @@
 
             activeGenre =
               genre;
-
 
             currentPage =
               1;
@@ -3893,6 +3344,7 @@
     );
 
 
+
     /* =========================================================
        BUSCA
     ========================================================= */
@@ -3917,8 +3369,9 @@
     );
 
 
+
     /* =========================================================
-       TEMPLATE CARD
+       TEMPLATE DO CARD
     ========================================================= */
 
     function cardTemplate(game) {
@@ -3935,7 +3388,6 @@
 
 
       const coverContent =
-
         game.imagem
 
           ? `
@@ -3954,7 +3406,6 @@
 
 
       const coverStyle =
-
         game.imagem
 
           ? ''
@@ -4032,8 +3483,8 @@
         </article>
 
       `;
-
     }
+
 
 
     /* =========================================================
@@ -4046,30 +3497,22 @@
         game => {
 
           const matchGenre =
-
             activeGenre === 'todos' ||
-
-            game.genero ===
-              activeGenre;
+            game.genero === activeGenre;
 
 
           const matchSearch =
-
             !searchTerm ||
 
             game.nome
               .toLowerCase()
-              .includes(
-                searchTerm
-              ) ||
+              .includes(searchTerm) ||
 
             genreLabels[
               game.genero
             ]
               .toLowerCase()
-              .includes(
-                searchTerm
-              );
+              .includes(searchTerm);
 
 
           return (
@@ -4081,6 +3524,7 @@
       );
 
     }
+
 
 
     /* =========================================================
@@ -4102,12 +3546,11 @@
         );
 
 
-      if (
-        totalPages <= 1
-      ) {
+      if (totalPages <= 1) {
 
         return;
       }
+
 
 
       /* ANTERIOR */
@@ -4162,6 +3605,7 @@
       pagination.appendChild(
         previousButton
       );
+
 
 
       /* NÚMEROS */
@@ -4230,6 +3674,7 @@
       }
 
 
+
       /* PRÓXIMO */
 
       const nextButton =
@@ -4253,8 +3698,7 @@
 
 
       nextButton.disabled =
-        currentPage ===
-        totalPages;
+        currentPage === totalPages;
 
 
       nextButton.addEventListener(
@@ -4288,6 +3732,7 @@
     }
 
 
+
     /* =========================================================
        RENDERIZAÇÃO
     ========================================================= */
@@ -4319,6 +3764,7 @@
         filtered.length;
 
 
+
       /* ESTADO VAZIO */
 
       if (
@@ -4342,10 +3788,10 @@
         true;
 
 
+
       /* 6 JOGOS POR PÁGINA */
 
       const startIndex =
-
         (
           currentPage - 1
         ) *
@@ -4353,7 +3799,6 @@
 
 
       const endIndex =
-
         startIndex +
         GAMES_PER_PAGE;
 
@@ -4365,8 +3810,6 @@
         );
 
 
-      /* RENDERIZA */
-
       grid.innerHTML =
         pageGames
           .map(
@@ -4375,13 +3818,12 @@
           .join('');
 
 
-      /* PAGINAÇÃO */
-
       renderPagination(
         filtered.length
       );
 
     }
+
 
 
     /* =========================================================
@@ -4391,7 +3833,6 @@
     render();
 
   </script>
-
 
 </body>
 
