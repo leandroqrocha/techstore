@@ -17,7 +17,6 @@
     content="Uma vitrine de jogos gratuitos e de código aberto."
   >
 
-
   <!-- =========================================================
        BOOTSTRAP
   ========================================================= -->
@@ -31,7 +30,8 @@
 
 
   <!-- =========================================================
-       FONTES
+       FONTE PRINCIPAL
+       TODO O SITE USA RIDGEOUT
   ========================================================= -->
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -43,10 +43,12 @@
   >
 
   <link
-    href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,600&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Righteous&display=swap"
     rel="stylesheet"
   >
 
+
+  <!-- FAVICON -->
 
   <link
     rel="icon"
@@ -55,7 +57,6 @@
 
 
   <style>
-
 
     /* =========================================================
        VARIÁVEIS
@@ -83,7 +84,8 @@
 
       --blue-dark: #1d4fd0;
 
-      --blue-soft: rgba(47,111,237,0.10);
+      --blue-soft:
+        rgba(47,111,237,0.10);
 
 
       --yellow: #f2b705;
@@ -100,28 +102,26 @@
 
 
       --shadow:
-        0 4px 18px rgba(20,30,60,0.06);
+        0 4px 18px
+        rgba(20,30,60,0.06);
+
 
       --shadow-hover:
-        0 10px 28px rgba(20,30,60,0.10);
+        0 10px 28px
+        rgba(20,30,60,0.10);
 
 
-      --font-display:
-        'Baloo 2',
-        sans-serif;
+      /*
+        FONTE ÚNICA DO SITE
+      */
 
-      --font-body:
-        'Nunito',
-        sans-serif;
-
-      --font-mono:
-        'IBM Plex Mono',
-        monospace;
+      --font-main:
+        'Righteous',
+        cursive;
 
 
       color-scheme: light;
     }
-
 
 
     /* =========================================================
@@ -162,15 +162,17 @@
 
 
       --shadow:
-        0 4px 18px rgba(0,0,0,0.35);
+        0 4px 18px
+        rgba(0,0,0,0.35);
+
 
       --shadow-hover:
-        0 10px 30px rgba(0,0,0,0.5);
+        0 10px 30px
+        rgba(0,0,0,0.5);
 
 
       color-scheme: dark;
     }
-
 
 
     /* =========================================================
@@ -178,11 +180,20 @@
     ========================================================= */
 
     * {
+
       box-sizing: border-box;
+
+      /*
+        FORÇA RIDGEOUT EM TODO O SITE
+      */
+
+      font-family:
+        var(--font-main);
     }
 
 
     html {
+
       scroll-behavior: smooth;
     }
 
@@ -191,15 +202,19 @@
 
       margin: 0;
 
-      background: var(--bg);
+      background:
+        var(--bg);
 
-      color: var(--text);
+      color:
+        var(--text);
 
-      font-family: var(--font-body);
+      font-family:
+        var(--font-main);
 
       line-height: 1.55;
 
-      -webkit-font-smoothing: antialiased;
+      -webkit-font-smoothing:
+        antialiased;
 
       transition:
         background .2s ease,
@@ -207,7 +222,18 @@
     }
 
 
+    button,
+    input,
+    textarea,
+    select {
+
+      font-family:
+        var(--font-main);
+    }
+
+
     a {
+
       color: inherit;
     }
 
@@ -215,13 +241,13 @@
     :focus-visible {
 
       outline:
-        3px solid var(--blue);
+        3px solid
+        var(--blue);
 
       outline-offset: 3px;
 
       border-radius: 4px;
     }
-
 
 
     /* =========================================================
@@ -232,12 +258,12 @@
 
       max-width: 1180px;
 
-      margin: 0 auto;
+      margin:
+        0 auto;
 
       padding:
         0 24px;
     }
-
 
 
     /* =========================================================
@@ -263,7 +289,8 @@
         blur(10px);
 
       border-bottom:
-        1px solid var(--line);
+        1px solid
+        var(--line);
     }
 
 
@@ -285,7 +312,6 @@
     }
 
 
-
     /* =========================================================
        LOGO HEADER
     ========================================================= */
@@ -299,9 +325,9 @@
       gap: 10px;
 
       font-family:
-        var(--font-display);
+        var(--font-main);
 
-      font-weight: 600;
+      font-weight: 400;
 
       font-size: 20px;
 
@@ -311,7 +337,8 @@
 
       white-space: nowrap;
 
-      color: var(--blue);
+      color:
+        var(--blue);
     }
 
 
@@ -331,7 +358,8 @@
 
       border-radius: 50%;
 
-      background: var(--blue);
+      background:
+        var(--blue);
 
       box-shadow:
         0 0 6px
@@ -342,17 +370,24 @@
         );
 
       animation:
-        flicker 2.6s infinite ease-in-out;
+        flicker
+        2.6s
+        infinite
+        ease-in-out;
     }
 
 
     .bulb:nth-child(2) {
-      animation-delay: .3s;
+
+      animation-delay:
+        .3s;
     }
 
 
     .bulb:nth-child(3) {
-      animation-delay: .6s;
+
+      animation-delay:
+        .6s;
     }
 
 
@@ -360,22 +395,26 @@
 
       0%,
       100% {
+
         opacity: 1;
       }
 
       50% {
+
         opacity: .35;
       }
     }
 
 
-    @media (prefers-reduced-motion: reduce) {
+    @media (
+      prefers-reduced-motion: reduce
+    ) {
 
       .bulb {
+
         animation: none;
       }
     }
-
 
 
     /* =========================================================
@@ -394,9 +433,11 @@
         var(--surface-2);
 
       border:
-        1px solid var(--line);
+        1px solid
+        var(--line);
 
-      border-radius: 999px;
+      border-radius:
+        999px;
 
       padding:
         10px 18px;
@@ -413,7 +454,8 @@
 
       flex-shrink: 0;
 
-      color: var(--muted);
+      color:
+        var(--muted);
 
       width: 17px;
 
@@ -425,19 +467,21 @@
 
       flex: 1;
 
-      background: transparent;
+      background:
+        transparent;
 
       border: none;
 
-      color: var(--text);
+      color:
+        var(--text);
 
-      font-family: var(--font-body);
-
-      font-weight: 600;
+      font-family:
+        var(--font-main);
 
       font-size: .92rem;
 
-      padding: 2px 0;
+      padding:
+        2px 0;
 
       min-width: 0;
     }
@@ -445,13 +489,13 @@
 
     .header-search input::placeholder {
 
-      color: var(--muted);
-
-      font-weight: 600;
+      color:
+        var(--muted);
     }
 
 
     .header-search input:focus {
+
       outline: none;
     }
 
@@ -463,9 +507,8 @@
     }
 
 
-
     /* =========================================================
-       AÇÕES DO HEADER
+       AÇÕES HEADER
     ========================================================= */
 
     .header-actions {
@@ -482,20 +525,20 @@
 
     .nav-count {
 
-      font-family: var(--font-mono);
-
       font-size: 13px;
 
-      color: var(--muted);
+      color:
+        var(--muted);
 
       white-space: nowrap;
     }
 
 
     .nav-count strong {
-      color: var(--blue);
-    }
 
+      color:
+        var(--blue);
+    }
 
 
     /* =========================================================
@@ -516,19 +559,22 @@
         var(--surface-2);
 
       border:
-        1px solid var(--line);
+        1px solid
+        var(--line);
 
-      color: var(--text);
+      color:
+        var(--text);
 
       font-family:
-        var(--font-mono);
+        var(--font-main);
 
       font-size: 12px;
 
       padding:
         8px 12px;
 
-      border-radius: 999px;
+      border-radius:
+        999px;
 
       cursor: pointer;
 
@@ -553,7 +599,6 @@
     }
 
 
-
     /* =========================================================
        HERO
     ========================================================= */
@@ -569,7 +614,6 @@
     }
 
 
-
     /* =========================================================
        PEIXE + TÍTULO
     ========================================================= */
@@ -582,29 +626,41 @@
 
       justify-content: center;
 
-      gap: 14px;
+      /*
+        Espaçamento proporcional à imagem enviada
+      */
 
-      margin-bottom: 22px;
+      gap: 18px;
+
+      margin-bottom:
+        22px;
 
       padding:
         0 16px;
     }
 
 
-
     /* =========================================================
        PEIXINHO
-       
-       MAIOR QUE O TÍTULO
+
+       A imagem enviada tem aproximadamente:
+
+       Peixe: ~145px de altura
+       Título: ~80px de altura
+
+       Portanto o peixe fica aproximadamente
+       1,7x maior que a altura visual do título.
     ========================================================= */
 
     .mascot-video {
 
-      width: 135px;
+      width: 145px;
 
-      height: 135px;
+      height: 145px;
 
       object-fit: contain;
+
+      object-position: center;
 
       display: block;
 
@@ -614,30 +670,34 @@
     }
 
 
-
-    /* =========================================================
-       CONTROLE DOS PEIXES POR TEMA
-    ========================================================= */
+    /*
+      Somente um peixe aparece por vez.
+    */
 
     .fish-dark {
+
       display: none;
     }
 
 
     .fish-light {
+
       display: block;
     }
 
 
-    html[data-theme="dark"] .fish-dark {
+    html[data-theme="dark"]
+    .fish-dark {
+
       display: block;
     }
 
 
-    html[data-theme="dark"] .fish-light {
+    html[data-theme="dark"]
+    .fish-light {
+
       display: none;
     }
-
 
 
     /* =========================================================
@@ -647,30 +707,37 @@
     .hero h1 {
 
       font-family:
-        var(--font-display);
+        var(--font-main);
 
-      font-weight: 700;
+      font-weight: 400;
+
+      /*
+        Tamanho aumentado para acompanhar
+        a proporção da imagem enviada.
+      */
 
       font-size:
         clamp(
-          2.8rem,
-          6.8vw,
-          4.8rem
+          3.4rem,
+          7vw,
+          5rem
         );
 
-      line-height: 1;
+      line-height: .95;
 
       margin: 0;
 
-      letter-spacing: -.7px;
+      letter-spacing: 0;
 
-      color: var(--blue);
+      color:
+        var(--blue);
+
+      white-space: nowrap;
     }
 
 
-
     /* =========================================================
-       FRASE PRINCIPAL
+       TEXTO PRINCIPAL
     ========================================================= */
 
     .hero p.lede-main {
@@ -680,15 +747,14 @@
       margin:
         0 auto 6px;
 
-      color: var(--text);
-
-      font-weight: 800;
+      color:
+        var(--text);
 
       font-size:
         clamp(
-          1.15rem,
-          2.6vw,
-          1.5rem
+          1.1rem,
+          2.4vw,
+          1.4rem
         );
 
       padding:
@@ -697,14 +763,11 @@
 
 
     .hero p.lede-main .accent {
-      color: var(--blue);
+
+      color:
+        var(--blue);
     }
 
-
-
-    /* =========================================================
-       SUBTÍTULO
-    ========================================================= */
 
     .hero p.lede {
 
@@ -713,14 +776,15 @@
       margin:
         10px auto 0;
 
-      color: var(--muted);
+      color:
+        var(--muted);
 
-      font-size: 1rem;
+      font-size:
+        1rem;
 
       padding:
         0 16px;
     }
-
 
 
     /* =========================================================
@@ -745,9 +809,7 @@
     .chip {
 
       font-family:
-        var(--font-body);
-
-      font-weight: 700;
+        var(--font-main);
 
       font-size: 14px;
 
@@ -755,14 +817,17 @@
         var(--surface);
 
       border:
-        1px solid var(--line);
+        1px solid
+        var(--line);
 
-      color: var(--muted);
+      color:
+        var(--muted);
 
       padding:
         10px 20px;
 
-      border-radius: 999px;
+      border-radius:
+        999px;
 
       cursor: pointer;
 
@@ -782,7 +847,8 @@
       border-color:
         var(--blue);
 
-      color: var(--text);
+      color:
+        var(--text);
     }
 
 
@@ -794,9 +860,9 @@
       border-color:
         var(--blue);
 
-      color: #fff;
+      color:
+        #fff;
     }
-
 
 
     /* =========================================================
@@ -812,27 +878,26 @@
 
     .count-line {
 
-      font-family:
-        var(--font-mono);
-
       font-size: 13px;
 
-      color: var(--muted);
+      color:
+        var(--muted);
 
       padding:
         14px 0 24px;
 
       border-bottom:
-        1px solid var(--line);
+        1px solid
+        var(--line);
 
-      margin-bottom: 28px;
+      margin-bottom:
+        28px;
     }
-
 
 
     /* =========================================================
        GRID
-       
+
        2 JOGOS POR FILEIRA
     ========================================================= */
 
@@ -841,14 +906,10 @@
       display: grid;
 
       grid-template-columns:
-        repeat(
-          2,
-          minmax(0, 1fr)
-        );
+        repeat(2, minmax(0, 1fr));
 
       gap: 26px;
     }
-
 
 
     /* =========================================================
@@ -861,7 +922,8 @@
         var(--surface);
 
       border:
-        1px solid var(--line);
+        1px solid
+        var(--line);
 
       border-radius:
         var(--radius);
@@ -895,14 +957,9 @@
     }
 
 
-
-    /* =========================================================
-       CAPA
-    ========================================================= */
-
     .card-cover {
 
-      height: 210px;
+      height: 220px;
 
       position: relative;
 
@@ -941,9 +998,8 @@
     }
 
 
-
     /* =========================================================
-       NÚMERO DO JOGO
+       NÚMERO DO CARD
     ========================================================= */
 
     .ticket-no {
@@ -960,12 +1016,7 @@
 
       gap: 5px;
 
-      font-family:
-        var(--font-mono);
-
       font-size: 11px;
-
-      font-weight: 600;
 
       letter-spacing: 1px;
 
@@ -980,7 +1031,8 @@
       padding:
         5px 10px;
 
-      border-radius: 999px;
+      border-radius:
+        999px;
     }
 
 
@@ -994,9 +1046,8 @@
     }
 
 
-
     /* =========================================================
-       CORPO DO CARD
+       CORPO CARD
     ========================================================= */
 
     .card-body {
@@ -1017,28 +1068,32 @@
     .card-body h3 {
 
       font-family:
-        var(--font-display);
+        var(--font-main);
 
-      font-weight: 600;
+      font-weight: 400;
 
-      font-size: 1.25rem;
+      font-size:
+        1.35rem;
 
       margin: 0;
 
-      letter-spacing: -.2px;
+      letter-spacing: 0;
 
-      color: var(--text);
+      color:
+        var(--text);
     }
 
 
     /*
-      TÍTULOS BRANCOS NO MODO ESCURO
+      NO TEMA ESCURO:
+      TÍTULO DOS JOGOS FICA BRANCO
     */
 
     html[data-theme="dark"]
     .card-body h3 {
 
-      color: #ffffff;
+      color:
+        #ffffff;
     }
 
 
@@ -1046,9 +1101,11 @@
 
       margin: 0;
 
-      color: var(--muted);
+      color:
+        var(--muted);
 
-      font-size: .93rem;
+      font-size:
+        .95rem;
 
       flex: 1;
     }
@@ -1063,15 +1120,14 @@
     .btn-game {
 
       font-family:
-        var(--font-body);
-
-      font-weight: 800;
+        var(--font-main);
 
       font-size: 14px;
 
       text-decoration: none;
 
-      color: var(--blue);
+      color:
+        var(--blue);
 
       display: inline-flex;
 
@@ -1089,9 +1145,9 @@
 
       gap: 10px;
 
-      color: var(--blue-dark);
+      color:
+        var(--blue-dark);
     }
-
 
 
     /* =========================================================
@@ -1123,18 +1179,21 @@
       padding:
         0 12px;
 
-      border-radius: 10px;
+      border-radius:
+        10px;
 
       border:
-        1px solid var(--line);
+        1px solid
+        var(--line);
 
       background:
         var(--surface);
 
-      color: var(--muted);
+      color:
+        var(--muted);
 
       font-family:
-        var(--font-mono);
+        var(--font-main);
 
       font-size: 13px;
 
@@ -1153,7 +1212,8 @@
       border-color:
         var(--blue);
 
-      color: var(--blue);
+      color:
+        var(--blue);
 
       transform:
         translateY(-1px);
@@ -1168,7 +1228,8 @@
       border-color:
         var(--blue);
 
-      color: #fff;
+      color:
+        #fff;
     }
 
 
@@ -1178,7 +1239,6 @@
 
       cursor: not-allowed;
     }
-
 
 
     /* =========================================================
@@ -1192,14 +1252,11 @@
       padding:
         60px 20px;
 
-      color: var(--muted);
-
-      font-family:
-        var(--font-mono);
+      color:
+        var(--muted);
 
       font-size: 14px;
     }
-
 
 
     /* =========================================================
@@ -1215,12 +1272,14 @@
           var(--blue)
         );
 
-      color: #fff;
+      color:
+        #fff;
 
       padding:
         48px 0 0;
 
-      margin-top: 40px;
+      margin-top:
+        40px;
     }
 
 
@@ -1235,27 +1294,32 @@
       justify-content:
         space-between;
 
-      padding-bottom: 32px;
+      padding-bottom:
+        32px;
     }
 
 
     .footer-brand {
 
-      max-width: 420px;
+      max-width:
+        320px;
     }
 
 
     .footer-brand .brand {
 
-      color: #fff;
+      color:
+        #fff;
 
-      margin-bottom: 10px;
+      margin-bottom:
+        10px;
     }
 
 
     .footer-brand .bulb {
 
-      background: #fff;
+      background:
+        #fff;
     }
 
 
@@ -1266,18 +1330,20 @@
       color:
         rgba(255,255,255,.85);
 
-      font-size: 14px;
+      font-size:
+        14px;
     }
 
 
     .footer-col h4 {
 
       font-family:
-        var(--font-display);
+        var(--font-main);
 
-      font-weight: 600;
+      font-weight: 400;
 
-      font-size: 15px;
+      font-size:
+        15px;
 
       margin:
         0 0 14px;
@@ -1286,7 +1352,8 @@
 
     .footer-col ul {
 
-      list-style: none;
+      list-style:
+        none;
 
       margin: 0;
 
@@ -1302,20 +1369,24 @@
 
     .footer-col a {
 
-      text-decoration: none;
+      text-decoration:
+        none;
 
       color:
         rgba(255,255,255,.85);
 
-      font-size: 14px;
+      font-size:
+        14px;
     }
 
 
     .footer-col a:hover {
 
-      color: #fff;
+      color:
+        #fff;
 
-      text-decoration: underline;
+      text-decoration:
+        underline;
     }
 
 
@@ -1348,12 +1419,9 @@
       color:
         rgba(255,255,255,.75);
 
-      font-size: 13px;
-
-      font-family:
-        var(--font-mono);
+      font-size:
+        13px;
     }
-
 
 
     /* =========================================================
@@ -1365,10 +1433,7 @@
       .grid {
 
         grid-template-columns:
-          repeat(
-            2,
-            minmax(0, 1fr)
-          );
+          repeat(2, minmax(0, 1fr));
 
         gap: 20px;
       }
@@ -1382,9 +1447,9 @@
 
       .mascot-video {
 
-        width: 120px;
+        width: 125px;
 
-        height: 120px;
+        height: 125px;
       }
 
 
@@ -1392,13 +1457,12 @@
 
         font-size:
           clamp(
-            2.6rem,
-            7vw,
-            4rem
+            3rem,
+            8vw,
+            4.4rem
           );
       }
     }
-
 
 
     /* =========================================================
@@ -1406,7 +1470,6 @@
     ========================================================= */
 
     @media (max-width: 720px) {
-
 
       /* HEADER */
 
@@ -1424,9 +1487,11 @@
 
       .marquee-bar .brand {
 
-        margin-left: 4px;
+        margin-left:
+          4px;
 
-        font-size: 18px;
+        font-size:
+          18px;
 
         gap: 8px;
       }
@@ -1434,9 +1499,11 @@
 
       .header-actions {
 
-        justify-self: end;
+        justify-self:
+          end;
 
-        margin-right: 4px;
+        margin-right:
+          4px;
 
         gap: 0;
       }
@@ -1444,7 +1511,8 @@
 
       .theme-toggle {
 
-        white-space: nowrap;
+        white-space:
+          nowrap;
 
         padding:
           8px 12px;
@@ -1452,14 +1520,15 @@
 
 
       .header-search {
+
         display: none;
       }
 
 
       .nav-count {
+
         display: none;
       }
-
 
 
       /* HERO */
@@ -1467,30 +1536,45 @@
       .hero {
 
         padding:
-          44px 8px 24px;
+          42px 8px 24px;
       }
 
 
       .brand-lockup {
 
-        gap: 8px;
+        gap:
+          8px;
 
         padding:
-          0 12px;
+          0 10px;
 
-        margin-bottom: 22px;
+        margin-bottom:
+          22px;
       }
 
 
       /*
-        PEIXE MAIOR NO CELULAR
+        PEIXE NO CELULAR
+
+        Mantém a mesma proporção,
+        mas reduz para caber na tela.
       */
 
       .mascot-video {
 
-        width: 85px;
+        width:
+          clamp(
+            92px,
+            25vw,
+            120px
+          );
 
-        height: 85px;
+        height:
+          clamp(
+            92px,
+            25vw,
+            120px
+          );
       }
 
 
@@ -1498,13 +1582,15 @@
 
         font-size:
           clamp(
-            2.2rem,
+            2.4rem,
             10vw,
-            3.2rem
+            3.6rem
           );
 
-        margin:
-          0 8px;
+        margin: 0;
+
+        line-height:
+          .95;
       }
 
 
@@ -1520,7 +1606,6 @@
         padding:
           0 12px;
       }
-
 
 
       /* FILTROS */
@@ -1539,117 +1624,134 @@
       }
 
 
-
       /* CONTEÚDO */
 
       .wrap {
 
-        padding-left: 18px;
+        padding-left:
+          18px;
 
-        padding-right: 18px;
+        padding-right:
+          18px;
       }
 
 
-
-      /* GRID */
+      /*
+        CONTINUA COM 2 JOGOS
+        POR FILEIRA
+      */
 
       .grid {
 
         grid-template-columns:
-          repeat(
-            2,
-            minmax(0, 1fr)
-          );
+          repeat(2, minmax(0, 1fr));
 
-        gap: 16px;
+        gap:
+          16px;
       }
 
 
       .card-cover {
 
-        height: 170px;
+        height:
+          160px;
       }
 
 
       .card-body {
 
         padding:
-          16px;
+          16px 15px 18px;
+
+        gap: 8px;
       }
 
 
       .card-body h3 {
 
-        font-size: 1.1rem;
+        font-size:
+          1.15rem;
       }
 
 
       .card-body p {
 
-        font-size: .88rem;
+        font-size:
+          .85rem;
       }
 
+
+      .btn-game {
+
+        font-size:
+          13px;
+      }
 
 
       /* PAGINAÇÃO */
 
       .pagination-container {
 
-        margin-top: 32px;
+        margin-top:
+          32px;
 
-        gap: 6px;
+        gap:
+          6px;
       }
 
 
       .page-btn {
 
-        min-width: 38px;
+        min-width:
+          38px;
 
-        height: 38px;
+        height:
+          38px;
 
         padding:
           0 9px;
 
-        font-size: 12px;
+        font-size:
+          12px;
       }
-
     }
 
 
-
     /* =========================================================
-       CELULARES PEQUENOS
+       CELULARES MUITO PEQUENOS
     ========================================================= */
 
     @media (max-width: 560px) {
 
-
       .hero {
 
         padding:
-          38px 6px 22px;
+          36px 6px 22px;
       }
 
 
       .brand-lockup {
 
-        gap: 5px;
+        gap:
+          4px;
 
         padding:
-          0 10px;
+          0 6px;
       }
 
 
       /*
-        PEIXE MAIOR QUE O TÍTULO
-        MESMO EM CELULARES PEQUENOS
+        PEIXE AINDA GRANDE,
+        MAS PROPORCIONAL AO TÍTULO
       */
 
       .mascot-video {
 
-        width: 75px;
+        width:
+          88px;
 
-        height: 75px;
+        height:
+          88px;
       }
 
 
@@ -1657,19 +1759,17 @@
 
         font-size:
           clamp(
-            2rem,
-            9.5vw,
+            2.05rem,
+            10vw,
             2.8rem
           );
-
-        margin:
-          0 6px;
       }
 
 
       .hero p.lede-main {
 
-        font-size: 1.1rem;
+        font-size:
+          1.05rem;
 
         padding:
           0 10px;
@@ -1678,19 +1778,18 @@
 
       .hero p.lede {
 
-        font-size: .95rem;
+        font-size:
+          .92rem;
 
         padding:
           0 10px;
       }
 
 
-
-      /* FILTROS */
-
       .filters {
 
-        gap: 8px;
+        gap:
+          8px;
 
         padding:
           20px 6px 8px;
@@ -1699,107 +1798,174 @@
 
       .chip {
 
-        font-size: 13px;
+        font-size:
+          13px;
 
         padding:
           8px 14px;
       }
 
 
-
-      /* CONTEÚDO */
-
       .count-line {
 
-        margin-bottom: 22px;
+        margin-bottom:
+          22px;
       }
 
 
-
-      /* GRID */
+      /*
+        Em celulares pequenos:
+        continua 2 por fileira.
+      */
 
       .grid {
 
         grid-template-columns:
-          repeat(
-            2,
-            minmax(0, 1fr)
-          );
+          repeat(2, minmax(0, 1fr));
 
-        gap: 12px;
+        gap:
+          12px;
       }
 
 
       .card {
 
-        border-radius: 15px;
+        border-radius:
+          15px;
       }
 
 
       .card-cover {
 
-        height: 145px;
+        height:
+          125px;
       }
 
 
       .card-body {
 
         padding:
-          14px;
+          14px 12px 16px;
       }
 
 
       .card-body h3 {
 
-        font-size: 1rem;
+        font-size:
+          1rem;
       }
 
 
       .card-body p {
 
-        font-size: .82rem;
+        font-size:
+          .78rem;
       }
 
 
-      .btn-game {
+      .ticket-no {
 
-        font-size: 13px;
+        top: 8px;
+
+        left: 8px;
+
+        font-size:
+          9px;
+
+        padding:
+          4px 7px;
       }
 
-
-
-      /* PAGINAÇÃO */
 
       .pagination-container {
 
-        gap: 5px;
+        gap:
+          5px;
       }
 
 
       .page-btn {
 
-        min-width: 36px;
+        min-width:
+          36px;
 
-        height: 36px;
+        height:
+          36px;
       }
 
-
-      /* FOOTER */
 
       .footer-bottom {
 
-        flex-direction: column;
+        flex-direction:
+          column;
 
-        align-items: flex-start;
+        align-items:
+          flex-start;
       }
-
     }
 
+
+    /* =========================================================
+       CELULARES EXTREMAMENTE PEQUENOS
+    ========================================================= */
+
+    @media (max-width: 400px) {
+
+      .brand-lockup {
+
+        gap:
+          2px;
+      }
+
+
+      .mascot-video {
+
+        width:
+          78px;
+
+        height:
+          78px;
+      }
+
+
+      .hero h1 {
+
+        font-size:
+          1.95rem;
+      }
+
+
+      .grid {
+
+        gap:
+          10px;
+      }
+
+
+      .card-cover {
+
+        height:
+          110px;
+      }
+
+
+      .card-body h3 {
+
+        font-size:
+          .9rem;
+      }
+
+
+      .card-body p {
+
+        font-size:
+          .72rem;
+      }
+    }
 
   </style>
 
 </head>
-
 
 
 <body>
@@ -1831,9 +1997,7 @@
 
         </span>
 
-
         Tech Store
-
 
         <span class="bulb-row">
 
@@ -1846,7 +2010,6 @@
         </span>
 
       </a>
-
 
 
       <!-- BUSCA -->
@@ -1888,7 +2051,6 @@
         >
 
       </div>
-
 
 
       <!-- AÇÕES -->
@@ -1945,9 +2107,7 @@
   <main>
 
 
-    <!-- =====================================================
-         HERO
-    ====================================================== -->
+    <!-- HERO -->
 
     <section
       class="hero"
@@ -1960,7 +2120,7 @@
       <div class="brand-lockup">
 
 
-        <!-- PEIXE DO TEMA ESCURO -->
+        <!-- PEIXE TEMA ESCURO -->
 
         <video
           autoplay
@@ -1978,7 +2138,7 @@
         </video>
 
 
-        <!-- PEIXE DO TEMA CLARO -->
+        <!-- PEIXE TEMA CLARO -->
 
         <video
           autoplay
@@ -2005,9 +2165,6 @@
       </div>
 
 
-
-      <!-- FRASE PRINCIPAL -->
-
       <p class="lede-main">
 
         Seu próximo jogo favorito está a um
@@ -2021,16 +2178,12 @@
       </p>
 
 
-
-      <!-- SUBTÍTULO -->
-
       <p class="lede">
 
         Jogos gratuitos e de código aberto —
         escolha o gênero e jogue.
 
       </p>
-
 
 
       <!-- FILTROS -->
@@ -2046,14 +2199,10 @@
 
 
 
-    <!-- =====================================================
-         LISTAGEM
-    ====================================================== -->
+    <!-- LISTAGEM -->
 
     <div class="wrap">
 
-
-      <!-- CONTADOR -->
 
       <p class="count-line">
 
@@ -2066,14 +2215,12 @@
       </p>
 
 
-
-      <!-- GRID -->
+      <!-- JOGOS -->
 
       <div
         class="grid"
         id="grid"
       ></div>
-
 
 
       <!-- PAGINAÇÃO -->
@@ -2082,7 +2229,6 @@
         class="pagination-container"
         id="pagination"
       ></div>
-
 
 
       <!-- ESTADO VAZIO -->
@@ -2131,9 +2277,7 @@
 
             </span>
 
-
             Tech Store
-
 
             <span class="bulb-row">
 
@@ -2154,7 +2298,6 @@
           </p>
 
         </div>
-
 
 
         <!-- EXPLORAR -->
@@ -2190,22 +2333,14 @@
         </div>
 
 
-        <!--
-          A SEÇÃO "SOBRE" FOI REMOVIDA
-        -->
-
       </div>
 
-
-
-      <!-- RODAPÉ INFERIOR -->
 
       <div class="footer-bottom">
 
         <p>
           © 2026 Tech Store catálogo independente.
         </p>
-
 
         <p>
           Links levam aos sites oficiais de cada projeto.
@@ -2233,7 +2368,6 @@
 
   <script>
 
-
     /* =========================================================
        TEMA CLARO / ESCURO
     ========================================================= */
@@ -2260,7 +2394,6 @@
       );
 
 
-
     const sunPath = `
 
       <circle
@@ -2285,7 +2418,6 @@
     `;
 
 
-
     const moonPath = `
 
       <path
@@ -2299,9 +2431,7 @@
     `;
 
 
-
     function applyTheme(theme) {
-
 
       root.setAttribute(
         'data-theme',
@@ -2317,7 +2447,9 @@
         themeLabel.textContent =
           'Claro';
 
-      } else {
+      }
+
+      else {
 
         themeIcon.innerHTML =
           moonPath;
@@ -2336,7 +2468,6 @@
     }
 
 
-
     const savedTheme =
       localStorage.getItem(
         'techstore-theme'
@@ -2352,14 +2483,15 @@
 
 
     applyTheme(
+
       savedTheme ||
       (
         prefersDark
           ? 'dark'
           : 'light'
       )
-    );
 
+    );
 
 
     themeToggle.addEventListener(
@@ -2373,14 +2505,15 @@
 
 
         applyTheme(
+
           current === 'dark'
             ? 'light'
             : 'dark'
+
         );
 
       }
     );
-
 
 
     /* =========================================================
@@ -2388,7 +2521,6 @@
     ========================================================= */
 
     const icons = {
-
 
       corrida: `
 
@@ -2405,10 +2537,7 @@
 
           <path
             d="
-              M4 4h6
-              l1 2h6
-              l1 4h-7
-              l-1-2H4
+              M4 4h6l1 2h6l1 4h-7l-1-2H4
             "
           />
 
@@ -2435,12 +2564,7 @@
           <path d="M4 20h16"/>
 
           <path
-            d="
-              M9 20V10
-              l3-6
-              3 6
-              v10
-            "
+            d="M9 20V10l3-6 3 6v10"
           />
 
           <circle
@@ -2467,10 +2591,7 @@
 
           <path
             d="
-              M14.5 4.5
-              l5 5
-              -11 11
-              -5-5z
+              M14.5 4.5l5 5-11 11-5-5z
             "
           />
 
@@ -2670,7 +2791,6 @@
     };
 
 
-
     /* =========================================================
        NOMES DOS GÊNEROS
     ========================================================= */
@@ -2702,7 +2822,6 @@
         'Simulação'
 
     };
-
 
 
     /* =========================================================
@@ -2738,7 +2857,6 @@
     };
 
 
-
     /* =========================================================
        ÍCONE DO SELO
     ========================================================= */
@@ -2767,20 +2885,16 @@
     `;
 
 
-
     /* =========================================================
        JOGOS
-       
-       IDS CORRIGIDOS:
-       001 ATÉ 034
+       IDs CORRIGIDOS: 1 ATÉ 34
     ========================================================= */
 
     const games = [
 
-
-      /* =====================================================
+      /* =========================
          BEATRIZ
-      ===================================================== */
+      ========================= */
 
       {
         id: 1,
@@ -2851,10 +2965,9 @@
       },
 
 
-
-      /* =====================================================
+      /* =========================
          DIEGO
-      ===================================================== */
+      ========================= */
 
       {
         id: 4,
@@ -2948,10 +3061,9 @@
       },
 
 
-
-      /* =====================================================
+      /* =========================
          DIOGO
-      ===================================================== */
+      ========================= */
 
       {
         id: 8,
@@ -2976,10 +3088,9 @@
       },
 
 
-
-      /* =====================================================
+      /* =========================
          FRANMARYS
-      ===================================================== */
+      ========================= */
 
       {
         id: 9,
@@ -3004,10 +3115,9 @@
       },
 
 
-
-      /* =====================================================
+      /* =========================
          GIULIA
-      ===================================================== */
+      ========================= */
 
       {
         id: 10,
@@ -3048,17 +3158,16 @@
           'img/giulia2.png',
 
         desc:
-          'Um jogo de aventura e exploração onde você precisa superar desafios e descobrir novos caminhos.',
+          'Um jogo de aventura com desafios e elementos interativos para explorar diretamente pelo navegador.',
 
         link:
           'https://holistic-pop-bubble-quest.base44.app'
       },
 
 
-
-      /* =====================================================
+      /* =========================
          JOÃO
-      ===================================================== */
+      ========================= */
 
       {
         id: 12,
@@ -3106,10 +3215,9 @@
       },
 
 
-
-      /* =====================================================
+      /* =========================
          LEANDRO
-      ===================================================== */
+      ========================= */
 
       {
         id: 14,
@@ -3157,10 +3265,9 @@
       },
 
 
-
-      /* =====================================================
+      /* =========================
          MIGUEL
-      ===================================================== */
+      ========================= */
 
       {
         id: 16,
@@ -3208,10 +3315,9 @@
       },
 
 
-
-      /* =====================================================
+      /* =========================
          NAARA
-      ===================================================== */
+      ========================= */
 
       {
         id: 18,
@@ -3259,10 +3365,9 @@
       },
 
 
-
-      /* =====================================================
+      /* =========================
          NICOLAS
-      ===================================================== */
+      ========================= */
 
       {
         id: 20,
@@ -3310,10 +3415,9 @@
       },
 
 
-
-      /* =====================================================
+      /* =========================
          REBECA
-      ===================================================== */
+      ========================= */
 
       {
         id: 22,
@@ -3361,10 +3465,9 @@
       },
 
 
-
-      /* =====================================================
-         OUTROS JOGOS
-      ===================================================== */
+      /* =========================
+         OUTROS
+      ========================= */
 
       {
         id: 24,
@@ -3608,11 +3711,19 @@
     ];
 
 
+    /*
+      IMPORTANTE:
+
+      Como o catálogo original possui 35 objetos,
+      o último jogo é o Nº 35.
+
+      Se você quiser exatamente 34 jogos,
+      basta remover o Freeciv ou outro jogo.
+    */
+
 
     /* =========================================================
        PAGINAÇÃO
-       
-       6 JOGOS POR PÁGINA
     ========================================================= */
 
     const GAMES_PER_PAGE = 6;
@@ -3621,11 +3732,12 @@
     let currentPage = 1;
 
 
-    let activeGenre = 'todos';
+    let activeGenre =
+      'todos';
 
 
-    let searchTerm = '';
-
+    let searchTerm =
+      '';
 
 
     /* =========================================================
@@ -3674,14 +3786,12 @@
       );
 
 
-
     /* =========================================================
        CONTADOR
     ========================================================= */
 
     headerCount.textContent =
       games.length;
-
 
 
     /* =========================================================
@@ -3705,10 +3815,8 @@
     ];
 
 
-
     genresPresent.forEach(
       genre => {
-
 
         const chip =
           document.createElement(
@@ -3736,17 +3844,13 @@
         chip.textContent =
 
           genre === 'todos'
-
             ? 'Todos'
-
             : genreLabels[genre];
-
 
 
         chip.addEventListener(
           'click',
           () => {
-
 
             activeGenre =
               genre;
@@ -3754,7 +3858,6 @@
 
             currentPage =
               1;
-
 
 
             document
@@ -3770,19 +3873,16 @@
               );
 
 
-
             chip.setAttribute(
               'aria-pressed',
               'true'
             );
 
 
-
             render();
 
           }
         );
-
 
 
         filtersEl.appendChild(
@@ -3793,7 +3893,6 @@
     );
 
 
-
     /* =========================================================
        BUSCA
     ========================================================= */
@@ -3801,7 +3900,6 @@
     searchInput.addEventListener(
       'input',
       event => {
-
 
         searchTerm =
           event.target.value
@@ -3819,13 +3917,11 @@
     );
 
 
-
     /* =========================================================
-       TEMPLATE DO CARD
+       TEMPLATE CARD
     ========================================================= */
 
     function cardTemplate(game) {
-
 
       const [c1, c2] =
         genreColors[
@@ -3833,11 +3929,9 @@
         ];
 
 
-
       const ticketNo =
         String(game.id)
           .padStart(3, '0');
-
 
 
       const coverContent =
@@ -3857,7 +3951,6 @@
           : icons[
               game.genero
             ];
-
 
 
       const coverStyle =
@@ -3880,11 +3973,9 @@
           `;
 
 
-
       return `
 
         <article class="card">
-
 
           <div
             class="card-cover"
@@ -3905,9 +3996,7 @@
           </div>
 
 
-
           <div class="card-body">
-
 
             <h3>
               ${game.nome}
@@ -3920,7 +4009,6 @@
 
 
             <div class="card-actions">
-
 
               <a
                 class="btn-game"
@@ -3937,7 +4025,6 @@
 
               </a>
 
-
             </div>
 
           </div>
@@ -3949,17 +4036,14 @@
     }
 
 
-
     /* =========================================================
        FILTRAGEM
     ========================================================= */
 
     function getFilteredGames() {
 
-
       return games.filter(
         game => {
-
 
           const matchGenre =
 
@@ -3967,7 +4051,6 @@
 
             game.genero ===
               activeGenre;
-
 
 
           const matchSearch =
@@ -3989,20 +4072,15 @@
               );
 
 
-
           return (
-
             matchGenre &&
-
             matchSearch
-
           );
 
         }
       );
 
     }
-
 
 
     /* =========================================================
@@ -4013,10 +4091,8 @@
       totalGames
     ) {
 
-
       pagination.innerHTML =
         '';
-
 
 
       const totalPages =
@@ -4026,13 +4102,12 @@
         );
 
 
-
-      if (totalPages <= 1) {
+      if (
+        totalPages <= 1
+      ) {
 
         return;
-
       }
-
 
 
       /* ANTERIOR */
@@ -4065,24 +4140,17 @@
         'click',
         () => {
 
-
           if (
             currentPage > 1
           ) {
 
-
             currentPage--;
-
 
             render();
 
-
             window.scrollTo({
-
               top: 0,
-
               behavior: 'smooth'
-
             });
 
           }
@@ -4096,7 +4164,6 @@
       );
 
 
-
       /* NÚMEROS */
 
       for (
@@ -4104,7 +4171,6 @@
         page <= totalPages;
         page++
       ) {
-
 
         const pageButton =
           document.createElement(
@@ -4141,7 +4207,6 @@
           'click',
           () => {
 
-
             currentPage =
               page;
 
@@ -4150,11 +4215,8 @@
 
 
             window.scrollTo({
-
               top: 0,
-
               behavior: 'smooth'
-
             });
 
           }
@@ -4166,7 +4228,6 @@
         );
 
       }
-
 
 
       /* PRÓXIMO */
@@ -4192,32 +4253,26 @@
 
 
       nextButton.disabled =
-        currentPage === totalPages;
+        currentPage ===
+        totalPages;
 
 
       nextButton.addEventListener(
         'click',
         () => {
 
-
           if (
             currentPage <
             totalPages
           ) {
 
-
             currentPage++;
-
 
             render();
 
-
             window.scrollTo({
-
               top: 0,
-
               behavior: 'smooth'
-
             });
 
           }
@@ -4233,17 +4288,14 @@
     }
 
 
-
     /* =========================================================
        RENDERIZAÇÃO
     ========================================================= */
 
     function render() {
 
-
       const filtered =
         getFilteredGames();
-
 
 
       const totalPages =
@@ -4253,26 +4305,18 @@
         );
 
 
-
       if (
-
         totalPages > 0 &&
-
-        currentPage >
-          totalPages
-
+        currentPage > totalPages
       ) {
 
         currentPage =
           totalPages;
-
       }
-
 
 
       resultsCount.textContent =
         filtered.length;
-
 
 
       /* ESTADO VAZIO */
@@ -4281,31 +4325,24 @@
         filtered.length === 0
       ) {
 
-
         grid.innerHTML =
           '';
-
 
         pagination.innerHTML =
           '';
 
-
         emptyState.hidden =
           false;
 
-
         return;
-
       }
-
 
 
       emptyState.hidden =
         true;
 
 
-
-      /* ÍNDICES DA PÁGINA */
+      /* 6 JOGOS POR PÁGINA */
 
       const startIndex =
 
@@ -4315,12 +4352,10 @@
         GAMES_PER_PAGE;
 
 
-
       const endIndex =
 
         startIndex +
         GAMES_PER_PAGE;
-
 
 
       const pageGames =
@@ -4330,8 +4365,7 @@
         );
 
 
-
-      /* RENDERIZA 6 JOGOS */
+      /* RENDERIZA */
 
       grid.innerHTML =
         pageGames
@@ -4339,7 +4373,6 @@
             cardTemplate
           )
           .join('');
-
 
 
       /* PAGINAÇÃO */
@@ -4351,13 +4384,11 @@
     }
 
 
-
     /* =========================================================
        INICIALIZAÇÃO
     ========================================================= */
 
     render();
-
 
   </script>
 
