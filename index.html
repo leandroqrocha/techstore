@@ -18,23 +18,26 @@
   >
 
 
-  <!-- =======================================================
+  <!-- =====================================================
        BOOTSTRAP
-  ======================================================== -->
+  ====================================================== -->
 
   <link
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
     rel="stylesheet"
-    integrity="sha384-sRIlkxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
     crossorigin="anonymous"
   >
 
 
-  <!-- =======================================================
+  <!-- =====================================================
        FONTE RIGHTEOUS
-  ======================================================== -->
+  ====================================================== -->
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
 
   <link
     rel="preconnect"
@@ -47,6 +50,8 @@
     rel="stylesheet"
   >
 
+
+  <!-- FAVICON -->
 
   <link
     rel="icon"
@@ -79,6 +84,14 @@
       --muted: #6b7280;
 
 
+      /*
+        AZUL PRINCIPAL
+
+        IMPORTANTE:
+        Este azul será usado tanto no
+        modo claro quanto no escuro.
+      */
+
       --blue: #2f6fed;
 
       --blue-dark: #1d4fd0;
@@ -107,9 +120,11 @@
         0 10px 28px rgba(20,30,60,0.10);
 
 
-      --font:
-        'Righteous',
-        cursive;
+      /*
+        TODO O SITE USA RIGHTEOUS
+      */
+
+      --font-site: 'Righteous', sans-serif;
 
 
       color-scheme: light;
@@ -127,6 +142,7 @@
 
       --bg-soft: #0a0a0f;
 
+
       --surface: #131318;
 
       --surface-2: #1b1b22;
@@ -139,12 +155,21 @@
       --muted: #9aa0ad;
 
 
-      --blue: #4d8dff;
+      /*
+        MESMO AZUL DO MODO CLARO
 
-      --blue-dark: #6ea1ff;
+        NÃO ALTERAR.
+
+        Assim o azul fica exatamente igual
+        nos dois temas.
+      */
+
+      --blue: #2f6fed;
+
+      --blue-dark: #1d4fd0;
 
       --blue-soft:
-        rgba(77,141,255,0.16);
+        rgba(47,111,237,0.10);
 
 
       --line:
@@ -174,13 +199,15 @@
 
       box-sizing: border-box;
 
-      font-family: var(--font);
+      font-family: var(--font-site);
+
     }
 
 
     html {
 
       scroll-behavior: smooth;
+
     }
 
 
@@ -192,37 +219,45 @@
 
       color: var(--text);
 
+      font-family: var(--font-site);
+
       line-height: 1.55;
 
       -webkit-font-smoothing: antialiased;
 
+
       transition:
         background .2s ease,
         color .2s ease;
+
     }
 
 
     a {
 
       color: inherit;
+
     }
 
 
     button,
     input {
 
-      font-family: var(--font);
+      font-family: var(--font-site);
+
     }
 
 
     :focus-visible {
 
       outline:
-        3px solid var(--blue);
+        3px solid
+        var(--blue);
 
       outline-offset: 3px;
 
       border-radius: 4px;
+
     }
 
 
@@ -239,6 +274,7 @@
 
       padding:
         0 24px;
+
     }
 
 
@@ -255,6 +291,7 @@
 
       z-index: 20;
 
+
       background:
         color-mix(
           in srgb,
@@ -262,10 +299,15 @@
           transparent
         );
 
-      backdrop-filter: blur(10px);
+
+      backdrop-filter:
+        blur(10px);
+
 
       border-bottom:
-        1px solid var(--line);
+        1px solid
+        var(--line);
+
     }
 
 
@@ -281,9 +323,10 @@
       align-items: center;
 
       padding:
-        14px 0;
+        16px 0;
 
       gap: 16px;
+
     }
 
 
@@ -300,7 +343,8 @@
 
       gap: 10px;
 
-      font-family: var(--font);
+      font-family:
+        var(--font-site);
 
       font-weight: 400;
 
@@ -312,7 +356,9 @@
 
       white-space: nowrap;
 
-      color: var(--blue);
+      color:
+        var(--blue);
+
     }
 
 
@@ -321,6 +367,7 @@
       display: flex;
 
       gap: 4px;
+
     }
 
 
@@ -332,7 +379,9 @@
 
       border-radius: 50%;
 
-      background: var(--blue);
+      background:
+        var(--blue);
+
 
       box-shadow:
         0 0 6px
@@ -342,21 +391,26 @@
           transparent
         );
 
+
       animation:
-        flicker 2.6s infinite
+        flicker 2.6s
+        infinite
         ease-in-out;
+
     }
 
 
     .bulb:nth-child(2) {
 
       animation-delay: .3s;
+
     }
 
 
     .bulb:nth-child(3) {
 
       animation-delay: .6s;
+
     }
 
 
@@ -366,21 +420,28 @@
       100% {
 
         opacity: 1;
+
       }
 
       50% {
 
         opacity: .35;
+
       }
+
     }
 
 
-    @media (prefers-reduced-motion: reduce) {
+    @media (
+      prefers-reduced-motion: reduce
+    ) {
 
       .bulb {
 
         animation: none;
+
       }
+
     }
 
 
@@ -401,7 +462,8 @@
         var(--surface-2);
 
       border:
-        1px solid var(--line);
+        1px solid
+        var(--line);
 
       border-radius: 999px;
 
@@ -413,6 +475,7 @@
       align-items: center;
 
       gap: 10px;
+
     }
 
 
@@ -420,11 +483,13 @@
 
       flex-shrink: 0;
 
-      color: var(--muted);
+      color:
+        var(--muted);
 
       width: 17px;
 
       height: 17px;
+
     }
 
 
@@ -436,29 +501,34 @@
 
       border: none;
 
-      color: var(--text);
+      color:
+        var(--text);
 
-      font-family: var(--font);
+      font-family:
+        var(--font-site);
 
-      font-size: .82rem;
+      font-size: .92rem;
 
-      padding: 2px 0;
+      padding:
+        2px 0;
 
       min-width: 0;
+
     }
 
 
     .header-search input::placeholder {
 
-      color: var(--muted);
+      color:
+        var(--muted);
 
-      opacity: 1;
     }
 
 
     .header-search input:focus {
 
       outline: none;
+
     }
 
 
@@ -466,12 +536,13 @@
 
       border-color:
         var(--blue);
+
     }
 
 
 
     /* =========================================================
-       AÇÕES DO HEADER
+       AÇÕES HEADER
     ========================================================= */
 
     .header-actions {
@@ -483,22 +554,30 @@
       gap: 14px;
 
       flex-shrink: 0;
+
     }
 
 
     .nav-count {
 
+      font-family:
+        var(--font-site);
+
       font-size: 13px;
 
-      color: var(--muted);
+      color:
+        var(--muted);
 
       white-space: nowrap;
+
     }
 
 
     .nav-count strong {
 
-      color: var(--blue);
+      color:
+        var(--blue);
+
     }
 
 
@@ -521,9 +600,14 @@
         var(--surface-2);
 
       border:
-        1px solid var(--line);
+        1px solid
+        var(--line);
 
-      color: var(--text);
+      color:
+        var(--text);
+
+      font-family:
+        var(--font-site);
 
       font-size: 12px;
 
@@ -537,6 +621,7 @@
       transition:
         border-color .15s ease,
         background .15s ease;
+
     }
 
 
@@ -544,6 +629,7 @@
 
       border-color:
         var(--line-strong);
+
     }
 
 
@@ -552,6 +638,7 @@
       width: 14px;
 
       height: 14px;
+
     }
 
 
@@ -563,11 +650,12 @@
     .hero {
 
       padding:
-        50px 0 32px;
+        48px 0 32px;
 
       text-align: center;
 
       position: relative;
+
     }
 
 
@@ -584,25 +672,33 @@
 
       justify-content: center;
 
-      gap: 42px;
+      gap: 22px;
 
       margin-bottom: 22px;
 
       padding:
         0 16px;
+
     }
 
 
 
     /* =========================================================
-       PEIXINHO
+       PEIXE
     ========================================================= */
 
     .mascot-video {
 
-      width: 180px;
+      /*
+        PEIXE GRANDE
 
-      height: 180px;
+        Ele fica propositalmente maior
+        que o título.
+      */
+
+      width: 190px;
+
+      height: 190px;
 
       object-fit: contain;
 
@@ -611,60 +707,75 @@
       flex-shrink: 0;
 
       pointer-events: none;
+
     }
 
+
+    /*
+      Somente um peixe aparece
+      dependendo do tema.
+    */
 
     .fish-dark {
 
       display: none;
+
     }
 
 
     .fish-light {
 
       display: block;
+
     }
 
 
-    html[data-theme="dark"] .fish-dark {
+    html[data-theme="dark"]
+    .fish-dark {
 
       display: block;
+
     }
 
 
-    html[data-theme="dark"] .fish-light {
+    html[data-theme="dark"]
+    .fish-light {
 
       display: none;
+
     }
 
 
 
     /* =========================================================
-       TÍTULO PRINCIPAL
+       TÍTULO
     ========================================================= */
 
     .hero h1 {
 
-      font-family: var(--font);
+      font-family:
+        var(--font-site);
 
       font-weight: 400;
 
       font-size:
         clamp(
-          3.4rem,
-          7vw,
-          5.8rem
+          3rem,
+          6.5vw,
+          5.3rem
         );
 
       line-height: 1;
 
       margin: 0;
 
-      letter-spacing: -.8px;
+      letter-spacing: -.5px;
 
-      color: var(--blue);
+      color:
+        var(--blue);
 
       text-align: center;
+
     }
 
 
@@ -680,7 +791,8 @@
       margin:
         0 auto 6px;
 
-      color: var(--text);
+      color:
+        var(--text);
 
       font-size:
         clamp(
@@ -693,28 +805,35 @@
         0 16px;
 
       text-align: center;
+
     }
 
 
     .hero p.lede-main .accent {
 
-      color: var(--blue);
+      color:
+        var(--blue);
+
     }
 
 
 
     /* =========================================================
        DESCRIÇÃO
+
+       A quebra de linha é feita exatamente
+       depois do hífen.
     ========================================================= */
 
     .hero p.lede {
 
-      max-width: 560px;
+      max-width: 650px;
 
       margin:
-        10px auto 0;
+        18px auto 0;
 
-      color: var(--muted);
+      color:
+        var(--muted);
 
       font-size: 1rem;
 
@@ -722,6 +841,14 @@
         0 16px;
 
       text-align: center;
+
+    }
+
+
+    .lede-break {
+
+      display: block;
+
     }
 
 
@@ -742,10 +869,14 @@
 
       padding:
         28px 12px 8px;
+
     }
 
 
     .chip {
+
+      font-family:
+        var(--font-site);
 
       font-size: 14px;
 
@@ -753,9 +884,11 @@
         var(--surface);
 
       border:
-        1px solid var(--line);
+        1px solid
+        var(--line);
 
-      color: var(--muted);
+      color:
+        var(--muted);
 
       padding:
         10px 20px;
@@ -772,6 +905,7 @@
 
       box-shadow:
         var(--shadow);
+
     }
 
 
@@ -780,7 +914,9 @@
       border-color:
         var(--blue);
 
-      color: var(--text);
+      color:
+        var(--text);
+
     }
 
 
@@ -793,6 +929,7 @@
         var(--blue);
 
       color: #fff;
+
     }
 
 
@@ -805,29 +942,36 @@
 
       padding:
         20px 0 80px;
+
     }
 
 
     .count-line {
 
+      font-family:
+        var(--font-site);
+
       font-size: 13px;
 
-      color: var(--muted);
+      color:
+        var(--muted);
 
       padding:
         14px 0 24px;
 
       border-bottom:
-        1px solid var(--line);
+        1px solid
+        var(--line);
 
       margin-bottom: 28px;
+
     }
 
 
 
     /* =========================================================
        GRID
-       6 JOGOS POR PÁGINA
+
        2 JOGOS POR FILEIRA
     ========================================================= */
 
@@ -839,6 +983,7 @@
         repeat(2, minmax(0, 1fr));
 
       gap: 26px;
+
     }
 
 
@@ -853,7 +998,8 @@
         var(--surface);
 
       border:
-        1px solid var(--line);
+        1px solid
+        var(--line);
 
       border-radius:
         var(--radius);
@@ -871,6 +1017,7 @@
         border-color .15s ease,
         transform .15s ease,
         box-shadow .15s ease;
+
     }
 
 
@@ -884,12 +1031,13 @@
 
       box-shadow:
         var(--shadow-hover);
+
     }
 
 
 
     /* =========================================================
-       IMAGEM DO JOGO
+       CAPA
     ========================================================= */
 
     .card-cover {
@@ -911,6 +1059,7 @@
 
       background:
         var(--surface-3);
+
     }
 
 
@@ -921,6 +1070,7 @@
       height: 46px;
 
       opacity: .9;
+
     }
 
 
@@ -933,6 +1083,7 @@
       object-fit: cover;
 
       display: block;
+
     }
 
 
@@ -950,7 +1101,12 @@
 
       gap: 5px;
 
+      font-family:
+        var(--font-site);
+
       font-size: 11px;
+
+      letter-spacing: 1px;
 
       color: #fff;
 
@@ -964,6 +1120,7 @@
         5px 10px;
 
       border-radius: 999px;
+
     }
 
 
@@ -974,12 +1131,13 @@
       height: 11px;
 
       opacity: 1;
+
     }
 
 
 
     /* =========================================================
-       CORPO DO CARD
+       CORPO CARD
     ========================================================= */
 
     .card-body {
@@ -994,35 +1152,39 @@
       gap: 10px;
 
       flex: 1;
+
     }
 
 
     .card-body h3 {
 
-      font-family: var(--font);
+      font-family:
+        var(--font-site);
 
       font-weight: 400;
 
-      font-size: 1.2rem;
+      font-size: 1.25rem;
 
       margin: 0;
 
       letter-spacing: -.2px;
 
-      color: var(--text);
+      color:
+        var(--text);
+
     }
 
 
     /*
-      No modo escuro os títulos ficam
-      explicitamente brancos para
-      garantir contraste.
+      GARANTE QUE NO ESCURO
+      O TÍTULO FIQUE BRANCO.
     */
 
     html[data-theme="dark"]
     .card-body h3 {
 
       color: #ffffff;
+
     }
 
 
@@ -1030,29 +1192,34 @@
 
       margin: 0;
 
-      color: var(--muted);
+      color:
+        var(--muted);
 
       font-size: .93rem;
 
       flex: 1;
+
     }
 
 
     .card-actions {
 
       margin-top: 4px;
+
     }
 
 
     .btn-game {
 
-      font-family: var(--font);
+      font-family:
+        var(--font-site);
 
       font-size: 14px;
 
       text-decoration: none;
 
-      color: var(--blue);
+      color:
+        var(--blue);
 
       display: inline-flex;
 
@@ -1063,6 +1230,7 @@
       transition:
         gap .15s ease,
         color .15s ease;
+
     }
 
 
@@ -1072,6 +1240,7 @@
 
       color:
         var(--blue-dark);
+
     }
 
 
@@ -1093,6 +1262,7 @@
       margin-top: 42px;
 
       flex-wrap: wrap;
+
     }
 
 
@@ -1108,13 +1278,17 @@
       border-radius: 10px;
 
       border:
-        1px solid var(--line);
+        1px solid
+        var(--line);
 
       background:
         var(--surface);
 
       color:
         var(--muted);
+
+      font-family:
+        var(--font-site);
 
       font-size: 13px;
 
@@ -1125,6 +1299,7 @@
         border-color .15s ease,
         color .15s ease,
         transform .15s ease;
+
     }
 
 
@@ -1138,6 +1313,7 @@
 
       transform:
         translateY(-1px);
+
     }
 
 
@@ -1150,6 +1326,7 @@
         var(--blue);
 
       color: #fff;
+
     }
 
 
@@ -1158,6 +1335,7 @@
       opacity: .4;
 
       cursor: not-allowed;
+
     }
 
 
@@ -1173,9 +1351,14 @@
       padding:
         60px 20px;
 
-      color: var(--muted);
+      color:
+        var(--muted);
+
+      font-family:
+        var(--font-site);
 
       font-size: 14px;
+
     }
 
 
@@ -1199,6 +1382,7 @@
         48px 0 0;
 
       margin-top: 40px;
+
     }
 
 
@@ -1210,16 +1394,17 @@
 
       gap: 40px;
 
-      justify-content:
-        space-between;
+      justify-content: space-between;
 
       padding-bottom: 32px;
+
     }
 
 
     .footer-brand {
 
       max-width: 320px;
+
     }
 
 
@@ -1228,12 +1413,14 @@
       color: #fff;
 
       margin-bottom: 10px;
+
     }
 
 
     .footer-brand .bulb {
 
       background: #fff;
+
     }
 
 
@@ -1245,15 +1432,20 @@
         rgba(255,255,255,.85);
 
       font-size: 14px;
+
     }
 
 
     .footer-col h4 {
 
+      font-family:
+        var(--font-site);
+
       font-size: 15px;
 
       margin:
         0 0 14px;
+
     }
 
 
@@ -1270,6 +1462,7 @@
       flex-direction: column;
 
       gap: 10px;
+
     }
 
 
@@ -1281,6 +1474,7 @@
         rgba(255,255,255,.85);
 
       font-size: 14px;
+
     }
 
 
@@ -1289,6 +1483,7 @@
       color: #fff;
 
       text-decoration: underline;
+
     }
 
 
@@ -1309,8 +1504,8 @@
 
       align-items: center;
 
-      justify-content:
-        space-between;
+      justify-content: space-between;
+
     }
 
 
@@ -1322,6 +1517,7 @@
         rgba(255,255,255,.75);
 
       font-size: 13px;
+
     }
 
 
@@ -1338,26 +1534,23 @@
           repeat(2, minmax(0, 1fr));
 
         gap: 20px;
+
       }
 
 
       .card-cover {
 
         height: 180px;
+
       }
 
 
       .mascot-video {
 
-        width: 150px;
+        width: 155px;
 
-        height: 150px;
-      }
+        height: 155px;
 
-
-      .brand-lockup {
-
-        gap: 32px;
       }
 
 
@@ -1365,11 +1558,13 @@
 
         font-size:
           clamp(
-            3rem,
-            8vw,
-            4.8rem
+            2.8rem,
+            7vw,
+            4.5rem
           );
+
       }
+
     }
 
 
@@ -1392,6 +1587,7 @@
 
         padding:
           12px 18px;
+
       }
 
 
@@ -1402,6 +1598,7 @@
         font-size: 18px;
 
         gap: 8px;
+
       }
 
 
@@ -1412,6 +1609,7 @@
         margin-right: 4px;
 
         gap: 0;
+
       }
 
 
@@ -1421,18 +1619,21 @@
 
         padding:
           8px 12px;
+
       }
 
 
       .header-search {
 
         display: none;
+
       }
 
 
       .nav-count {
 
         display: none;
+
       }
 
 
@@ -1442,26 +1643,29 @@
       .hero {
 
         padding:
-          40px 8px 24px;
+          34px 8px 24px;
+
       }
 
 
       .brand-lockup {
 
-        gap: 22px;
+        gap: 14px;
 
         padding:
           0 10px;
 
         margin-bottom: 22px;
+
       }
 
 
       .mascot-video {
 
-        width: 105px;
+        width: 115px;
 
-        height: 105px;
+        height: 115px;
+
       }
 
 
@@ -1471,8 +1675,11 @@
           clamp(
             2.4rem,
             10vw,
-            3.5rem
+            3.8rem
           );
+
+        margin: 0;
+
       }
 
 
@@ -1480,6 +1687,7 @@
 
         padding:
           0 12px;
+
       }
 
 
@@ -1487,6 +1695,7 @@
 
         padding:
           0 12px;
+
       }
 
 
@@ -1497,6 +1706,7 @@
 
         padding:
           24px 8px 8px;
+
       }
 
 
@@ -1504,6 +1714,7 @@
 
         padding:
           9px 17px;
+
       }
 
 
@@ -1515,23 +1726,52 @@
         padding-left: 18px;
 
         padding-right: 18px;
+
       }
 
 
 
-      /* GRID */
+      /*
+        Mantemos 2 jogos por fileira
+        até 720px.
+      */
 
       .grid {
 
-        grid-template-columns: 1fr;
+        grid-template-columns:
+          repeat(2, minmax(0, 1fr));
 
-        gap: 20px;
+        gap: 16px;
+
       }
 
 
       .card-cover {
 
-        height: 190px;
+        height: 150px;
+
+      }
+
+
+      .card-body {
+
+        padding:
+          16px;
+
+      }
+
+
+      .card-body h3 {
+
+        font-size: 1.05rem;
+
+      }
+
+
+      .card-body p {
+
+        font-size: .85rem;
+
       }
 
 
@@ -1543,6 +1783,7 @@
         margin-top: 32px;
 
         gap: 6px;
+
       }
 
 
@@ -1556,38 +1797,44 @@
           0 9px;
 
         font-size: 12px;
+
       }
+
     }
 
 
 
     /* =========================================================
-       CELULARES PEQUENOS
+       CELULAR PEQUENO
     ========================================================= */
 
     @media (max-width: 560px) {
 
+
       .hero {
 
         padding:
-          34px 6px 22px;
+          30px 6px 22px;
+
       }
 
 
       .brand-lockup {
 
-        gap: 15px;
+        gap: 12px;
 
         padding:
           0 8px;
+
       }
 
 
       .mascot-video {
 
-        width: 88px;
+        width: 90px;
 
-        height: 88px;
+        height: 90px;
+
       }
 
 
@@ -1595,30 +1842,31 @@
 
         font-size:
           clamp(
-            2.1rem,
+            2rem,
             9.5vw,
             3rem
           );
+
       }
 
 
       .hero p.lede-main {
 
-        font-size:
-          1.1rem;
+        font-size: 1.1rem;
 
         padding:
           0 10px;
+
       }
 
 
       .hero p.lede {
 
-        font-size:
-          .95rem;
+        font-size: .95rem;
 
         padding:
           0 10px;
+
       }
 
 
@@ -1628,6 +1876,7 @@
 
         padding:
           20px 6px 8px;
+
       }
 
 
@@ -1637,25 +1886,95 @@
 
         padding:
           8px 14px;
+
       }
 
 
       .count-line {
 
         margin-bottom: 22px;
+
+      }
+
+
+      /*
+        Continua com 2 por fileira,
+        mas deixa os cards menores.
+      */
+
+      .grid {
+
+        grid-template-columns:
+          repeat(2, minmax(0, 1fr));
+
+        gap: 12px;
+
+      }
+
+
+      .card {
+
+        border-radius: 14px;
+
+      }
+
+
+      .card-cover {
+
+        height: 115px;
+
+      }
+
+
+      .ticket-no {
+
+        top: 7px;
+
+        left: 7px;
+
+        font-size: 9px;
+
+        padding:
+          4px 7px;
+
       }
 
 
       .card-body {
 
         padding:
-          18px 18px 20px;
+          13px;
+
+        gap: 8px;
+
+      }
+
+
+      .card-body h3 {
+
+        font-size: .95rem;
+
+      }
+
+
+      .card-body p {
+
+        font-size: .78rem;
+
+      }
+
+
+      .btn-game {
+
+        font-size: 12px;
+
       }
 
 
       .pagination-container {
 
         gap: 5px;
+
       }
 
 
@@ -1664,6 +1983,7 @@
         min-width: 36px;
 
         height: 36px;
+
       }
 
 
@@ -1672,7 +1992,9 @@
         flex-direction: column;
 
         align-items: flex-start;
+
       }
+
     }
 
 
@@ -1835,6 +2157,8 @@
     >
 
 
+      <!-- PEIXE + TÍTULO -->
+
       <div class="brand-lockup">
 
 
@@ -1856,6 +2180,7 @@
         </video>
 
 
+
         <!-- PEIXE MODO CLARO -->
 
         <video
@@ -1874,6 +2199,9 @@
         </video>
 
 
+
+        <!-- TÍTULO -->
+
         <h1>
           Tech Store
         </h1>
@@ -1881,6 +2209,8 @@
       </div>
 
 
+
+      <!-- FRASE PRINCIPAL -->
 
       <p class="lede-main">
 
@@ -1896,16 +2226,15 @@
 
 
 
-      <!--
-        QUEBRA DE LINHA SOLICITADA
-      -->
+      <!-- FRASE SECUNDÁRIA -->
 
       <p class="lede">
 
-        Jogos gratuitos e de código aberto —
-        <br>
+        Jogos gratuitos e de código aberto -
 
-        escolha o gênero e jogue.
+        <span class="lede-break">
+          escolha o gênero e jogue.
+        </span>
 
       </p>
 
@@ -2041,33 +2370,24 @@
             Explorar
           </h4>
 
-
           <ul>
 
             <li>
-
               <a href="#top">
                 Início
               </a>
-
             </li>
 
-
             <li>
-
               <a href="#filters">
                 Gêneros
               </a>
-
             </li>
 
-
             <li>
-
               <a href="#grid">
                 Todos os jogos
               </a>
-
             </li>
 
           </ul>
@@ -2079,19 +2399,16 @@
 
 
 
+      <!-- RODAPÉ INFERIOR -->
+
       <div class="footer-bottom">
 
         <p>
-
           © 2026 Tech Store catálogo independente.
-
         </p>
 
-
         <p>
-
           Links levam aos sites oficiais de cada projeto.
-
         </p>
 
       </div>
@@ -2182,6 +2499,7 @@
 
     function applyTheme(theme) {
 
+
       root.setAttribute(
         'data-theme',
         theme
@@ -2203,6 +2521,7 @@
 
         themeLabel.textContent =
           'Escuro';
+
       }
 
 
@@ -2210,6 +2529,7 @@
         'techstore-theme',
         theme
       );
+
     }
 
 
@@ -2278,9 +2598,13 @@
 
           <path d="M4 4v16"/>
 
-          <path d="M4 4h6l1 2h6l1 4h-7l-1-2H4"/>
+          <path
+            d="M4 4h6l1 2h6l1 4h-7l-1-2H4"
+          />
 
-          <path d="M4 12h6l1 2h6"/>
+          <path
+            d="M4 12h6l1 2h6"
+          />
 
         </svg>
 
@@ -2300,7 +2624,9 @@
 
           <path d="M4 20h16"/>
 
-          <path d="M9 20V10l3-6 3 6v10"/>
+          <path
+            d="M9 20V10l3-6 3 6v10"
+          />
 
           <circle
             cx="12"
@@ -2634,7 +2960,6 @@
       ===================================================== */
 
       {
-
         id: 1,
 
         nome:
@@ -2659,7 +2984,6 @@
 
 
       {
-
         id: 2,
 
         nome:
@@ -2684,7 +3008,6 @@
 
 
       {
-
         id: 3,
 
         nome:
@@ -2708,12 +3031,12 @@
       },
 
 
+
       /* =====================================================
          DIEGO
       ===================================================== */
 
       {
-
         id: 4,
 
         nome:
@@ -2738,7 +3061,6 @@
 
 
       {
-
         id: 5,
 
         nome:
@@ -2763,7 +3085,6 @@
 
 
       {
-
         id: 6,
 
         nome:
@@ -2788,7 +3109,6 @@
 
 
       {
-
         id: 7,
 
         nome:
@@ -2812,12 +3132,12 @@
       },
 
 
+
       /* =====================================================
          DIOGO
       ===================================================== */
 
       {
-
         id: 8,
 
         nome:
@@ -2841,12 +3161,12 @@
       },
 
 
+
       /* =====================================================
          FRANMARYS
       ===================================================== */
 
       {
-
         id: 9,
 
         nome:
@@ -2870,12 +3190,12 @@
       },
 
 
+
       /* =====================================================
          GIULIA
       ===================================================== */
 
       {
-
         id: 10,
 
         nome:
@@ -2900,7 +3220,6 @@
 
 
       {
-
         id: 11,
 
         nome:
@@ -2916,7 +3235,7 @@
           'img/giulia2.png',
 
         desc:
-          'Um jogo de piano interativo para tocar notas e experimentar diferentes melodias diretamente no navegador.',
+          'Um jogo de aventura e desafios com uma jornada cheia de obstáculos e descobertas.',
 
         link:
           'https://holistic-pop-bubble-quest.base44.app'
@@ -2924,12 +3243,12 @@
       },
 
 
+
       /* =====================================================
          JOÃO
       ===================================================== */
 
       {
-
         id: 12,
 
         nome:
@@ -2954,7 +3273,6 @@
 
 
       {
-
         id: 13,
 
         nome:
@@ -2978,12 +3296,12 @@
       },
 
 
+
       /* =====================================================
          LEANDRO
       ===================================================== */
 
       {
-
         id: 14,
 
         nome:
@@ -3008,7 +3326,6 @@
 
 
       {
-
         id: 15,
 
         nome:
@@ -3032,12 +3349,12 @@
       },
 
 
+
       /* =====================================================
          MIGUEL
       ===================================================== */
 
       {
-
         id: 16,
 
         nome:
@@ -3062,7 +3379,6 @@
 
 
       {
-
         id: 17,
 
         nome:
@@ -3086,12 +3402,12 @@
       },
 
 
+
       /* =====================================================
          NAARA
       ===================================================== */
 
       {
-
         id: 18,
 
         nome:
@@ -3116,7 +3432,6 @@
 
 
       {
-
         id: 19,
 
         nome:
@@ -3140,12 +3455,12 @@
       },
 
 
+
       /* =====================================================
          NICOLAS
       ===================================================== */
 
       {
-
         id: 20,
 
         nome:
@@ -3170,7 +3485,6 @@
 
 
       {
-
         id: 21,
 
         nome:
@@ -3194,12 +3508,12 @@
       },
 
 
+
       /* =====================================================
          REBECA
       ===================================================== */
 
       {
-
         id: 22,
 
         nome:
@@ -3224,7 +3538,6 @@
 
 
       {
-
         id: 23,
 
         nome:
@@ -3248,12 +3561,12 @@
       },
 
 
+
       /* =====================================================
-         JOGOS OPEN SOURCE
+         JOGOS DE CÓDIGO ABERTO
       ===================================================== */
 
       {
-
         id: 24,
 
         nome:
@@ -3278,7 +3591,6 @@
 
 
       {
-
         id: 25,
 
         nome:
@@ -3303,7 +3615,6 @@
 
 
       {
-
         id: 26,
 
         nome:
@@ -3313,7 +3624,7 @@
           'estrategia',
 
         plataformas:
-          'Win / Mac / Linux',
+          'Win / Mac / Linux / Android',
 
         imagem:
           'img/battle-for-wesnoth.png',
@@ -3328,7 +3639,6 @@
 
 
       {
-
         id: 27,
 
         nome:
@@ -3353,7 +3663,6 @@
 
 
       {
-
         id: 28,
 
         nome:
@@ -3378,7 +3687,6 @@
 
 
       {
-
         id: 29,
 
         nome:
@@ -3403,7 +3711,6 @@
 
 
       {
-
         id: 30,
 
         nome:
@@ -3428,7 +3735,6 @@
 
 
       {
-
         id: 31,
 
         nome:
@@ -3453,7 +3759,6 @@
 
 
       {
-
         id: 32,
 
         nome:
@@ -3478,7 +3783,6 @@
 
 
       {
-
         id: 33,
 
         nome:
@@ -3503,7 +3807,6 @@
 
 
       {
-
         id: 34,
 
         nome:
@@ -3528,7 +3831,6 @@
 
 
       {
-
         id: 35,
 
         nome:
@@ -3565,12 +3867,10 @@
     let currentPage = 1;
 
 
-    let activeGenre =
-      'todos';
+    let activeGenre = 'todos';
 
 
-    let searchTerm =
-      '';
+    let searchTerm = '';
 
 
 
@@ -3654,6 +3954,7 @@
     genresPresent.forEach(
       genre => {
 
+
         const chip =
           document.createElement(
             'button'
@@ -3670,7 +3971,6 @@
 
         chip.setAttribute(
           'aria-pressed',
-
           genre === activeGenre
             ? 'true'
             : 'false'
@@ -3686,6 +3986,7 @@
         chip.addEventListener(
           'click',
           () => {
+
 
             activeGenre =
               genre;
@@ -3737,6 +4038,7 @@
       'input',
       event => {
 
+
         searchTerm =
           event.target.value
             .trim()
@@ -3755,10 +4057,11 @@
 
 
     /* =========================================================
-       TEMPLATE DOS CARDS
+       TEMPLATE DO CARD
     ========================================================= */
 
     function cardTemplate(game) {
+
 
       const [c1, c2] =
         genreColors[
@@ -3771,41 +4074,15 @@
           .padStart(3, '0');
 
 
-      const coverContent =
-        game.imagem
+      const coverContent = `
 
-          ? `
+        <img
+          src="${game.imagem}"
+          alt="Capa de ${game.nome}"
+          loading="lazy"
+        >
 
-            <img
-              src="${game.imagem}"
-              alt="Capa de ${game.nome}"
-              loading="lazy"
-            >
-
-          `
-
-          : icons[
-              game.genero
-            ];
-
-
-      const coverStyle =
-        game.imagem
-
-          ? ''
-
-          : `
-
-            style="
-              background:
-                linear-gradient(
-                  135deg,
-                  ${c1},
-                  ${c2}
-                );
-            "
-
-          `;
+      `;
 
 
       return `
@@ -3815,8 +4092,16 @@
 
           <div
             class="card-cover"
-            ${coverStyle}
+            style="
+              background:
+                linear-gradient(
+                  135deg,
+                  ${c1},
+                  ${c2}
+                );
+            "
           >
+
 
             ${coverContent}
 
@@ -3828,6 +4113,7 @@
               Nº ${ticketNo}
 
             </span>
+
 
           </div>
 
@@ -3867,6 +4153,7 @@
 
             </div>
 
+
           </div>
 
 
@@ -3884,8 +4171,10 @@
 
     function getFilteredGames() {
 
+
       return games.filter(
         game => {
+
 
           const matchGenre =
             activeGenre === 'todos' ||
@@ -3893,7 +4182,6 @@
 
 
           const matchSearch =
-
             !searchTerm ||
 
             game.nome
@@ -3927,6 +4215,7 @@
       totalGames
     ) {
 
+
       pagination.innerHTML =
         '';
 
@@ -3938,9 +4227,12 @@
         );
 
 
-      if (totalPages <= 1) {
+      if (
+        totalPages <= 1
+      ) {
 
         return;
+
       }
 
 
@@ -3975,11 +4267,14 @@
         'click',
         () => {
 
+
           if (
             currentPage > 1
           ) {
 
+
             currentPage--;
+
 
             render();
 
@@ -4011,6 +4306,7 @@
         page <= totalPages;
         page++
       ) {
+
 
         const pageButton =
           document.createElement(
@@ -4046,6 +4342,7 @@
         pageButton.addEventListener(
           'click',
           () => {
+
 
             currentPage =
               page;
@@ -4104,10 +4401,12 @@
         'click',
         () => {
 
+
           if (
             currentPage <
             totalPages
           ) {
+
 
             currentPage++;
 
@@ -4143,6 +4442,7 @@
 
     function render() {
 
+
       const filtered =
         getFilteredGames();
 
@@ -4161,6 +4461,7 @@
 
         currentPage =
           totalPages;
+
       }
 
 
@@ -4175,16 +4476,21 @@
         filtered.length === 0
       ) {
 
+
         grid.innerHTML =
           '';
+
 
         pagination.innerHTML =
           '';
 
+
         emptyState.hidden =
           false;
 
+
         return;
+
       }
 
 
