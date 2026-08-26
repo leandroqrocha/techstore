@@ -617,15 +617,7 @@
     */
 
     .fish-dark {
-
       display: none;
-
-      /*
-        O multiply faz o fundo claro do vídeo
-        se integrar ao fundo escuro da página.
-      */
-
-      mix-blend-mode: multiply;
     }
 
 
@@ -634,13 +626,12 @@
       display: block;
 
       /*
-        Integra o fundo claro do vídeo ao fundo
-        do site e mantém o peixe mais visível.
+        Sem blend e sem filter: a cor do peixe
+        permanece intacta. O fundo do elemento
+        usa a mesma cor do site.
       */
 
-      mix-blend-mode: multiply;
       background-color: var(--bg);
-      filter: brightness(1.35) contrast(1.08);
     }
 
 
