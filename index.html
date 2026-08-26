@@ -25,13 +25,13 @@
   <link
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
     rel="stylesheet"
-    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+    integrity="sha384-sRIlkxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
     crossorigin="anonymous"
   >
 
 
   <!-- =======================================================
-       FONTES
+       FONTE RIGHTEOUS
   ======================================================== -->
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -42,19 +42,11 @@
     crossorigin
   >
 
-  <!--
-    Righteous será utilizada em TODO o site.
-  -->
-
   <link
     href="https://fonts.googleapis.com/css2?family=Righteous&display=swap"
     rel="stylesheet"
   >
 
-
-  <!-- =======================================================
-       FAVICON
-  ======================================================== -->
 
   <link
     rel="icon"
@@ -63,6 +55,7 @@
 
 
   <style>
+
 
     /* =========================================================
        VARIÁVEIS
@@ -108,34 +101,15 @@
 
 
       --shadow:
-        0 4px 18px
-        rgba(20,30,60,0.06);
-
+        0 4px 18px rgba(20,30,60,0.06);
 
       --shadow-hover:
-        0 10px 28px
-        rgba(20,30,60,0.10);
+        0 10px 28px rgba(20,30,60,0.10);
 
 
-      /*
-        TODA A PÁGINA USA RIGHTEOUS.
-      */
-
-      --font-main:
+      --font:
         'Righteous',
         cursive;
-
-
-      /*
-        Tamanho do peixe (mascote).
-        Usado também na grid do brand-lockup
-        para manter o título centralizado
-        de verdade, com uma coluna "espelho"
-        do lado direito do mesmo tamanho
-        do peixe.
-      */
-
-      --fish-size: 230px;
 
 
       color-scheme: light;
@@ -152,7 +126,6 @@
       --bg: #0a0a0f;
 
       --bg-soft: #0a0a0f;
-
 
       --surface: #131318;
 
@@ -182,13 +155,10 @@
 
 
       --shadow:
-        0 4px 18px
-        rgba(0,0,0,0.35);
-
+        0 4px 18px rgba(0,0,0,0.35);
 
       --shadow-hover:
-        0 10px 30px
-        rgba(0,0,0,0.5);
+        0 10px 30px rgba(0,0,0,0.5);
 
 
       color-scheme: dark;
@@ -204,13 +174,13 @@
 
       box-sizing: border-box;
 
+      font-family: var(--font);
     }
 
 
     html {
 
       scroll-behavior: smooth;
-
     }
 
 
@@ -218,53 +188,30 @@
 
       margin: 0;
 
-      background:
-        var(--bg);
+      background: var(--bg);
 
-      color:
-        var(--text);
+      color: var(--text);
 
-      /*
-        RIGHTEOUS EM TODO O SITE.
-      */
+      line-height: 1.55;
 
-      font-family:
-        var(--font-main);
-
-      line-height:
-        1.55;
-
-      -webkit-font-smoothing:
-        antialiased;
+      -webkit-font-smoothing: antialiased;
 
       transition:
         background .2s ease,
         color .2s ease;
-
-    }
-
-
-    /*
-      Garante que elementos de formulário
-      também utilizem Righteous.
-    */
-
-    button,
-    input,
-    textarea,
-    select {
-
-      font-family:
-        var(--font-main);
-
     }
 
 
     a {
 
-      color:
-        inherit;
+      color: inherit;
+    }
 
+
+    button,
+    input {
+
+      font-family: var(--font);
     }
 
 
@@ -273,12 +220,9 @@
       outline:
         3px solid var(--blue);
 
-      outline-offset:
-        3px;
+      outline-offset: 3px;
 
-      border-radius:
-        4px;
-
+      border-radius: 4px;
     }
 
 
@@ -289,15 +233,12 @@
 
     .wrap {
 
-      max-width:
-        1180px;
+      max-width: 1180px;
 
-      margin:
-        0 auto;
+      margin: 0 auto;
 
       padding:
         0 24px;
-
     }
 
 
@@ -308,14 +249,11 @@
 
     header.marquee {
 
-      position:
-        sticky;
+      position: sticky;
 
-      top:
-        0;
+      top: 0;
 
-      z-index:
-        20;
+      z-index: 20;
 
       background:
         color-mix(
@@ -324,101 +262,77 @@
           transparent
         );
 
-      backdrop-filter:
-        blur(10px);
+      backdrop-filter: blur(10px);
 
       border-bottom:
         1px solid var(--line);
-
     }
 
 
     .marquee-bar {
 
-      display:
-        grid;
+      display: grid;
 
       grid-template-columns:
         auto
         1fr
         auto;
 
-      align-items:
-        center;
+      align-items: center;
 
       padding:
         14px 0;
 
-      gap:
-        16px;
-
+      gap: 16px;
     }
 
 
 
     /* =========================================================
-       LOGO HEADER
+       LOGO DO HEADER
     ========================================================= */
 
     .brand {
 
-      display:
-        flex;
+      display: flex;
 
-      align-items:
-        center;
+      align-items: center;
 
-      gap:
-        10px;
+      gap: 10px;
 
-      font-family:
-        var(--font-main);
+      font-family: var(--font);
 
-      font-weight:
-        400;
+      font-weight: 400;
 
-      font-size:
-        18px;
+      font-size: 20px;
 
-      letter-spacing:
-        .2px;
+      letter-spacing: .2px;
 
-      text-decoration:
-        none;
+      text-decoration: none;
 
-      white-space:
-        nowrap;
+      white-space: nowrap;
 
-      color:
-        var(--blue);
-
+      color: var(--blue);
     }
 
 
     .bulb-row {
 
-      display:
-        flex;
+      display: flex;
 
-      gap:
-        4px;
-
+      gap: 4px;
     }
 
 
     .bulb {
 
-      width:
-        6px;
+      width: 6px;
 
-      height:
-        6px;
+      height: 6px;
 
-      border-radius:
-        50%;
+      border-radius: 50%;
 
-      background:
-        var(--blue);
+      background: var(--blue);
 
       box-shadow:
         0 0 6px
@@ -431,23 +345,18 @@
       animation:
         flicker 2.6s infinite
         ease-in-out;
-
     }
 
 
     .bulb:nth-child(2) {
 
-      animation-delay:
-        .3s;
-
+      animation-delay: .3s;
     }
 
 
     .bulb:nth-child(3) {
 
-      animation-delay:
-        .6s;
-
+      animation-delay: .6s;
     }
 
 
@@ -456,18 +365,13 @@
       0%,
       100% {
 
-        opacity:
-          1;
-
+        opacity: 1;
       }
 
       50% {
 
-        opacity:
-          .35;
-
+        opacity: .35;
       }
-
     }
 
 
@@ -475,11 +379,8 @@
 
       .bulb {
 
-        animation:
-          none;
-
+        animation: none;
       }
-
     }
 
 
@@ -490,14 +391,11 @@
 
     .header-search {
 
-      max-width:
-        460px;
+      max-width: 460px;
 
-      width:
-        100%;
+      width: 100%;
 
-      justify-self:
-        center;
+      justify-self: center;
 
       background:
         var(--surface-2);
@@ -505,86 +403,62 @@
       border:
         1px solid var(--line);
 
-      border-radius:
-        999px;
+      border-radius: 999px;
 
       padding:
         10px 18px;
 
-      display:
-        flex;
+      display: flex;
 
-      align-items:
-        center;
+      align-items: center;
 
-      gap:
-        10px;
-
+      gap: 10px;
     }
 
 
     .header-search svg {
 
-      flex-shrink:
-        0;
+      flex-shrink: 0;
 
-      color:
-        var(--muted);
+      color: var(--muted);
 
-      width:
-        17px;
+      width: 17px;
 
-      height:
-        17px;
-
+      height: 17px;
     }
 
 
     .header-search input {
 
-      flex:
-        1;
+      flex: 1;
 
-      background:
-        transparent;
+      background: transparent;
 
-      border:
-        none;
+      border: none;
 
-      color:
-        var(--text);
+      color: var(--text);
 
-      font-family:
-        var(--font-main);
+      font-family: var(--font);
 
-      font-size:
-        .88rem;
+      font-size: .82rem;
 
-      padding:
-        2px 0;
+      padding: 2px 0;
 
-      min-width:
-        0;
-
+      min-width: 0;
     }
 
 
     .header-search input::placeholder {
 
-      color:
-        var(--muted);
+      color: var(--muted);
 
-      opacity:
-        1;
-
+      opacity: 1;
     }
 
 
     .header-search input:focus {
 
-      outline:
-        none;
-
+      outline: none;
     }
 
 
@@ -592,7 +466,6 @@
 
       border-color:
         var(--blue);
-
     }
 
 
@@ -603,43 +476,29 @@
 
     .header-actions {
 
-      display:
-        flex;
+      display: flex;
 
-      align-items:
-        center;
+      align-items: center;
 
-      gap:
-        14px;
+      gap: 14px;
 
-      flex-shrink:
-        0;
-
+      flex-shrink: 0;
     }
 
 
     .nav-count {
 
-      font-family:
-        var(--font-main);
+      font-size: 13px;
 
-      font-size:
-        13px;
+      color: var(--muted);
 
-      color:
-        var(--muted);
-
-      white-space:
-        nowrap;
-
+      white-space: nowrap;
     }
 
 
     .nav-count strong {
 
-      color:
-        var(--blue);
-
+      color: var(--blue);
     }
 
 
@@ -650,17 +509,13 @@
 
     .theme-toggle {
 
-      display:
-        inline-flex;
+      display: inline-flex;
 
-      align-items:
-        center;
+      align-items: center;
 
-      justify-content:
-        center;
+      justify-content: center;
 
-      gap:
-        6px;
+      gap: 6px;
 
       background:
         var(--surface-2);
@@ -668,28 +523,20 @@
       border:
         1px solid var(--line);
 
-      color:
-        var(--text);
+      color: var(--text);
 
-      font-family:
-        var(--font-main);
-
-      font-size:
-        12px;
+      font-size: 12px;
 
       padding:
         8px 12px;
 
-      border-radius:
-        999px;
+      border-radius: 999px;
 
-      cursor:
-        pointer;
+      cursor: pointer;
 
       transition:
         border-color .15s ease,
         background .15s ease;
-
     }
 
 
@@ -697,18 +544,14 @@
 
       border-color:
         var(--line-strong);
-
     }
 
 
     .theme-toggle svg {
 
-      width:
-        14px;
+      width: 14px;
 
-      height:
-        14px;
-
+      height: 14px;
     }
 
 
@@ -719,91 +562,34 @@
 
     .hero {
 
-      /*
-        Título/peixe agora ficam bem
-        próximos da barra de pesquisa
-        do header.
-      */
-
       padding:
-        20px 0 28px;
+        50px 0 32px;
 
-      text-align:
-        center;
+      text-align: center;
 
-      position:
-        relative;
-
+      position: relative;
     }
 
 
 
     /* =========================================================
-       PEIXE + TÍTULO
+       TÍTULO + PEIXE
     ========================================================= */
 
     .brand-lockup {
 
-      /*
-        Grid com 3 colunas: peixe | título | espelho.
-        A coluna da direita tem a MESMA largura do
-        peixe (var(--fish-size)), então o título fica
-        realmente centralizado na página, mesmo com
-        o peixe ocupando espaço à esquerda.
-      */
+      display: flex;
 
-      display:
-        grid;
+      align-items: center;
 
-      grid-template-columns:
-        var(--fish-size)
-        1fr
-        var(--fish-size);
+      justify-content: center;
 
-      align-items:
-        center;
+      gap: 42px;
 
-      /*
-        "Um dedo" de distância entre peixe e texto.
-      */
-
-      gap:
-        16px;
-
-      margin:
-        0 auto 18px;
+      margin-bottom: 22px;
 
       padding:
-        0 20px;
-
-      max-width:
-        100%;
-
-    }
-
-
-    .brand-lockup .fish-slot {
-
-      grid-column:
-        1;
-
-      display:
-        flex;
-
-      align-items:
-        center;
-
-      justify-content:
-        flex-end;
-
-    }
-
-
-    .brand-lockup h1 {
-
-      grid-column:
-        2;
-
+        0 16px;
     }
 
 
@@ -814,67 +600,41 @@
 
     .mascot-video {
 
-      /*
-        O peixe agora é maior que o título.
-      */
+      width: 180px;
 
-      width:
-        var(--fish-size);
+      height: 180px;
 
-      height:
-        var(--fish-size);
+      object-fit: contain;
 
-      object-fit:
-        contain;
+      display: block;
 
-      display:
-        block;
+      flex-shrink: 0;
 
-      flex-shrink:
-        0;
-
-      pointer-events:
-        none;
-
+      pointer-events: none;
     }
 
 
-    /*
-      Somente um peixe aparece de acordo
-      com o tema.
-    */
-
     .fish-dark {
 
-      display:
-        none;
-
+      display: none;
     }
 
 
     .fish-light {
 
-      display:
-        block;
-
+      display: block;
     }
 
 
-    html[data-theme="dark"]
-    .fish-dark {
+    html[data-theme="dark"] .fish-dark {
 
-      display:
-        block;
-
+      display: block;
     }
 
 
-    html[data-theme="dark"]
-    .fish-light {
+    html[data-theme="dark"] .fish-light {
 
-      display:
-        none;
-
+      display: none;
     }
 
 
@@ -885,121 +645,83 @@
 
     .hero h1 {
 
-      font-family:
-        var(--font-main);
+      font-family: var(--font);
 
-      font-weight:
-        400;
-
-      /*
-        Tamanho grande, porém menor que o peixe.
-      */
+      font-weight: 400;
 
       font-size:
         clamp(
-          2.6rem,
-          5vw,
-          4.4rem
+          3.4rem,
+          7vw,
+          5.8rem
         );
 
-      line-height:
-        .95;
+      line-height: 1;
 
-      margin:
-        0;
+      margin: 0;
 
-      letter-spacing:
-        0;
+      letter-spacing: -.8px;
 
-      color:
-        var(--blue);
+      color: var(--blue);
 
-      white-space:
-        nowrap;
-
+      text-align: center;
     }
 
 
 
     /* =========================================================
-       FRASE PRINCIPAL
+       TEXTO PRINCIPAL
     ========================================================= */
 
     .hero p.lede-main {
 
-      max-width:
-        700px;
+      max-width: 650px;
 
       margin:
-        0 auto 8px;
+        0 auto 6px;
 
-      color:
-        var(--text);
-
-      font-weight:
-        400;
+      color: var(--text);
 
       font-size:
         clamp(
-          1.1rem,
-          2.2vw,
-          1.4rem
+          1.15rem,
+          2.6vw,
+          1.5rem
         );
 
       padding:
         0 16px;
 
+      text-align: center;
     }
 
 
     .hero p.lede-main .accent {
 
-      color:
-        var(--blue);
-
+      color: var(--blue);
     }
 
 
 
     /* =========================================================
-       FRASE SECUNDÁRIA
+       DESCRIÇÃO
     ========================================================= */
 
     .hero p.lede {
 
-      max-width:
-        700px;
+      max-width: 560px;
 
       margin:
-        12px auto 0;
+        10px auto 0;
 
-      color:
-        var(--muted);
+      color: var(--muted);
 
-      font-size:
-        1rem;
+      font-size: 1rem;
 
       padding:
         0 16px;
 
-      line-height:
-        1.7;
-
-    }
-
-
-    /*
-      A quebra solicitada:
-
-      Jogos gratuitos e de código aberto —
-      escolha o gênero e jogue.
-    */
-
-    .lede-break {
-
-      display:
-        block;
-
+      text-align: center;
     }
 
 
@@ -1010,34 +732,22 @@
 
     .filters {
 
-      display:
-        flex;
+      display: flex;
 
-      flex-wrap:
-        wrap;
+      flex-wrap: wrap;
 
-      gap:
-        10px;
+      gap: 10px;
 
-      justify-content:
-        center;
+      justify-content: center;
 
       padding:
         28px 12px 8px;
-
     }
 
 
     .chip {
 
-      font-family:
-        var(--font-main);
-
-      font-weight:
-        400;
-
-      font-size:
-        14px;
+      font-size: 14px;
 
       background:
         var(--surface);
@@ -1045,17 +755,14 @@
       border:
         1px solid var(--line);
 
-      color:
-        var(--muted);
+      color: var(--muted);
 
       padding:
         10px 20px;
 
-      border-radius:
-        999px;
+      border-radius: 999px;
 
-      cursor:
-        pointer;
+      cursor: pointer;
 
       transition:
         border-color .15s ease,
@@ -1065,7 +772,6 @@
 
       box-shadow:
         var(--shadow);
-
     }
 
 
@@ -1074,9 +780,7 @@
       border-color:
         var(--blue);
 
-      color:
-        var(--text);
-
+      color: var(--text);
     }
 
 
@@ -1088,9 +792,7 @@
       border-color:
         var(--blue);
 
-      color:
-        #fff;
-
+      color: #fff;
     }
 
 
@@ -1103,20 +805,14 @@
 
       padding:
         20px 0 80px;
-
     }
 
 
     .count-line {
 
-      font-family:
-        var(--font-main);
+      font-size: 13px;
 
-      font-size:
-        13px;
-
-      color:
-        var(--muted);
+      color: var(--muted);
 
       padding:
         14px 0 24px;
@@ -1124,35 +820,25 @@
       border-bottom:
         1px solid var(--line);
 
-      margin-bottom:
-        28px;
-
+      margin-bottom: 28px;
     }
 
 
 
     /* =========================================================
        GRID
+       6 JOGOS POR PÁGINA
+       2 JOGOS POR FILEIRA
     ========================================================= */
 
     .grid {
 
-      display:
-        grid;
-
-      /*
-        2 jogos por fileira.
-      */
+      display: grid;
 
       grid-template-columns:
-        repeat(
-          2,
-          minmax(0, 1fr)
-        );
+        repeat(2, minmax(0, 1fr));
 
-      gap:
-        26px;
-
+      gap: 26px;
     }
 
 
@@ -1172,14 +858,11 @@
       border-radius:
         var(--radius);
 
-      overflow:
-        hidden;
+      overflow: hidden;
 
-      display:
-        flex;
+      display: flex;
 
-      flex-direction:
-        column;
+      flex-direction: column;
 
       box-shadow:
         var(--shadow);
@@ -1188,7 +871,6 @@
         border-color .15s ease,
         transform .15s ease,
         box-shadow .15s ease;
-
     }
 
 
@@ -1202,101 +884,75 @@
 
       box-shadow:
         var(--shadow-hover);
-
     }
 
 
+
+    /* =========================================================
+       IMAGEM DO JOGO
+    ========================================================= */
+
     .card-cover {
 
-      height:
-        210px;
+      height: 190px;
 
-      position:
-        relative;
+      position: relative;
 
-      display:
-        flex;
+      display: flex;
 
-      align-items:
-        center;
+      align-items: center;
 
-      justify-content:
-        center;
+      justify-content: center;
 
       color:
         rgba(255,255,255,.92);
 
-      overflow:
-        hidden;
+      overflow: hidden;
 
+      background:
+        var(--surface-3);
     }
 
 
     .card-cover svg {
 
-      width:
-        46px;
+      width: 46px;
 
-      height:
-        46px;
+      height: 46px;
 
-      opacity:
-        .9;
-
+      opacity: .9;
     }
 
 
     .card-cover img {
 
-      width:
-        100%;
+      width: 100%;
 
-      height:
-        100%;
+      height: 100%;
 
-      object-fit:
-        cover;
+      object-fit: cover;
 
-      display:
-        block;
-
+      display: block;
     }
 
 
     .ticket-no {
 
-      position:
-        absolute;
+      position: absolute;
 
-      top:
-        12px;
+      top: 12px;
 
-      left:
-        12px;
+      left: 12px;
 
-      display:
-        inline-flex;
+      display: inline-flex;
 
-      align-items:
-        center;
+      align-items: center;
 
-      gap:
-        5px;
+      gap: 5px;
 
-      font-family:
-        var(--font-main);
+      font-size: 11px;
 
-      font-size:
-        11px;
-
-      font-weight:
-        400;
-
-      letter-spacing:
-        1px;
-
-      color:
-        #fff;
+      color: #fff;
 
       background:
         rgba(10,12,20,.55);
@@ -1307,148 +963,115 @@
       padding:
         5px 10px;
 
-      border-radius:
-        999px;
-
+      border-radius: 999px;
     }
 
 
     .ticket-no svg {
 
-      width:
-        11px;
+      width: 11px;
 
-      height:
-        11px;
+      height: 11px;
 
-      opacity:
-        1;
-
+      opacity: 1;
     }
 
+
+
+    /* =========================================================
+       CORPO DO CARD
+    ========================================================= */
 
     .card-body {
 
       padding:
         20px 20px 22px;
 
-      display:
-        flex;
+      display: flex;
 
-      flex-direction:
-        column;
+      flex-direction: column;
 
-      gap:
-        10px;
+      gap: 10px;
 
-      flex:
-        1;
-
+      flex: 1;
     }
 
 
     .card-body h3 {
 
-      font-family:
-        var(--font-main);
+      font-family: var(--font);
 
-      font-weight:
-        400;
+      font-weight: 400;
 
-      font-size:
-        1.25rem;
+      font-size: 1.2rem;
 
-      margin:
-        0;
+      margin: 0;
 
-      letter-spacing:
-        0;
+      letter-spacing: -.2px;
 
-      color:
-        var(--text);
-
+      color: var(--text);
     }
 
 
     /*
-      Títulos brancos no modo escuro.
+      No modo escuro os títulos ficam
+      explicitamente brancos para
+      garantir contraste.
     */
 
     html[data-theme="dark"]
     .card-body h3 {
 
-      color:
-        #ffffff;
-
+      color: #ffffff;
     }
 
 
     .card-body p {
 
-      margin:
-        0;
+      margin: 0;
 
-      color:
-        var(--muted);
+      color: var(--muted);
 
-      font-size:
-        .93rem;
+      font-size: .93rem;
 
-      flex:
-        1;
-
+      flex: 1;
     }
 
 
     .card-actions {
 
-      margin-top:
-        4px;
-
+      margin-top: 4px;
     }
 
 
     .btn-game {
 
-      font-family:
-        var(--font-main);
+      font-family: var(--font);
 
-      font-weight:
-        400;
+      font-size: 14px;
 
-      font-size:
-        14px;
+      text-decoration: none;
 
-      text-decoration:
-        none;
+      color: var(--blue);
 
-      color:
-        var(--blue);
+      display: inline-flex;
 
-      display:
-        inline-flex;
+      align-items: center;
 
-      align-items:
-        center;
-
-      gap:
-        6px;
+      gap: 6px;
 
       transition:
         gap .15s ease,
         color .15s ease;
-
     }
 
 
     .btn-game:hover {
 
-      gap:
-        10px;
+      gap: 10px;
 
       color:
         var(--blue-dark);
-
     }
 
 
@@ -1459,40 +1082,30 @@
 
     .pagination-container {
 
-      display:
-        flex;
+      display: flex;
 
-      justify-content:
-        center;
+      justify-content: center;
 
-      align-items:
-        center;
+      align-items: center;
 
-      gap:
-        8px;
+      gap: 8px;
 
-      margin-top:
-        42px;
+      margin-top: 42px;
 
-      flex-wrap:
-        wrap;
-
+      flex-wrap: wrap;
     }
 
 
     .page-btn {
 
-      min-width:
-        42px;
+      min-width: 42px;
 
-      height:
-        42px;
+      height: 42px;
 
       padding:
         0 12px;
 
-      border-radius:
-        10px;
+      border-radius: 10px;
 
       border:
         1px solid var(--line);
@@ -1503,21 +1116,15 @@
       color:
         var(--muted);
 
-      font-family:
-        var(--font-main);
+      font-size: 13px;
 
-      font-size:
-        13px;
-
-      cursor:
-        pointer;
+      cursor: pointer;
 
       transition:
         background .15s ease,
         border-color .15s ease,
         color .15s ease,
         transform .15s ease;
-
     }
 
 
@@ -1531,7 +1138,6 @@
 
       transform:
         translateY(-1px);
-
     }
 
 
@@ -1543,20 +1149,15 @@
       border-color:
         var(--blue);
 
-      color:
-        #fff;
-
+      color: #fff;
     }
 
 
     .page-btn:disabled {
 
-      opacity:
-        .4;
+      opacity: .4;
 
-      cursor:
-        not-allowed;
-
+      cursor: not-allowed;
     }
 
 
@@ -1567,21 +1168,14 @@
 
     .empty-state {
 
-      text-align:
-        center;
+      text-align: center;
 
       padding:
         60px 20px;
 
-      color:
-        var(--muted);
+      color: var(--muted);
 
-      font-family:
-        var(--font-main);
-
-      font-size:
-        14px;
-
+      font-size: 14px;
     }
 
 
@@ -1599,141 +1193,102 @@
           var(--blue)
         );
 
-      color:
-        #fff;
+      color: #fff;
 
       padding:
         48px 0 0;
 
-      margin-top:
-        40px;
-
+      margin-top: 40px;
     }
 
 
     .footer-top {
 
-      display:
-        flex;
+      display: flex;
 
-      flex-wrap:
-        wrap;
+      flex-wrap: wrap;
 
-      gap:
-        40px;
+      gap: 40px;
 
       justify-content:
         space-between;
 
-      padding-bottom:
-        32px;
-
+      padding-bottom: 32px;
     }
 
 
     .footer-brand {
 
-      max-width:
-        320px;
-
+      max-width: 320px;
     }
 
 
     .footer-brand .brand {
 
-      color:
-        #fff;
+      color: #fff;
 
-      margin-bottom:
-        10px;
-
+      margin-bottom: 10px;
     }
 
 
     .footer-brand .bulb {
 
-      background:
-        #fff;
-
+      background: #fff;
     }
 
 
     .footer-brand p {
 
-      margin:
-        0;
+      margin: 0;
 
       color:
         rgba(255,255,255,.85);
 
-      font-size:
-        14px;
-
+      font-size: 14px;
     }
 
 
     .footer-col h4 {
 
-      font-family:
-        var(--font-main);
-
-      font-weight:
-        400;
-
-      font-size:
-        15px;
+      font-size: 15px;
 
       margin:
         0 0 14px;
-
     }
 
 
     .footer-col ul {
 
-      list-style:
-        none;
+      list-style: none;
 
-      margin:
-        0;
+      margin: 0;
 
-      padding:
-        0;
+      padding: 0;
 
-      display:
-        flex;
+      display: flex;
 
-      flex-direction:
-        column;
+      flex-direction: column;
 
-      gap:
-        10px;
-
+      gap: 10px;
     }
 
 
     .footer-col a {
 
-      text-decoration:
-        none;
+      text-decoration: none;
 
       color:
         rgba(255,255,255,.85);
 
-      font-size:
-        14px;
-
+      font-size: 14px;
     }
 
 
     .footer-col a:hover {
 
-      color:
-        #fff;
+      color: #fff;
 
-      text-decoration:
-        underline;
-
+      text-decoration: underline;
     }
 
 
@@ -1746,38 +1301,27 @@
       padding:
         20px 0 28px;
 
-      display:
-        flex;
+      display: flex;
 
-      flex-wrap:
-        wrap;
+      flex-wrap: wrap;
 
-      gap:
-        10px;
+      gap: 10px;
 
-      align-items:
-        center;
+      align-items: center;
 
       justify-content:
         space-between;
-
     }
 
 
     .footer-bottom p {
 
-      margin:
-        0;
+      margin: 0;
 
       color:
         rgba(255,255,255,.75);
 
-      font-size:
-        13px;
-
-      font-family:
-        var(--font-main);
-
+      font-size: 13px;
     }
 
 
@@ -1788,33 +1332,32 @@
 
     @media (max-width: 900px) {
 
-      :root {
-
-        --fish-size:
-          190px;
-
-      }
-
-
       .grid {
 
         grid-template-columns:
-          repeat(
-            2,
-            minmax(0, 1fr)
-          );
+          repeat(2, minmax(0, 1fr));
 
-        gap:
-          20px;
-
+        gap: 20px;
       }
 
 
       .card-cover {
 
-        height:
-          190px;
+        height: 180px;
+      }
 
+
+      .mascot-video {
+
+        width: 150px;
+
+        height: 150px;
+      }
+
+
+      .brand-lockup {
+
+        gap: 32px;
       }
 
 
@@ -1822,13 +1365,11 @@
 
         font-size:
           clamp(
-            2.3rem,
-            6vw,
-            3.6rem
+            3rem,
+            8vw,
+            4.8rem
           );
-
       }
-
     }
 
 
@@ -1839,6 +1380,7 @@
 
     @media (max-width: 720px) {
 
+
       /* HEADER */
 
       .marquee-bar {
@@ -1846,105 +1388,80 @@
         grid-template-columns:
           1fr auto;
 
-        gap:
-          12px;
+        gap: 12px;
 
         padding:
           12px 18px;
-
       }
 
 
       .marquee-bar .brand {
 
-        margin-left:
-          4px;
+        margin-left: 4px;
 
-        font-size:
-          17px;
+        font-size: 18px;
 
-        gap:
-          8px;
-
+        gap: 8px;
       }
 
 
       .header-actions {
 
-        justify-self:
-          end;
+        justify-self: end;
 
-        margin-right:
-          4px;
+        margin-right: 4px;
 
-        gap:
-          0;
-
+        gap: 0;
       }
 
 
       .theme-toggle {
 
-        white-space:
-          nowrap;
+        white-space: nowrap;
 
         padding:
           8px 12px;
-
       }
 
 
       .header-search {
 
-        display:
-          none;
-
+        display: none;
       }
 
 
       .nav-count {
 
-        display:
-          none;
-
+        display: none;
       }
 
 
 
       /* HERO */
 
-      :root {
-
-        --fish-size:
-          150px;
-
-      }
-
-
       .hero {
 
         padding:
-          16px 8px 22px;
-
+          40px 8px 24px;
       }
 
 
       .brand-lockup {
 
-        grid-template-columns:
-          var(--fish-size)
-          1fr
-          0;
-
-        gap:
-          14px;
+        gap: 22px;
 
         padding:
-          0 12px;
+          0 10px;
 
-        margin-bottom:
-          16px;
+        margin-bottom: 22px;
+      }
 
+
+      .mascot-video {
+
+        width: 105px;
+
+        height: 105px;
       }
 
 
@@ -1952,14 +1469,10 @@
 
         font-size:
           clamp(
-            1.9rem,
-            9vw,
-            2.9rem
+            2.4rem,
+            10vw,
+            3.5rem
           );
-
-        white-space:
-          normal;
-
       }
 
 
@@ -1967,7 +1480,6 @@
 
         padding:
           0 12px;
-
       }
 
 
@@ -1975,7 +1487,6 @@
 
         padding:
           0 12px;
-
       }
 
 
@@ -1986,7 +1497,6 @@
 
         padding:
           24px 8px 8px;
-
       }
 
 
@@ -1994,7 +1504,6 @@
 
         padding:
           9px 17px;
-
       }
 
 
@@ -2003,37 +1512,26 @@
 
       .wrap {
 
-        padding-left:
-          18px;
+        padding-left: 18px;
 
-        padding-right:
-          18px;
-
+        padding-right: 18px;
       }
 
 
 
-      /*
-        No celular:
-        1 jogo por linha.
-      */
+      /* GRID */
 
       .grid {
 
-        grid-template-columns:
-          1fr;
+        grid-template-columns: 1fr;
 
-        gap:
-          20px;
-
+        gap: 20px;
       }
 
 
       .card-cover {
 
-        height:
-          190px;
-
+        height: 190px;
       }
 
 
@@ -2042,65 +1540,54 @@
 
       .pagination-container {
 
-        margin-top:
-          32px;
+        margin-top: 32px;
 
-        gap:
-          6px;
-
+        gap: 6px;
       }
 
 
       .page-btn {
 
-        min-width:
-          38px;
+        min-width: 38px;
 
-        height:
-          38px;
+        height: 38px;
 
         padding:
           0 9px;
 
-        font-size:
-          12px;
-
+        font-size: 12px;
       }
-
     }
 
 
 
     /* =========================================================
-       CELULAR PEQUENO
+       CELULARES PEQUENOS
     ========================================================= */
 
     @media (max-width: 560px) {
 
-      :root {
-
-        --fish-size:
-          120px;
-
-      }
-
-
       .hero {
 
         padding:
-          14px 6px 20px;
-
+          34px 6px 22px;
       }
 
 
       .brand-lockup {
 
-        gap:
-          12px;
+        gap: 15px;
 
         padding:
           0 8px;
+      }
 
+
+      .mascot-video {
+
+        width: 88px;
+
+        height: 88px;
       }
 
 
@@ -2108,63 +1595,54 @@
 
         font-size:
           clamp(
-            1.6rem,
-            9vw,
-            2.4rem
+            2.1rem,
+            9.5vw,
+            3rem
           );
-
       }
 
 
       .hero p.lede-main {
 
         font-size:
-          1.05rem;
+          1.1rem;
 
         padding:
           0 10px;
-
       }
 
 
       .hero p.lede {
 
         font-size:
-          .93rem;
+          .95rem;
 
         padding:
           0 10px;
-
       }
 
 
       .filters {
 
-        gap:
-          8px;
+        gap: 8px;
 
         padding:
           20px 6px 8px;
-
       }
 
 
       .chip {
 
-        font-size:
-          13px;
+        font-size: 13px;
 
         padding:
           8px 14px;
-
       }
 
 
       .count-line {
 
-        margin-bottom:
-          22px;
-
+        margin-bottom: 22px;
       }
 
 
@@ -2172,40 +1650,31 @@
 
         padding:
           18px 18px 20px;
-
       }
 
 
       .pagination-container {
 
-        gap:
-          5px;
-
+        gap: 5px;
       }
 
 
       .page-btn {
 
-        min-width:
-          36px;
+        min-width: 36px;
 
-        height:
-          36px;
-
+        height: 36px;
       }
 
 
       .footer-bottom {
 
-        flex-direction:
-          column;
+        flex-direction: column;
 
-        align-items:
-          flex-start;
-
+        align-items: flex-start;
       }
-
     }
+
 
   </style>
 
@@ -2366,61 +1835,44 @@
     >
 
 
-      <!--
-        PEIXE + TÍTULO
-
-        Grid de 3 colunas: peixe | título | espelho
-        (mesma largura do peixe), para o título ficar
-        realmente centralizado na página.
-      -->
-
       <div class="brand-lockup">
 
 
-        <!-- COLUNA DO PEIXE -->
+        <!-- PEIXE MODO ESCURO -->
 
-        <div class="fish-slot">
+        <video
+          autoplay
+          muted
+          loop
+          playsinline
+          class="mascot-video fish-dark"
+        >
 
-          <!-- PEIXE MODO ESCURO -->
-
-          <video
-            autoplay
-            muted
-            loop
-            playsinline
-            class="mascot-video fish-dark"
+          <source
+            src="img/peixe.webm"
+            type="video/webm"
           >
 
-            <source
-              src="img/peixe.webm"
-              type="video/webm"
-            >
-
-          </video>
+        </video>
 
 
-          <!-- PEIXE MODO CLARO -->
+        <!-- PEIXE MODO CLARO -->
 
-          <video
-            autoplay
-            muted
-            loop
-            playsinline
-            class="mascot-video fish-light"
+        <video
+          autoplay
+          muted
+          loop
+          playsinline
+          class="mascot-video fish-light"
+        >
+
+          <source
+            src="img/peixe claro.webm"
+            type="video/webm"
           >
 
-            <source
-              src="img/peixe claro.webm"
-              type="video/webm"
-            >
+        </video>
 
-          </video>
-
-        </div>
-
-
-
-        <!-- TÍTULO -->
 
         <h1>
           Tech Store
@@ -2429,8 +1881,6 @@
       </div>
 
 
-
-      <!-- FRASE PRINCIPAL -->
 
       <p class="lede-main">
 
@@ -2447,19 +1897,15 @@
 
 
       <!--
-        FRASE SECUNDÁRIA
-
-        A quebra de linha acontece exatamente
-        depois do travessão.
+        QUEBRA DE LINHA SOLICITADA
       -->
 
       <p class="lede">
 
         Jogos gratuitos e de código aberto —
+        <br>
 
-        <span class="lede-break">
-          escolha o gênero e jogue.
-        </span>
+        escolha o gênero e jogue.
 
       </p>
 
@@ -2561,7 +2007,9 @@
 
             </span>
 
+
             Tech Store
+
 
             <span class="bulb-row">
 
@@ -2593,6 +2041,7 @@
             Explorar
           </h4>
 
+
           <ul>
 
             <li>
@@ -2603,6 +2052,7 @@
 
             </li>
 
+
             <li>
 
               <a href="#filters">
@@ -2610,6 +2060,7 @@
               </a>
 
             </li>
+
 
             <li>
 
@@ -2628,16 +2079,19 @@
 
 
 
-      <!-- RODAPÉ INFERIOR -->
-
       <div class="footer-bottom">
 
         <p>
+
           © 2026 Tech Store catálogo independente.
+
         </p>
 
+
         <p>
+
           Links levam aos sites oficiais de cada projeto.
+
         </p>
 
       </div>
@@ -2661,6 +2115,7 @@
 
 
   <script>
+
 
     /* =========================================================
        TEMA CLARO / ESCURO
@@ -2748,7 +2203,6 @@
 
         themeLabel.textContent =
           'Escuro';
-
       }
 
 
@@ -2756,7 +2210,6 @@
         'techstore-theme',
         theme
       );
-
     }
 
 
@@ -2811,6 +2264,7 @@
 
     const icons = {
 
+
       corrida: `
 
         <svg
@@ -2824,17 +2278,9 @@
 
           <path d="M4 4v16"/>
 
-          <path
-            d="
-              M4 4h6l1 2h6l1 4h-7l-1-2H4
-            "
-          />
+          <path d="M4 4h6l1 2h6l1 4h-7l-1-2H4"/>
 
-          <path
-            d="
-              M4 12h6l1 2h6
-            "
-          />
+          <path d="M4 12h6l1 2h6"/>
 
         </svg>
 
@@ -2854,11 +2300,7 @@
 
           <path d="M4 20h16"/>
 
-          <path
-            d="
-              M9 20V10l3-6 3 6v10
-            "
-          />
+          <path d="M9 20V10l3-6 3 6v10"/>
 
           <circle
             cx="12"
@@ -2883,17 +2325,15 @@
         >
 
           <path
-            d="
-              M14.5 4.5l5 5-11 11-5-5z
-            "
+            d="M14.5 4.5l5 5-11 11-5-5z"
           />
 
-          <path d="M14 6l4 4"/>
+          <path
+            d="M14 6l4 4"
+          />
 
           <path
-            d="
-              M4.5 19.5L3 21
-            "
+            d="M4.5 19.5L3 21"
           />
 
         </svg>
@@ -3008,9 +2448,7 @@
           />
 
           <path
-            d="
-              M12 8v4l3 2
-            "
+            d="M12 8v4l3 2"
           />
 
         </svg>
@@ -3190,6 +2628,7 @@
 
     const games = [
 
+
       /* =====================================================
          BEATRIZ
       ===================================================== */
@@ -3267,7 +2706,6 @@
           'https://bolt-escape.base44.app/'
 
       },
-
 
 
       /* =====================================================
@@ -3374,7 +2812,6 @@
       },
 
 
-
       /* =====================================================
          DIOGO
       ===================================================== */
@@ -3404,7 +2841,6 @@
       },
 
 
-
       /* =====================================================
          FRANMARYS
       ===================================================== */
@@ -3432,7 +2868,6 @@
           'https://multiple-play-2d551.web.app/'
 
       },
-
 
 
       /* =====================================================
@@ -3489,7 +2924,6 @@
       },
 
 
-
       /* =====================================================
          JOÃO
       ===================================================== */
@@ -3542,7 +2976,6 @@
           'https://lambent-speculoos-b2e5cd.netlify.app/'
 
       },
-
 
 
       /* =====================================================
@@ -3599,7 +3032,6 @@
       },
 
 
-
       /* =====================================================
          MIGUEL
       ===================================================== */
@@ -3652,7 +3084,6 @@
           'https://infinitecaft-fyzmnevb.manus.space/'
 
       },
-
 
 
       /* =====================================================
@@ -3709,7 +3140,6 @@
       },
 
 
-
       /* =====================================================
          NICOLAS
       ===================================================== */
@@ -3762,7 +3192,6 @@
           'https://garticgame-xmknmjby.manus.space/'
 
       },
-
 
 
       /* =====================================================
@@ -3819,9 +3248,8 @@
       },
 
 
-
       /* =====================================================
-         OUTROS
+         JOGOS OPEN SOURCE
       ===================================================== */
 
       {
@@ -3836,6 +3264,9 @@
 
         plataformas:
           'Win / Mac / Linux',
+
+        imagem:
+          'img/supertuxkart.png',
 
         desc:
           'Corrida de kart em 3D com dezenas de pistas, itens ofensivos e modo carreira, no espírito de clássicos de kart arcade.',
@@ -3859,6 +3290,9 @@
         plataformas:
           'Win / Mac / Linux',
 
+        imagem:
+          'img/0ad.png',
+
         desc:
           'RTS histórico ambientado antes de Cristo, com gestão de economia, cerco de cidades e civilizações jogáveis distintas.',
 
@@ -3879,7 +3313,10 @@
           'estrategia',
 
         plataformas:
-          'Win / Mac / Linux / Android',
+          'Win / Mac / Linux',
+
+        imagem:
+          'img/battle-for-wesnoth.png',
 
         desc:
           'Estratégia tática por turnos em um mundo de fantasia, com campanhas extensas e forte foco em terreno e vantagem de classe.',
@@ -3903,6 +3340,9 @@
         plataformas:
           'Win / Mac / Linux',
 
+        imagem:
+          'img/veloren.png',
+
         desc:
           'Mundo aberto voxel inspirado em RPGs de sobrevivência, com exploração, crafting e combate em tempo real cooperativo.',
 
@@ -3924,6 +3364,9 @@
 
         plataformas:
           'Win / Mac / Linux',
+
+        imagem:
+          'img/openra.png',
 
         desc:
           'Engine moderna que reconstrói RTS clássicos dos anos 90, com multiplayer estável e ritmo acelerado de construção de base.',
@@ -3947,6 +3390,9 @@
         plataformas:
           'Win / Mac / Linux',
 
+        imagem:
+          'img/xonotic.png',
+
         desc:
           'FPS de arena rápido, focado em movimentação aérea e combate competitivo, herdeiro direto da era dos shooters old-school.',
 
@@ -3968,6 +3414,9 @@
 
         plataformas:
           'Win / Mac / Linux / Android',
+
+        imagem:
+          'img/mindustry.png',
 
         desc:
           'Mistura de fábrica automatizada com defesa de torres: projete linhas de produção enquanto resiste a ondas inimigas.',
@@ -3991,6 +3440,9 @@
         plataformas:
           'Win / Mac / Linux',
 
+        imagem:
+          'img/cataclysm-dark-days-ahead.png',
+
         desc:
           'Roguelike pós-apocalíptico de sobrevivência extremamente detalhado, com crafting profundo e simulação de mundo aberto.',
 
@@ -4012,6 +3464,9 @@
 
         plataformas:
           'Win / Mac / Linux',
+
+        imagem:
+          'img/endless-sky.png',
 
         desc:
           'Simulador de comércio e combate espacial em 2D, com exploração de sistemas estelares e campanha ramificada.',
@@ -4035,6 +3490,9 @@
         plataformas:
           'Win / Mac / Linux',
 
+        imagem:
+          'img/hedgewars.png',
+
         desc:
           'Artilharia por turnos com humor exagerado e ouriços armados, na linha de jogos de destruição de terreno em 2D.',
 
@@ -4056,6 +3514,9 @@
 
         plataformas:
           'Win / Mac / Linux / Android',
+
+        imagem:
+          'img/teeworlds.png',
 
         desc:
           'Plataforma 2D com tiro multiplayer, gancho de escalada e mapas compactos voltados para partidas rápidas.',
@@ -4079,6 +3540,9 @@
         plataformas:
           'Win / Mac / Linux / Navegador',
 
+        imagem:
+          'img/freeciv.png',
+
         desc:
           '4X por turnos de construção de império, do início da civilização até a era espacial, jogável sozinho ou em rede.',
 
@@ -4095,16 +3559,10 @@
        PAGINAÇÃO
     ========================================================= */
 
-    /*
-      EXATAMENTE 6 JOGOS POR PÁGINA.
-    */
-
-    const GAMES_PER_PAGE =
-      6;
+    const GAMES_PER_PAGE = 6;
 
 
-    let currentPage =
-      1;
+    let currentPage = 1;
 
 
     let activeGenre =
@@ -4164,7 +3622,7 @@
 
 
     /* =========================================================
-       CONTADOR TOTAL
+       CONTADOR
     ========================================================= */
 
     headerCount.textContent =
@@ -4212,6 +3670,7 @@
 
         chip.setAttribute(
           'aria-pressed',
+
           genre === activeGenre
             ? 'true'
             : 'false'
@@ -4296,7 +3755,7 @@
 
 
     /* =========================================================
-       TEMPLATE DO CARD
+       TEMPLATE DOS CARDS
     ========================================================= */
 
     function cardTemplate(game) {
@@ -4376,6 +3835,7 @@
 
           <div class="card-body">
 
+
             <h3>
               ${game.nome}
             </h3>
@@ -4387,6 +3847,7 @@
 
 
             <div class="card-actions">
+
 
               <a
                 class="btn-game"
@@ -4403,9 +3864,11 @@
 
               </a>
 
+
             </div>
 
           </div>
+
 
         </article>
 
@@ -4430,6 +3893,7 @@
 
 
           const matchSearch =
+
             !searchTerm ||
 
             game.nome
@@ -4474,17 +3938,14 @@
         );
 
 
-      if (
-        totalPages <= 1
-      ) {
+      if (totalPages <= 1) {
 
         return;
-
       }
 
 
 
-      /* BOTÃO ANTERIOR */
+      /* ANTERIOR */
 
       const previousButton =
         document.createElement(
@@ -4525,11 +3986,9 @@
 
             window.scrollTo({
 
-              top:
-                0,
+              top: 0,
 
-              behavior:
-                'smooth'
+              behavior: 'smooth'
 
             });
 
@@ -4545,7 +4004,7 @@
 
 
 
-      /* NÚMEROS DAS PÁGINAS */
+      /* NÚMEROS */
 
       for (
         let page = 1;
@@ -4597,11 +4056,9 @@
 
             window.scrollTo({
 
-              top:
-                0,
+              top: 0,
 
-              behavior:
-                'smooth'
+              behavior: 'smooth'
 
             });
 
@@ -4617,7 +4074,7 @@
 
 
 
-      /* BOTÃO PRÓXIMO */
+      /* PRÓXIMO */
 
       const nextButton =
         document.createElement(
@@ -4660,11 +4117,9 @@
 
             window.scrollTo({
 
-              top:
-                0,
+              top: 0,
 
-              behavior:
-                'smooth'
+              behavior: 'smooth'
 
             });
 
@@ -4699,12 +4154,6 @@
         );
 
 
-      /*
-        Corrige automaticamente a página
-        caso o filtro reduza a quantidade
-        de resultados.
-      */
-
       if (
         totalPages > 0 &&
         currentPage > totalPages
@@ -4712,7 +4161,6 @@
 
         currentPage =
           totalPages;
-
       }
 
 
@@ -4737,7 +4185,6 @@
           false;
 
         return;
-
       }
 
 
@@ -4746,7 +4193,7 @@
 
 
 
-      /* CALCULA OS 6 JOGOS */
+      /* CALCULA OS 6 DA PÁGINA */
 
       const startIndex =
         (
@@ -4768,7 +4215,7 @@
 
 
 
-      /* RENDERIZA OS JOGOS */
+      /* RENDERIZA */
 
       grid.innerHTML =
         pageGames
@@ -4779,7 +4226,7 @@
 
 
 
-      /* RENDERIZA PAGINAÇÃO */
+      /* PAGINAÇÃO */
 
       renderPagination(
         filtered.length
@@ -4794,6 +4241,7 @@
     ========================================================= */
 
     render();
+
 
   </script>
 
