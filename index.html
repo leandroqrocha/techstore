@@ -634,11 +634,14 @@
       display: block;
 
       /*
-        Mantém o peixe visível,
-        mas integra o fundo claro ao fundo escuro.
+        Integra o fundo claro do vídeo à cor
+        exata do site (#0a0a0f) para eliminar
+        a marca / retângulo do vídeo.
       */
 
-      mix-blend-mode: multiply;
+      mix-blend-mode: darken;
+
+      background-color: var(--bg);
     }
 
 
