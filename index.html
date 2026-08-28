@@ -569,9 +569,9 @@
         MAS AINDA GRANDE EM RELAÇÃO AO TÍTULO.
       */
 
-      width: 145px;
+      width: 220px;
 
-      height: 145px;
+      height: 220px;
 
       object-fit: contain;
 
@@ -597,6 +597,14 @@
       */
 
       box-shadow: none;
+
+      /*
+        O vídeo fica acima da composição do tema.
+        O fundo da página nunca deve escurecer o peixe.
+      */
+      position: relative;
+      z-index: 5;
+      isolation: isolate;
     }
 
 
@@ -609,6 +617,8 @@
       display: block;
 
       mix-blend-mode: normal;
+      position: relative;
+      z-index: 5;
     }
 
 
@@ -621,11 +631,12 @@
       display: none;
 
       /*
-        O multiply faz o fundo claro do vídeo
-        se integrar ao fundo escuro da página.
+        Sem blend-mode: o tema não altera
+        as cores originais do peixe.
       */
-
-      mix-blend-mode: multiply;
+      mix-blend-mode: normal;
+      position: relative;
+      z-index: 5;
     }
 
 
@@ -634,11 +645,12 @@
       display: block;
 
       /*
-        Mantém o peixe visível,
-        mas integra o fundo claro ao fundo escuro.
+        Mantém o peixe com suas cores originais
+        e acima da composição visual do tema.
       */
-
-      mix-blend-mode: multiply;
+      mix-blend-mode: normal;
+      position: relative;
+      z-index: 5;
     }
 
 
@@ -1366,9 +1378,9 @@
 
       .mascot-video {
 
-        width: 130px;
+        width: 180px;
 
-        height: 130px;
+        height: 180px;
       }
 
 
@@ -1492,9 +1504,9 @@
 
       .mascot-video {
 
-        width: 105px;
+        width: 150px;
 
-        height: 105px;
+        height: 150px;
       }
 
 
@@ -1672,9 +1684,9 @@
 
       .mascot-video {
 
-        width: 92px;
+        width: 135px;
 
-        height: 92px;
+        height: 135px;
       }
 
 
