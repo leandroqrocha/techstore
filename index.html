@@ -17,9 +17,9 @@
     content="Uma vitrine de jogos gratuitos e de código aberto."
   >
 
-  <!-- =======================================================
+  <!-- =====================================================
        BOOTSTRAP
-  ======================================================== -->
+  ====================================================== -->
 
   <link
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
@@ -28,10 +28,9 @@
     crossorigin="anonymous"
   >
 
-
-  <!-- =======================================================
-       GOOGLE FONTS
-  ======================================================== -->
+  <!-- =====================================================
+       FONTES
+  ====================================================== -->
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
 
@@ -45,7 +44,6 @@
     href="https://fonts.googleapis.com/css2?family=Righteous&display=swap"
     rel="stylesheet"
   >
-
 
   <link
     rel="icon"
@@ -76,19 +74,15 @@
       --muted: #6b7280;
 
       /*
-        AZUL MANTIDO IGUAL NOS DOIS TEMAS
+        O AZUL FICA EXATAMENTE IGUAL
+        NOS DOIS TEMAS.
       */
 
       --blue: #2f6fed;
 
       --blue-dark: #1d4fd0;
 
-      --blue-soft: rgba(
-        47,
-        111,
-        237,
-        0.10
-      );
+      --blue-soft: rgba(47,111,237,0.10);
 
       --yellow: #f2b705;
 
@@ -101,23 +95,13 @@
       --radius-sm: 12px;
 
       --shadow:
-        0 4px 18px rgba(
-          20,
-          30,
-          60,
-          0.06
-        );
+        0 4px 18px rgba(20,30,60,0.06);
 
       --shadow-hover:
-        0 10px 28px rgba(
-          20,
-          30,
-          60,
-          0.10
-        );
+        0 10px 28px rgba(20,30,60,0.10);
 
       /*
-        Righteous em absolutamente todo o site
+        TODA A PÁGINA USA RIGHTEOUS
       */
 
       --font-main: 'Righteous', cursive;
@@ -142,55 +126,29 @@
 
       --surface-3: #202029;
 
-      --text: #eef0f6;
+      --text: #ffffff;
 
       --muted: #9aa0ad;
 
       /*
-        IMPORTANTE:
-        O azul NÃO muda no modo escuro.
+        MESMO AZUL DO TEMA CLARO
       */
 
       --blue: #2f6fed;
 
       --blue-dark: #1d4fd0;
 
-      --blue-soft: rgba(
-        47,
-        111,
-        237,
-        0.16
-      );
+      --blue-soft: rgba(47,111,237,0.16);
 
-      --line: rgba(
-        255,
-        255,
-        255,
-        0.08
-      );
+      --line: rgba(255,255,255,0.08);
 
-      --line-strong: rgba(
-        255,
-        255,
-        255,
-        0.16
-      );
+      --line-strong: rgba(255,255,255,0.16);
 
       --shadow:
-        0 4px 18px rgba(
-          0,
-          0,
-          0,
-          0.35
-        );
+        0 4px 18px rgba(0,0,0,0.35);
 
       --shadow-hover:
-        0 10px 30px rgba(
-          0,
-          0,
-          0,
-          0.5
-        );
+        0 10px 30px rgba(0,0,0,0.5);
 
       color-scheme: dark;
     }
@@ -200,27 +158,19 @@
        RESET
     ========================================================= */
 
-    *,
-    *::before,
-    *::after {
-
+    * {
       box-sizing: border-box;
-
     }
 
 
     html {
-
       scroll-behavior: smooth;
-
     }
 
 
     body {
 
       margin: 0;
-
-      padding: 0;
 
       background: var(--bg);
 
@@ -235,52 +185,22 @@
       transition:
         background .2s ease,
         color .2s ease;
-
-    }
-
-
-    /*
-      Righteous em todos os elementos
-    */
-
-    body,
-    button,
-    input,
-    textarea,
-    select,
-    a,
-    p,
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6,
-    span,
-    div {
-
-      font-family: var(--font-main);
-
     }
 
 
     a {
-
       color: inherit;
-
     }
 
 
     :focus-visible {
 
       outline:
-        3px solid
-        var(--blue);
+        3px solid var(--blue);
 
       outline-offset: 3px;
 
       border-radius: 4px;
-
     }
 
 
@@ -296,7 +216,6 @@
 
       padding:
         0 24px;
-
     }
 
 
@@ -319,13 +238,10 @@
           transparent
         );
 
-      backdrop-filter:
-        blur(10px);
+      backdrop-filter: blur(10px);
 
       border-bottom:
-        1px solid
-        var(--line);
-
+        1px solid var(--line);
     }
 
 
@@ -344,7 +260,6 @@
         16px 0;
 
       gap: 16px;
-
     }
 
 
@@ -373,7 +288,6 @@
       white-space: nowrap;
 
       color: var(--blue);
-
     }
 
 
@@ -382,7 +296,6 @@
       display: flex;
 
       gap: 4px;
-
     }
 
 
@@ -394,8 +307,7 @@
 
       border-radius: 50%;
 
-      background:
-        var(--blue);
+      background: var(--blue);
 
       box-shadow:
         0 0 6px
@@ -408,21 +320,16 @@
       animation:
         flicker 2.6s infinite
         ease-in-out;
-
     }
 
 
     .bulb:nth-child(2) {
-
       animation-delay: .3s;
-
     }
 
 
     .bulb:nth-child(3) {
-
       animation-delay: .6s;
-
     }
 
 
@@ -430,30 +337,20 @@
 
       0%,
       100% {
-
         opacity: 1;
-
       }
 
       50% {
-
         opacity: .35;
-
       }
-
     }
 
 
-    @media (
-      prefers-reduced-motion: reduce
-    ) {
+    @media (prefers-reduced-motion: reduce) {
 
       .bulb {
-
         animation: none;
-
       }
-
     }
 
 
@@ -469,12 +366,10 @@
 
       justify-self: center;
 
-      background:
-        var(--surface-2);
+      background: var(--surface-2);
 
       border:
-        1px solid
-        var(--line);
+        1px solid var(--line);
 
       border-radius: 999px;
 
@@ -486,10 +381,6 @@
       align-items: center;
 
       gap: 10px;
-
-      transition:
-        border-color .15s ease;
-
     }
 
 
@@ -497,13 +388,11 @@
 
       flex-shrink: 0;
 
-      color:
-        var(--muted);
+      color: var(--muted);
 
       width: 17px;
 
       height: 17px;
-
     }
 
 
@@ -511,39 +400,32 @@
 
       flex: 1;
 
-      background:
-        transparent;
+      background: transparent;
 
       border: none;
 
-      color:
-        var(--text);
+      color: var(--text);
 
-      font-family:
-        var(--font-main);
+      font-family: var(--font-main);
 
       font-size: .92rem;
 
-      padding:
-        2px 0;
+      padding: 2px 0;
 
       min-width: 0;
-
     }
 
 
     .header-search input::placeholder {
 
-      color:
-        var(--muted);
+      color: var(--muted);
 
+      opacity: 1;
     }
 
 
     .header-search input:focus {
-
       outline: none;
-
     }
 
 
@@ -551,7 +433,6 @@
 
       border-color:
         var(--blue);
-
     }
 
 
@@ -568,7 +449,6 @@
       gap: 14px;
 
       flex-shrink: 0;
-
     }
 
 
@@ -576,19 +456,14 @@
 
       font-size: 13px;
 
-      color:
-        var(--muted);
+      color: var(--muted);
 
       white-space: nowrap;
-
     }
 
 
     .nav-count strong {
-
-      color:
-        var(--blue);
-
+      color: var(--blue);
     }
 
 
@@ -606,18 +481,14 @@
 
       gap: 6px;
 
-      background:
-        var(--surface-2);
+      background: var(--surface-2);
 
       border:
-        1px solid
-        var(--line);
+        1px solid var(--line);
 
-      color:
-        var(--text);
+      color: var(--text);
 
-      font-family:
-        var(--font-main);
+      font-family: var(--font-main);
 
       font-size: 12px;
 
@@ -631,7 +502,6 @@
       transition:
         border-color .15s ease,
         background .15s ease;
-
     }
 
 
@@ -639,7 +509,6 @@
 
       border-color:
         var(--line-strong);
-
     }
 
 
@@ -648,7 +517,6 @@
       width: 14px;
 
       height: 14px;
-
     }
 
 
@@ -659,12 +527,11 @@
     .hero {
 
       padding:
-        42px 0 32px;
+        38px 0 32px;
 
       text-align: center;
 
       position: relative;
-
     }
 
 
@@ -680,56 +547,31 @@
 
       justify-content: center;
 
-      gap: 24px;
+      gap: 18px;
 
-      margin: 0 auto 20px;
+      margin-bottom: 20px;
 
-      padding: 0;
+      padding:
+        0 16px;
 
-      width: fit-content;
-
-      max-width: 100%;
-
+      position: relative;
     }
 
 
-    /*
-      ========================================================
-      PEIXE
-      ========================================================
-
-      IMPORTANTE:
-
-      - sem margem
-      - sem borda
-      - sem fundo
-      - sem sombra
-      - sem outline
-      - sem arredondamento
-      - sem espaço visual criado pelo CSS
-
-      O vídeo aparece sozinho.
-    */
+    /* =========================================================
+       PEIXE
+    ========================================================= */
 
     .mascot-video {
 
-      width: 260px;
+      /*
+        REDUZIDO UM POUCO EM RELAÇÃO À VERSÃO ANTERIOR,
+        MAS AINDA GRANDE EM RELAÇÃO AO TÍTULO.
+      */
 
-      height: 260px;
+      width: 145px;
 
-      margin: 0;
-
-      padding: 0;
-
-      border: none;
-
-      outline: none;
-
-      border-radius: 0;
-
-      background: transparent;
-
-      box-shadow: none;
+      height: 145px;
 
       object-fit: contain;
 
@@ -739,47 +581,70 @@
 
       pointer-events: none;
 
+      border: none;
+
+      outline: none;
+
+      margin: 0;
+
+      padding: 0;
+
+      background: transparent;
+
       /*
-        Remove qualquer comportamento
-        de alinhamento de imagem.
+        Remove qualquer aparência de borda
+        ou fundo criado pelo próprio elemento.
       */
 
-      vertical-align: middle;
-
+      box-shadow: none;
     }
 
 
     /*
-      Um vídeo por tema
+      PEIXE DO TEMA CLARO
+    */
+
+    .fish-light {
+
+      display: block;
+
+      mix-blend-mode: normal;
+    }
+
+
+    /*
+      PEIXE DO TEMA ESCURO
     */
 
     .fish-dark {
 
       display: none;
 
+      /*
+        O multiply faz o fundo claro do vídeo
+        se integrar ao fundo escuro da página.
+      */
+
+      mix-blend-mode: multiply;
     }
 
 
-    .fish-light {
+    html[data-theme="dark"] .fish-dark {
 
       display: block;
 
+      /*
+        Mantém o peixe visível,
+        mas integra o fundo claro ao fundo escuro.
+      */
+
+      mix-blend-mode: multiply;
     }
 
 
-    html[data-theme="dark"]
-    .fish-dark {
-
-      display: block;
-
-    }
-
-
-    html[data-theme="dark"]
-    .fish-light {
+    html[data-theme="dark"] .fish-light {
 
       display: none;
-
     }
 
 
@@ -789,31 +654,30 @@
 
     .hero h1 {
 
-      font-family:
-        var(--font-main);
+      font-family: var(--font-main);
 
       font-weight: 400;
 
       font-size:
         clamp(
-          3.2rem,
-          7vw,
-          5.2rem
+          2.8rem,
+          6.4vw,
+          4.6rem
         );
 
       line-height: 1;
 
       margin: 0;
 
-      padding: 0;
-
       letter-spacing: 0;
 
-      color:
-        var(--blue);
+      color: var(--blue);
 
       white-space: nowrap;
 
+      position: relative;
+
+      z-index: 2;
     }
 
 
@@ -823,69 +687,53 @@
 
     .hero p.lede-main {
 
-      max-width: none;
-
-      width: max-content;
-
-      max-width: 100%;
+      max-width: 900px;
 
       margin:
         0 auto 6px;
 
-      color:
-        var(--text);
+      color: var(--text);
+
+      font-family: var(--font-main);
 
       font-size:
         clamp(
-          1rem,
-          2.2vw,
-          1.35rem
+          1.05rem,
+          2.4vw,
+          1.4rem
         );
 
-      padding: 0;
+      padding:
+        0 16px;
 
       white-space: nowrap;
-
     }
 
 
     .hero p.lede-main .accent {
-
-      color:
-        var(--blue);
-
+      color: var(--blue);
     }
 
 
     /* =========================================================
-       FRASE SECUNDÁRIA
+       DESCRIÇÃO
     ========================================================= */
 
     .hero p.lede {
 
-      max-width: 700px;
+      max-width: 760px;
 
       margin:
-        12px auto 0;
+        10px auto 0;
 
-      color:
-        var(--muted);
+      color: var(--muted);
+
+      font-family: var(--font-main);
 
       font-size: 1rem;
 
-      padding: 0;
-
-    }
-
-
-    /*
-      Quebra específica da frase
-    */
-
-    .hero p.lede .line-break {
-
-      display: block;
-
+      padding:
+        0 16px;
     }
 
 
@@ -905,26 +753,21 @@
 
       padding:
         28px 12px 8px;
-
     }
 
 
     .chip {
 
-      font-family:
-        var(--font-main);
+      font-family: var(--font-main);
 
       font-size: 14px;
 
-      background:
-        var(--surface);
+      background: var(--surface);
 
       border:
-        1px solid
-        var(--line);
+        1px solid var(--line);
 
-      color:
-        var(--muted);
+      color: var(--muted);
 
       padding:
         10px 20px;
@@ -941,7 +784,6 @@
 
       box-shadow:
         var(--shadow);
-
     }
 
 
@@ -950,9 +792,7 @@
       border-color:
         var(--blue);
 
-      color:
-        var(--text);
-
+      color: var(--text);
     }
 
 
@@ -965,7 +805,6 @@
         var(--blue);
 
       color: #fff;
-
     }
 
 
@@ -977,32 +816,31 @@
 
       padding:
         20px 0 80px;
-
     }
 
 
     .count-line {
 
+      font-family: var(--font-main);
+
       font-size: 13px;
 
-      color:
-        var(--muted);
+      color: var(--muted);
 
       padding:
         14px 0 24px;
 
       border-bottom:
-        1px solid
-        var(--line);
+        1px solid var(--line);
 
       margin-bottom:
         28px;
-
     }
 
 
     /* =========================================================
        GRID
+       2 JOGOS POR FILEIRA
     ========================================================= */
 
     .grid {
@@ -1010,13 +848,9 @@
       display: grid;
 
       grid-template-columns:
-        repeat(
-          2,
-          minmax(0, 1fr)
-        );
+        repeat(2, minmax(0, 1fr));
 
       gap: 26px;
-
     }
 
 
@@ -1030,8 +864,7 @@
         var(--surface);
 
       border:
-        1px solid
-        var(--line);
+        1px solid var(--line);
 
       border-radius:
         var(--radius);
@@ -1049,7 +882,6 @@
         border-color .15s ease,
         transform .15s ease,
         box-shadow .15s ease;
-
     }
 
 
@@ -1063,7 +895,6 @@
 
       box-shadow:
         var(--shadow-hover);
-
     }
 
 
@@ -1080,18 +911,9 @@
       justify-content: center;
 
       color:
-        rgba(
-          255,
-          255,
-          255,
-          .92
-        );
+        rgba(255,255,255,.92);
 
       overflow: hidden;
-
-      background:
-        var(--surface-3);
-
     }
 
 
@@ -1102,7 +924,6 @@
       height: 46px;
 
       opacity: .9;
-
     }
 
 
@@ -1115,7 +936,6 @@
       object-fit: cover;
 
       display: block;
-
     }
 
 
@@ -1133,19 +953,18 @@
 
       gap: 5px;
 
+      font-family: var(--font-main);
+
       font-size: 11px;
+
+      font-weight: 400;
 
       letter-spacing: 1px;
 
       color: #fff;
 
       background:
-        rgba(
-          10,
-          12,
-          20,
-          .55
-        );
+        rgba(10,12,20,.55);
 
       backdrop-filter:
         blur(4px);
@@ -1154,7 +973,6 @@
         5px 10px;
 
       border-radius: 999px;
-
     }
 
 
@@ -1165,7 +983,6 @@
       height: 11px;
 
       opacity: 1;
-
     }
 
 
@@ -1181,14 +998,12 @@
       gap: 10px;
 
       flex: 1;
-
     }
 
 
     .card-body h3 {
 
-      font-family:
-        var(--font-main);
+      font-family: var(--font-main);
 
       font-weight: 400;
 
@@ -1196,21 +1011,19 @@
 
       margin: 0;
 
-      color:
-        var(--text);
+      letter-spacing: 0;
 
+      color: var(--text);
     }
 
 
     /*
-      TÍTULOS BRANCOS NO ESCURO
+      GARANTE BRANCO NO MODO ESCURO
     */
 
-    html[data-theme="dark"]
-    .card-body h3 {
+    html[data-theme="dark"] .card-body h3 {
 
       color: #ffffff;
-
     }
 
 
@@ -1218,34 +1031,31 @@
 
       margin: 0;
 
-      color:
-        var(--muted);
+      color: var(--muted);
+
+      font-family: var(--font-main);
 
       font-size: .93rem;
 
       flex: 1;
-
     }
 
 
     .card-actions {
 
       margin-top: 4px;
-
     }
 
 
     .btn-game {
 
-      font-family:
-        var(--font-main);
+      font-family: var(--font-main);
 
       font-size: 14px;
 
       text-decoration: none;
 
-      color:
-        var(--blue);
+      color: var(--blue);
 
       display: inline-flex;
 
@@ -1256,7 +1066,6 @@
       transition:
         gap .15s ease,
         color .15s ease;
-
     }
 
 
@@ -1266,7 +1075,6 @@
 
       color:
         var(--blue-dark);
-
     }
 
 
@@ -1287,7 +1095,6 @@
       margin-top: 42px;
 
       flex-wrap: wrap;
-
     }
 
 
@@ -1303,8 +1110,7 @@
       border-radius: 10px;
 
       border:
-        1px solid
-        var(--line);
+        1px solid var(--line);
 
       background:
         var(--surface);
@@ -1324,7 +1130,6 @@
         border-color .15s ease,
         color .15s ease,
         transform .15s ease;
-
     }
 
 
@@ -1338,7 +1143,6 @@
 
       transform:
         translateY(-1px);
-
     }
 
 
@@ -1350,8 +1154,8 @@
       border-color:
         var(--blue);
 
-      color: #fff;
-
+      color:
+        #fff;
     }
 
 
@@ -1360,7 +1164,6 @@
       opacity: .4;
 
       cursor: not-allowed;
-
     }
 
 
@@ -1378,8 +1181,10 @@
       color:
         var(--muted);
 
-      font-size: 14px;
+      font-family:
+        var(--font-main);
 
+      font-size: 14px;
     }
 
 
@@ -1402,7 +1207,6 @@
         48px 0 0;
 
       margin-top: 40px;
-
     }
 
 
@@ -1414,17 +1218,17 @@
 
       gap: 40px;
 
-      justify-content: space-between;
+      justify-content:
+        space-between;
 
-      padding-bottom: 32px;
-
+      padding-bottom:
+        32px;
     }
 
 
     .footer-brand {
 
       max-width: 320px;
-
     }
 
 
@@ -1433,14 +1237,12 @@
       color: #fff;
 
       margin-bottom: 10px;
-
     }
 
 
     .footer-brand .bulb {
 
       background: #fff;
-
     }
 
 
@@ -1449,25 +1251,23 @@
       margin: 0;
 
       color:
-        rgba(
-          255,
-          255,
-          255,
-          .85
-        );
+        rgba(255,255,255,.85);
 
       font-size: 14px;
-
     }
 
 
     .footer-col h4 {
 
+      font-family:
+        var(--font-main);
+
+      font-weight: 400;
+
       font-size: 15px;
 
       margin:
         0 0 14px;
-
     }
 
 
@@ -1484,7 +1284,6 @@
       flex-direction: column;
 
       gap: 10px;
-
     }
 
 
@@ -1493,15 +1292,9 @@
       text-decoration: none;
 
       color:
-        rgba(
-          255,
-          255,
-          255,
-          .85
-        );
+        rgba(255,255,255,.85);
 
       font-size: 14px;
-
     }
 
 
@@ -1509,8 +1302,8 @@
 
       color: #fff;
 
-      text-decoration: underline;
-
+      text-decoration:
+        underline;
     }
 
 
@@ -1518,12 +1311,7 @@
 
       border-top:
         1px solid
-        rgba(
-          255,
-          255,
-          255,
-          .18
-        );
+        rgba(255,255,255,.18);
 
       padding:
         20px 0 28px;
@@ -1536,8 +1324,8 @@
 
       align-items: center;
 
-      justify-content: space-between;
-
+      justify-content:
+        space-between;
     }
 
 
@@ -1546,15 +1334,12 @@
       margin: 0;
 
       color:
-        rgba(
-          255,
-          255,
-          255,
-          .75
-        );
+        rgba(255,255,255,.75);
 
       font-size: 13px;
 
+      font-family:
+        var(--font-main);
     }
 
 
@@ -1567,50 +1352,30 @@
       .grid {
 
         grid-template-columns:
-          repeat(
-            2,
-            minmax(0, 1fr)
-          );
+          repeat(2, minmax(0, 1fr));
 
         gap: 20px;
-
       }
 
 
       .card-cover {
 
-        height: 190px;
-
+        height: 200px;
       }
 
 
       .mascot-video {
 
-        width: 220px;
+        width: 130px;
 
-        height: 220px;
-
+        height: 130px;
       }
 
 
       .brand-lockup {
 
-        gap: 20px;
-
+        gap: 16px;
       }
-
-
-      .hero h1 {
-
-        font-size:
-          clamp(
-            3rem,
-            7vw,
-            4.5rem
-          );
-
-      }
-
     }
 
 
@@ -1620,9 +1385,7 @@
 
     @media (max-width: 720px) {
 
-      /*
-        HEADER
-      */
+      /* HEADER */
 
       .marquee-bar {
 
@@ -1633,7 +1396,6 @@
 
         padding:
           12px 18px;
-
       }
 
 
@@ -1644,7 +1406,6 @@
         font-size: 18px;
 
         gap: 8px;
-
       }
 
 
@@ -1655,7 +1416,6 @@
         margin-right: 4px;
 
         gap: 0;
-
       }
 
 
@@ -1665,87 +1425,76 @@
 
         padding:
           8px 12px;
-
       }
 
 
       /*
-        BUSCA APARECE NO CELULAR
+        A BARRA DE PESQUISA AGORA
+        APARECE NO CELULAR.
       */
 
       .header-search {
 
         display: flex;
 
-        grid-column:
-          1 / -1;
+        position: absolute;
 
-        grid-row: 2;
+        top: calc(100% + 10px);
+
+        left: 18px;
+
+        right: 18px;
+
+        width: auto;
 
         max-width: none;
 
-        width: 100%;
+        z-index: 30;
 
-        margin-top: 2px;
-
+        box-shadow:
+          var(--shadow);
       }
 
 
       .nav-count {
 
         display: none;
-
       }
 
 
       /*
-        HERO
+        HERO MAIS PRÓXIMO DA BARRA
       */
 
       .hero {
 
         padding:
-          20px 8px 24px;
-
+          55px 8px 24px;
       }
 
 
       /*
-        Peixe + título
+        PEIXE + TÍTULO
       */
 
       .brand-lockup {
 
         gap: 14px;
 
-        padding: 0;
+        padding:
+          0 12px;
 
-        margin:
-          0 auto 18px;
+        margin-bottom: 18px;
 
-        width: 100%;
-
+        justify-content: center;
       }
 
 
       .mascot-video {
 
-        width: 170px;
+        width: 105px;
 
-        height: 170px;
-
-        margin: 0;
-
-        padding: 0;
-
-        border: none;
-
-        outline: none;
-
-        background: transparent;
-
-        box-shadow: none;
-
+        height: 105px;
       }
 
 
@@ -1753,55 +1502,43 @@
 
         font-size:
           clamp(
-            2.5rem,
+            2.35rem,
             10vw,
-            3.5rem
+            3.4rem
           );
 
         margin: 0;
 
-        padding: 0;
-
+        white-space: nowrap;
       }
 
 
       /*
-        Frase principal sempre em uma linha.
+        FRASE PRINCIPAL SEM QUEBRA
       */
 
       .hero p.lede-main {
 
-        white-space: nowrap;
-
         font-size:
           clamp(
-            .78rem,
-            2.8vw,
-            1rem
+            .9rem,
+            3.4vw,
+            1.15rem
           );
 
-        margin:
-          0 auto 6px;
+        white-space: nowrap;
 
-        padding: 0;
-
+        padding:
+          0 8px;
       }
 
 
       .hero p.lede {
 
-        font-size:
-          .92rem;
+        font-size: .95rem;
 
-        padding: 0;
-
-      }
-
-
-      .hero p.lede .line-break {
-
-        display: block;
-
+        padding:
+          0 10px;
       }
 
 
@@ -1813,9 +1550,6 @@
 
         padding:
           24px 8px 8px;
-
-        gap: 8px;
-
       }
 
 
@@ -1823,7 +1557,6 @@
 
         padding:
           9px 17px;
-
       }
 
 
@@ -1836,73 +1569,51 @@
         padding-left: 18px;
 
         padding-right: 18px;
-
       }
 
 
       /*
-        2 JOGOS POR FILEIRA
-        mesmo no celular
+        GRID CONTINUA COM 2 JOGOS
+        POR FILEIRA
       */
 
       .grid {
 
         grid-template-columns:
-          repeat(
-            2,
-            minmax(0, 1fr)
-          );
+          repeat(2, minmax(0, 1fr));
 
-        gap: 14px;
-
-      }
-
-
-      .card {
-
-        border-radius: 15px;
-
+        gap: 16px;
       }
 
 
       .card-cover {
 
-        height: 150px;
-
+        height: 160px;
       }
 
 
       .card-body {
 
         padding:
-          14px;
-
-        gap: 8px;
-
+          16px;
       }
 
 
       .card-body h3 {
 
-        font-size:
-          1rem;
-
+        font-size: 1.05rem;
       }
 
 
       .card-body p {
 
-        font-size:
-          .78rem;
-
+        font-size: .82rem;
       }
 
 
       .btn-game {
 
-        font-size:
-          .82rem;
-
+        font-size: 13px;
       }
 
 
@@ -1912,81 +1623,58 @@
 
       .pagination-container {
 
-        margin-top:
-          32px;
+        margin-top: 32px;
 
         gap: 6px;
-
       }
 
 
       .page-btn {
 
-        min-width:
-          38px;
+        min-width: 38px;
 
-        height:
-          38px;
+        height: 38px;
 
         padding:
           0 9px;
 
-        font-size:
-          12px;
-
+        font-size: 12px;
       }
-
     }
 
 
     /* =========================================================
-       CELULAR PEQUENO
+       CELULARES PEQUENOS
     ========================================================= */
 
     @media (max-width: 560px) {
 
-      .marquee-bar {
-
-        padding:
-          10px 14px;
-
-      }
-
-
-      .header-search {
-
-        padding:
-          9px 14px;
-
-      }
-
-
       .hero {
 
         padding:
-          14px 4px 20px;
+          52px 6px 22px;
+      }
 
+
+      .brand-lockup {
+
+        gap: 11px;
+
+        padding:
+          0 8px;
       }
 
 
       /*
-        Peixe ainda grande,
-        mas cabendo ao lado do título.
+        PEIXE UM POUCO MENOR
+        PARA NÃO DOMINAR A TELA.
       */
-
-      .brand-lockup {
-
-        gap: 10px;
-
-      }
-
 
       .mascot-video {
 
-        width: 145px;
+        width: 92px;
 
-        height: 145px;
-
+        height: 92px;
       }
 
 
@@ -1994,123 +1682,146 @@
 
         font-size:
           clamp(
-            2.1rem,
-            10vw,
-            3rem
+            2rem,
+            9.5vw,
+            2.8rem
           );
 
+        white-space: nowrap;
       }
 
+
+      /*
+        MANTÉM A FRASE EM UMA ÚNICA LINHA
+      */
 
       .hero p.lede-main {
 
         font-size:
           clamp(
-            .7rem,
-            2.9vw,
-            .9rem
+            .78rem,
+            3.3vw,
+            1rem
           );
 
+        white-space: nowrap;
+
+        padding:
+          0 4px;
       }
 
 
       .hero p.lede {
 
-        font-size:
-          .85rem;
+        font-size: .9rem;
 
+        padding:
+          0 10px;
       }
 
 
       .filters {
 
-        gap: 7px;
+        gap: 8px;
 
         padding:
-          18px 4px 8px;
-
+          20px 6px 8px;
       }
 
 
       .chip {
 
-        font-size:
-          12px;
+        font-size: 13px;
 
         padding:
-          8px 12px;
+          8px 14px;
+      }
 
+
+      .count-line {
+
+        margin-bottom:
+          22px;
       }
 
 
       /*
-        Mantém 2 por fileira
+        2 COLUNAS NO CELULAR
       */
 
       .grid {
 
         grid-template-columns:
-          repeat(
-            2,
-            minmax(0, 1fr)
-          );
+          repeat(2, minmax(0, 1fr));
 
-        gap: 10px;
+        gap: 12px;
+      }
 
+
+      .card {
+
+        border-radius:
+          15px;
       }
 
 
       .card-cover {
 
         height: 125px;
-
       }
 
 
       .ticket-no {
 
-        top: 7px;
+        top: 8px;
 
-        left: 7px;
+        left: 8px;
 
         padding:
           4px 7px;
 
-        font-size:
-          9px;
-
+        font-size: 9px;
       }
 
 
       .card-body {
 
         padding:
-          12px;
-
+          13px;
       }
 
 
       .card-body h3 {
 
-        font-size:
-          .9rem;
-
+        font-size: .95rem;
       }
 
 
       .card-body p {
 
-        font-size:
-          .72rem;
+        font-size: .76rem;
 
+        line-height: 1.4;
       }
 
 
       .btn-game {
 
-        font-size:
-          .75rem;
+        font-size: 12px;
+      }
 
+
+      .pagination-container {
+
+        gap: 5px;
+      }
+
+
+      .page-btn {
+
+        min-width: 36px;
+
+        height: 36px;
       }
 
 
@@ -2118,13 +1829,90 @@
 
         flex-direction: column;
 
-        align-items:
-          flex-start;
+        align-items: flex-start;
+      }
+    }
 
+
+    /* =========================================================
+       CELULARES MUITO PEQUENOS
+    ========================================================= */
+
+    @media (max-width: 400px) {
+
+      .marquee-bar {
+
+        padding:
+          12px 14px;
+      }
+
+
+      .header-search {
+
+        left: 14px;
+
+        right: 14px;
+      }
+
+
+      .brand-lockup {
+
+        gap: 8px;
+      }
+
+
+      .mascot-video {
+
+        width: 82px;
+
+        height: 82px;
+      }
+
+
+      .hero h1 {
+
+        font-size:
+          2rem;
+      }
+
+
+      .hero p.lede-main {
+
+        font-size:
+          .72rem;
+      }
+
+
+      .grid {
+
+        gap: 10px;
+      }
+
+
+      .card-cover {
+
+        height: 110px;
+      }
+
+
+      .card-body {
+
+        padding: 11px;
+      }
+
+
+      .card-body h3 {
+
+        font-size: .88rem;
+      }
+
+
+      .card-body p {
+
+        font-size: .7rem;
       }
 
     }
-
 
   </style>
 
@@ -2294,8 +2082,8 @@
         >
 
           <source
-            src="img/peixe.mp4"
-            type="video/mp4"
+            src="img/peixeescuro.webm"
+            type="video/webm"
           >
 
         </video>
@@ -2312,14 +2100,12 @@
         >
 
           <source
-            src="img/peixe claro.webm"
+            src="img/peixeclaro.webm"
             type="video/webm"
           >
 
         </video>
 
-
-        <!-- TÍTULO -->
 
         <h1>
           Tech Store
@@ -2333,25 +2119,19 @@
       <p class="lede-main">
 
         Seu próximo jogo favorito está a um
-
-        <span class="accent">
-          clique
-        </span>
-
+        <span class="accent">clique</span>
         de distância.
 
       </p>
 
 
-      <!-- FRASE SECUNDÁRIA -->
+      <!-- DESCRIÇÃO -->
 
       <p class="lede">
 
         Jogos gratuitos e de código aberto -
-
-        <span class="line-break">
-          escolha o gênero e jogue.
-        </span>
+        <br>
+        escolha o gênero e jogue.
 
       </p>
 
@@ -2387,7 +2167,7 @@
       </p>
 
 
-      <!-- GRID -->
+      <!-- JOGOS -->
 
       <div
         class="grid"
@@ -2483,27 +2263,34 @@
           <ul>
 
             <li>
+
               <a href="#top">
                 Início
               </a>
+
             </li>
 
+
             <li>
+
               <a href="#filters">
                 Gêneros
               </a>
+
             </li>
 
+
             <li>
+
               <a href="#grid">
                 Todos os jogos
               </a>
+
             </li>
 
           </ul>
 
         </div>
-
 
       </div>
 
@@ -2513,6 +2300,7 @@
         <p>
           © 2026 Tech Store catálogo independente.
         </p>
+
 
         <p>
           Links levam aos sites oficiais de cada projeto.
@@ -2541,21 +2329,24 @@
   <script>
 
     /* =========================================================
-       TEMA
+       TEMA CLARO / ESCURO
     ========================================================= */
 
     const root =
       document.documentElement;
+
 
     const themeToggle =
       document.getElementById(
         'themeToggle'
       );
 
+
     const themeIcon =
       document.getElementById(
         'themeIcon'
       );
+
 
     const themeLabel =
       document.getElementById(
@@ -2608,9 +2399,7 @@
       );
 
 
-      if (
-        theme === 'dark'
-      ) {
+      if (theme === 'dark') {
 
         themeIcon.innerHTML =
           sunPath;
@@ -2618,7 +2407,9 @@
         themeLabel.textContent =
           'Claro';
 
-      } else {
+      }
+
+      else {
 
         themeIcon.innerHTML =
           moonPath;
@@ -2652,12 +2443,14 @@
 
 
     applyTheme(
+
       savedTheme ||
       (
         prefersDark
           ? 'dark'
           : 'light'
       )
+
     );
 
 
@@ -2672,9 +2465,11 @@
 
 
         applyTheme(
+
           current === 'dark'
             ? 'light'
             : 'dark'
+
         );
 
       }
@@ -2682,7 +2477,7 @@
 
 
     /* =========================================================
-       ÍCONES
+       ÍCONES DOS GÊNEROS
     ========================================================= */
 
     const icons = {
@@ -2700,17 +2495,11 @@
 
           <path d="M4 4v16"/>
 
-          <path
-            d="
-              M4 4h6l1 2h6l1 4h-7l-1-2H4
-            "
-          />
+          <path d="
+            M4 4h6l1 2h6l1 4h-7l-1-2H4
+          "/>
 
-          <path
-            d="
-              M4 12h6l1 2h6
-            "
-          />
+          <path d="M4 12h6l1 2h6"/>
 
         </svg>
 
@@ -2730,12 +2519,9 @@
 
           <path d="M4 20h16"/>
 
-          <path
-            d="
-              M9 20V10l3-6
-              3 6v10
-            "
-          />
+          <path d="
+            M9 20V10l3-6 3 6v10
+          "/>
 
           <circle
             cx="12"
@@ -2766,15 +2552,11 @@
           />
 
           <path
-            d="
-              M14 6l4 4
-            "
+            d="M14 6l4 4"
           />
 
           <path
-            d="
-              M4.5 19.5L3 21
-            "
+            d="M4.5 19.5L3 21"
           />
 
         </svg>
@@ -2889,9 +2671,7 @@
           />
 
           <path
-            d="
-              M12 8v4l3 2
-            "
+            d="M12 8v4l3 2"
           />
 
         </svg>
@@ -2968,7 +2748,7 @@
 
 
     /* =========================================================
-       GÊNEROS
+       NOMES DOS GÊNEROS
     ========================================================= */
 
     const genreLabels = {
@@ -3001,7 +2781,7 @@
 
 
     /* =========================================================
-       CORES
+       CORES DOS GÊNEROS
     ========================================================= */
 
     const genreColors = {
@@ -3034,7 +2814,7 @@
 
 
     /* =========================================================
-       SELO
+       ÍCONE DO SELO
     ========================================================= */
 
     const badgeIcon = `
@@ -3069,18 +2849,10 @@
 
       {
         id: 1,
-
-        nome:
-          'Memory Sunset - Beatriz',
-
-        genero:
-          'estrategia',
-
-        plataformas:
-          'Navegador',
-
-        imagem:
-          'img/beatriz.png',
+        nome: 'Memory Sunset - Beatriz',
+        genero: 'estrategia',
+        plataformas: 'Navegador',
+        imagem: 'img/beatriz.png',
 
         desc:
           'Memory Sunset é um jogo da memória com o objetivo de encontrar os pares de cartas, acumular pontos e desafiar outros jogadores para alcançar o topo da classificação.',
@@ -3092,18 +2864,10 @@
 
       {
         id: 2,
-
-        nome:
-          'Snoopy Park - Beatriz',
-
-        genero:
-          'estrategia',
-
-        plataformas:
-          'Navegador',
-
-        imagem:
-          'img/beatriz2.png',
+        nome: 'Snoopy Park - Beatriz',
+        genero: 'estrategia',
+        plataformas: 'Navegador',
+        imagem: 'img/beatriz2.png',
 
         desc:
           'Um jogo de plataforma e aventura onde personagens precisam cooperar para superar obstáculos e completar as fases.',
@@ -3115,18 +2879,10 @@
 
       {
         id: 3,
-
-        nome:
-          'Bolt Escape - Beatriz',
-
-        genero:
-          'estrategia',
-
-        plataformas:
-          'Navegador',
-
-        imagem:
-          'img/beatriz3.png',
+        nome: 'Bolt Escape - Beatriz',
+        genero: 'estrategia',
+        plataformas: 'Navegador',
+        imagem: 'img/beatriz3.png',
 
         desc:
           'Um jogo de quebra-cabeça onde o jogador deve remover os parafusos na ordem correta para liberar as peças.',
@@ -3138,18 +2894,10 @@
 
       {
         id: 4,
-
-        nome:
-          'Brasil Simulator - Diego',
-
-        genero:
-          'estrategia',
-
-        plataformas:
-          'Navegador',
-
-        imagem:
-          'img/diego.png',
+        nome: 'Brasil Simulator - Diego',
+        genero: 'estrategia',
+        plataformas: 'Navegador',
+        imagem: 'img/diego.png',
 
         desc:
           'Brasil Simulator é um jogo clicker online onde os jogadores evoluem seus benefícios e programas governamentais para ganhar mais dinheiro e subir no ranking.',
@@ -3161,18 +2909,10 @@
 
       {
         id: 5,
-
-        nome:
-          'Letraço - Diego',
-
-        genero:
-          'estrategia',
-
-        plataformas:
-          'Navegador',
-
-        imagem:
-          'img/diego3.png',
+        nome: 'Letraço - Diego',
+        genero: 'estrategia',
+        plataformas: 'Navegador',
+        imagem: 'img/diego3.png',
 
         desc:
           'Letraço é um jogo de palavras inspirado no clássico Stop, onde você precisa completar as categorias com a letra sorteada antes do tempo acabar e desafiar seus amigos.',
@@ -3184,18 +2924,10 @@
 
       {
         id: 6,
-
-        nome:
-          'Quiz Blast - Diego',
-
-        genero:
-          'quiz',
-
-        plataformas:
-          'Navegador',
-
-        imagem:
-          'img/diego1.png',
+        nome: 'Quiz Blast - Diego',
+        genero: 'quiz',
+        plataformas: 'Navegador',
+        imagem: 'img/diego1.png',
 
         desc:
           'QuizBlast é um jogo de quiz online onde os jogadores respondem perguntas de diferentes categorias para ganhar pontos, subir no ranking e competir com amigos.',
@@ -3207,18 +2939,10 @@
 
       {
         id: 7,
-
-        nome:
-          'LUDO - Diego',
-
-        genero:
-          'estrategia',
-
-        plataformas:
-          'Navegador',
-
-        imagem:
-          'img/diego2.png',
+        nome: 'LUDO - Diego',
+        genero: 'estrategia',
+        plataformas: 'Navegador',
+        imagem: 'img/diego2.png',
 
         desc:
           'Ludo é um divertido jogo de tabuleiro clássico para até 4 jogadores. Escolha sua cor, lance os dados e mova suas peças pelo tabuleiro até chegar ao destino.',
@@ -3230,18 +2954,10 @@
 
       {
         id: 8,
-
-        nome:
-          'Batalha de Reflexo - Diogo',
-
-        genero:
-          'corrida',
-
-        plataformas:
-          'Navegador',
-
-        imagem:
-          'img/diogo.png',
+        nome: 'Batalha de Reflexo - Diogo',
+        genero: 'corrida',
+        plataformas: 'Navegador',
+        imagem: 'img/diogo.png',
 
         desc:
           'Um jogo multiplayer sobre quem tem mais reflexo para ser o primeiro a clicar e garantir a vitória.',
@@ -3253,18 +2969,10 @@
 
       {
         id: 9,
-
-        nome:
-          'PURA Play - Franmarys',
-
-        genero:
-          'quiz',
-
-        plataformas:
-          'Navegador',
-
-        imagem:
-          'img/franmarys.png',
+        nome: 'PURA Play - Franmarys',
+        genero: 'quiz',
+        plataformas: 'Navegador',
+        imagem: 'img/franmarys.png',
 
         desc:
           '4X por turnos de construção de império, do início da civilização até a era espacial, jogável sozinho ou em rede.',
@@ -3276,18 +2984,10 @@
 
       {
         id: 10,
-
-        nome:
-          'Piano - Giulia',
-
-        genero:
-          'simulacao',
-
-        plataformas:
-          'Navegador',
-
-        imagem:
-          'img/giulia.png',
+        nome: 'Piano - Giulia',
+        genero: 'simulacao',
+        plataformas: 'Navegador',
+        imagem: 'img/giulia.png',
 
         desc:
           'Um jogo de piano interativo para tocar notas e experimentar diferentes melodias diretamente no navegador.',
@@ -3299,21 +2999,13 @@
 
       {
         id: 11,
-
-        nome:
-          'Bubble Quest - Giulia',
-
-        genero:
-          'simulacao',
-
-        plataformas:
-          'Navegador',
-
-        imagem:
-          'img/giulia2.png',
+        nome: 'Bubble Quest - Giulia',
+        genero: 'simulacao',
+        plataformas: 'Navegador',
+        imagem: 'img/giulia2.png',
 
         desc:
-          'Uma aventura divertida cheia de bolhas, desafios e descobertas para jogar diretamente no navegador.',
+          'Uma aventura divertida cheia de bolhas, desafios e descobertas para explorar diretamente no navegador.',
 
         link:
           'https://holistic-pop-bubble-quest.base44.app'
@@ -3322,18 +3014,10 @@
 
       {
         id: 12,
-
-        nome:
-          'Minerador Pro - João',
-
-        genero:
-          'simulacao',
-
-        plataformas:
-          'Navegador',
-
-        imagem:
-          'img/joao.png',
+        nome: 'Minerador Pro - João',
+        genero: 'simulacao',
+        plataformas: 'Navegador',
+        imagem: 'img/joao.png',
 
         desc:
           'Nesse jogo, você explora as profundezas, descobre minérios raros, aprimora seus equipamentos e se torna o maior minerador.',
@@ -3345,18 +3029,10 @@
 
       {
         id: 13,
-
-        nome:
-          'BlockDrops - João',
-
-        genero:
-          'simulacao',
-
-        plataformas:
-          'Navegador',
-
-        imagem:
-          'img/joao2.png',
+        nome: 'BlockDrops - João',
+        genero: 'simulacao',
+        plataformas: 'Navegador',
+        imagem: 'img/joao2.png',
 
         desc:
           'Encaixe os blocos, use poderes incríveis e mostre sua habilidade. Jogue agora, suba de nível e garanta seu lugar no Top 10 mundial.',
@@ -3368,18 +3044,10 @@
 
       {
         id: 14,
-
-        nome:
-          'Pedra, Papel e Tesoura - Leandro',
-
-        genero:
-          'estrategia',
-
-        plataformas:
-          'Navegador',
-
-        imagem:
-          'img/leandro.png',
+        nome: 'Pedra, Papel e Tesoura - Leandro',
+        genero: 'estrategia',
+        plataformas: 'Navegador',
+        imagem: 'img/leandro.png',
 
         desc:
           'Jogo clássico de Pedra, Papel e Tesoura para disputar partidas rápidas e testar suas escolhas contra o adversário.',
@@ -3391,21 +3059,13 @@
 
       {
         id: 15,
-
-        nome:
-          'Sudoku - Leandro',
-
-        genero:
-          'estrategia',
-
-        plataformas:
-          'Navegador',
-
-        imagem:
-          'img/leandro2.png',
+        nome: 'Sudoku - Leandro',
+        genero: 'estrategia',
+        plataformas: 'Navegador',
+        imagem: 'img/leandro2.png',
 
         desc:
-          'O clássico quebra-cabeça de lógica: preencha a grade 9×9 sem repetir números em linhas, colunas e blocos.',
+          'O clássico quebra-cabeça de lógica: preencha a grade 9×9 de forma que cada linha, coluna e bloco 3×3 contenha os números de 1 a 9 sem repetir.',
 
         link:
           'https://play-sudoku-pro.base44.app/'
@@ -3414,18 +3074,10 @@
 
       {
         id: 16,
-
-        nome:
-          'PicDraw - Miguel',
-
-        genero:
-          'simulacao',
-
-        plataformas:
-          'Navegador',
-
-        imagem:
-          'img/miguel.png',
+        nome: 'PicDraw - Miguel',
+        genero: 'simulacao',
+        plataformas: 'Navegador',
+        imagem: 'img/miguel.png',
 
         desc:
           'Jogue um novo Gartic. Pratique suas habilidades de desenho e se divirta com seus amigos.',
@@ -3437,21 +3089,13 @@
 
       {
         id: 17,
-
-        nome:
-          'InfiniteCraft - Miguel',
-
-        genero:
-          'simulacao',
-
-        plataformas:
-          'Navegador',
-
-        imagem:
-          'img/miguel2.png',
+        nome: 'InfiniteCraft - Miguel',
+        genero: 'simulacao',
+        plataformas: 'Navegador',
+        imagem: 'img/miguel2.png',
 
         desc:
-          'Combine elementos, descubra coisas novas e tente encontrar todos os elementos escondidos.',
+          'Combine elementos, descubra coisas novas, experimente combinações inesperadas e tente encontrar todos os elementos escondidos.',
 
         link:
           'https://infinitecaft-fyzmnevb.manus.space/'
@@ -3460,18 +3104,10 @@
 
       {
         id: 18,
-
-        nome:
-          'Naara',
-
-        genero:
-          'simulacao',
-
-        plataformas:
-          'Navegador',
-
-        imagem:
-          'img/naara.png',
+        nome: 'Naara',
+        genero: 'simulacao',
+        plataformas: 'Navegador',
+        imagem: 'img/naara.png',
 
         desc:
           'Um jogo da velha super fofo com tema de cafeteria. Escolha seu lado entre a Xícara de Café e o Bolinho de Chocolate.',
@@ -3483,18 +3119,10 @@
 
       {
         id: 19,
-
-        nome:
-          'Bola Vermelha - Naara',
-
-        genero:
-          'simulacao',
-
-        plataformas:
-          'Navegador',
-
-        imagem:
-          'img/naara2.png',
+        nome: 'Bola Vermelha - Naara',
+        genero: 'simulacao',
+        plataformas: 'Navegador',
+        imagem: 'img/naara2.png',
 
         desc:
           'REDBALL4 é um jogo bastante conhecido. Que tal dificultar esse jogo? Experimente a dificuldade extrema dessa outra versão.',
@@ -3506,21 +3134,13 @@
 
       {
         id: 20,
-
-        nome:
-          'JIBOIA - Nicolas',
-
-        genero:
-          'estrategia',
-
-        plataformas:
-          'Navegador',
-
-        imagem:
-          'img/nicolas.png',
+        nome: 'JIBOIA - Nicolas',
+        genero: 'estrategia',
+        plataformas: 'Navegador',
+        imagem: 'img/nicolas.png',
 
         desc:
-          'Entre no campo de batalha como uma esfera colorida, cresça comendo pérolas do mapa e elimine seus adversários.',
+          'Entre no campo de batalha como uma esfera colorida, cresça comendo pérolas do mapa e elimine seus adversários para se tornar a maior orbe do mapa.',
 
         link:
           'https://jiboia.onrender.com/'
@@ -3529,18 +3149,10 @@
 
       {
         id: 21,
-
-        nome:
-          'Jetiski - Nicolas',
-
-        genero:
-          'estrategia',
-
-        plataformas:
-          'Navegador',
-
-        imagem:
-          'img/nicolas2.png',
+        nome: 'Jetiski - Nicolas',
+        genero: 'estrategia',
+        plataformas: 'Navegador',
+        imagem: 'img/jetiski.png',
 
         desc:
           'Jetiski é um jogo de desenhar e adivinhar a figura.',
@@ -3552,18 +3164,10 @@
 
       {
         id: 22,
-
-        nome:
-          'PetTec - Rebeca',
-
-        genero:
-          'estrategia',
-
-        plataformas:
-          'Navegador',
-
-        imagem:
-          'img/rebeca.png',
+        nome: 'PetTec - Rebeca',
+        genero: 'estrategia',
+        plataformas: 'Navegador',
+        imagem: 'img/rebeca.png',
 
         desc:
           'PetTEC é um bichinho virtual estilo Tamagotchi onde você cuida de um pet, ganha moedas, compra roupas e acessórios e disputa um ranking.',
@@ -3575,18 +3179,10 @@
 
       {
         id: 23,
-
-        nome:
-          'Mochi - Rebeca',
-
-        genero:
-          'estrategia',
-
-        plataformas:
-          'Navegador',
-
-        imagem:
-          'img/rebeca1.png',
+        nome: 'Mochi - Rebeca',
+        genero: 'estrategia',
+        plataformas: 'Navegador',
+        imagem: 'img/rebeca1.png',
 
         desc:
           'Mochi é um jogo de cartas coloridas. Use poderes e vença zerando a mão.',
@@ -3598,18 +3194,10 @@
 
       {
         id: 24,
-
-        nome:
-          'SuperTuxKart',
-
-        genero:
-          'corrida',
-
-        plataformas:
-          'Win / Mac / Linux',
-
-        imagem:
-          'img/supertuxkart.png',
+        nome: 'SuperTuxKart',
+        genero: 'corrida',
+        plataformas: 'Win / Mac / Linux',
+        imagem: 'img/supertuxkart.png',
 
         desc:
           'Corrida de kart em 3D com dezenas de pistas, itens ofensivos e modo carreira, no espírito de clássicos de kart arcade.',
@@ -3621,18 +3209,10 @@
 
       {
         id: 25,
-
-        nome:
-          '0 A.D.',
-
-        genero:
-          'estrategia',
-
-        plataformas:
-          'Win / Mac / Linux',
-
-        imagem:
-          'img/0ad.png',
+        nome: '0 A.D.',
+        genero: 'estrategia',
+        plataformas: 'Win / Mac / Linux',
+        imagem: 'img/0ad.png',
 
         desc:
           'RTS histórico ambientado antes de Cristo, com gestão de economia, cerco de cidades e civilizações jogáveis distintas.',
@@ -3644,18 +3224,10 @@
 
       {
         id: 26,
-
-        nome:
-          'Battle for Wesnoth',
-
-        genero:
-          'estrategia',
-
-        plataformas:
-          'Win / Mac / Linux / Android',
-
-        imagem:
-          'img/battle-for-wesnoth.png',
+        nome: 'Battle for Wesnoth',
+        genero: 'estrategia',
+        plataformas: 'Win / Mac / Linux / Android',
+        imagem: 'img/battle-for-wesnoth.png',
 
         desc:
           'Estratégia tática por turnos em um mundo de fantasia, com campanhas extensas e forte foco em terreno e vantagem de classe.',
@@ -3667,18 +3239,10 @@
 
       {
         id: 27,
-
-        nome:
-          'Veloren',
-
-        genero:
-          'rpg',
-
-        plataformas:
-          'Win / Mac / Linux',
-
-        imagem:
-          'img/veloren.png',
+        nome: 'Veloren',
+        genero: 'rpg',
+        plataformas: 'Win / Mac / Linux',
+        imagem: 'img/veloren.png',
 
         desc:
           'Mundo aberto voxel inspirado em RPGs de sobrevivência, com exploração, crafting e combate em tempo real cooperativo.',
@@ -3690,18 +3254,10 @@
 
       {
         id: 28,
-
-        nome:
-          'OpenRA',
-
-        genero:
-          'estrategia',
-
-        plataformas:
-          'Win / Mac / Linux',
-
-        imagem:
-          'img/openra.png',
+        nome: 'OpenRA',
+        genero: 'estrategia',
+        plataformas: 'Win / Mac / Linux',
+        imagem: 'img/openra.png',
 
         desc:
           'Engine moderna que reconstrói RTS clássicos dos anos 90, com multiplayer estável e ritmo acelerado de construção de base.',
@@ -3713,18 +3269,10 @@
 
       {
         id: 29,
-
-        nome:
-          'Xonotic',
-
-        genero:
-          'tiro',
-
-        plataformas:
-          'Win / Mac / Linux',
-
-        imagem:
-          'img/xonotic.png',
+        nome: 'Xonotic',
+        genero: 'tiro',
+        plataformas: 'Win / Mac / Linux',
+        imagem: 'img/xonotic.png',
 
         desc:
           'FPS de arena rápido, focado em movimentação aérea e combate competitivo, herdeiro direto da era dos shooters old-school.',
@@ -3736,18 +3284,10 @@
 
       {
         id: 30,
-
-        nome:
-          'Mindustry',
-
-        genero:
-          'estrategia',
-
-        plataformas:
-          'Win / Mac / Linux / Android',
-
-        imagem:
-          'img/mindustry.png',
+        nome: 'Mindustry',
+        genero: 'estrategia',
+        plataformas: 'Win / Mac / Linux / Android',
+        imagem: 'img/mindustry.png',
 
         desc:
           'Mistura de fábrica automatizada com defesa de torres: projete linhas de produção enquanto resiste a ondas inimigas.',
@@ -3759,18 +3299,10 @@
 
       {
         id: 31,
-
-        nome:
-          'Cataclysm: Dark Days Ahead',
-
-        genero:
-          'sobrevivencia',
-
-        plataformas:
-          'Win / Mac / Linux',
-
-        imagem:
-          'img/cataclysm-dark-days-ahead.png',
+        nome: 'Cataclysm: Dark Days Ahead',
+        genero: 'sobrevivencia',
+        plataformas: 'Win / Mac / Linux',
+        imagem: 'img/cataclysm-dark-days-ahead.png',
 
         desc:
           'Roguelike pós-apocalíptico de sobrevivência extremamente detalhado, com crafting profundo e simulação de mundo aberto.',
@@ -3782,18 +3314,10 @@
 
       {
         id: 32,
-
-        nome:
-          'Endless Sky',
-
-        genero:
-          'simulacao',
-
-        plataformas:
-          'Win / Mac / Linux',
-
-        imagem:
-          'img/endless-sky.png',
+        nome: 'Endless Sky',
+        genero: 'simulacao',
+        plataformas: 'Win / Mac / Linux',
+        imagem: 'img/endless-sky.png',
 
         desc:
           'Simulador de comércio e combate espacial em 2D, com exploração de sistemas estelares e campanha ramificada.',
@@ -3805,18 +3329,10 @@
 
       {
         id: 33,
-
-        nome:
-          'Hedgewars',
-
-        genero:
-          'acao',
-
-        plataformas:
-          'Win / Mac / Linux',
-
-        imagem:
-          'img/hedgewars.png',
+        nome: 'Hedgewars',
+        genero: 'acao',
+        plataformas: 'Win / Mac / Linux',
+        imagem: 'img/hedgewars.png',
 
         desc:
           'Artilharia por turnos com humor exagerado e ouriços armados, na linha de jogos de destruição de terreno em 2D.',
@@ -3828,18 +3344,10 @@
 
       {
         id: 34,
-
-        nome:
-          'Teeworlds',
-
-        genero:
-          'tiro',
-
-        plataformas:
-          'Win / Mac / Linux / Android',
-
-        imagem:
-          'img/teeworlds.png',
+        nome: 'Teeworlds',
+        genero: 'tiro',
+        plataformas: 'Win / Mac / Linux / Android',
+        imagem: 'img/teeworlds.png',
 
         desc:
           'Plataforma 2D com tiro multiplayer, gancho de escalada e mapas compactos voltados para partidas rápidas.',
@@ -3851,18 +3359,10 @@
 
       {
         id: 35,
-
-        nome:
-          'Freeciv',
-
-        genero:
-          'estrategia',
-
-        plataformas:
-          'Win / Mac / Linux / Navegador',
-
-        imagem:
-          'img/freeciv.png',
+        nome: 'Freeciv',
+        genero: 'estrategia',
+        plataformas: 'Win / Mac / Linux / Navegador',
+        imagem: 'img/freeciv.png',
 
         desc:
           '4X por turnos de construção de império, do início da civilização até a era espacial, jogável sozinho ou em rede.',
@@ -3981,7 +3481,6 @@
 
         chip.setAttribute(
           'aria-pressed',
-
           genre === activeGenre
             ? 'true'
             : 'false'
@@ -4000,6 +3499,7 @@
 
             activeGenre =
               genre;
+
 
             currentPage =
               1;
@@ -4071,8 +3571,7 @@
       const colors =
         genreColors[
           game.genero
-        ] ||
-        genreColors.estrategia;
+        ];
 
 
       const c1 =
@@ -4085,10 +3584,7 @@
 
       const ticketNo =
         String(game.id)
-          .padStart(
-            3,
-            '0'
-          );
+          .padStart(3, '0');
 
 
       const coverContent =
@@ -4096,22 +3592,17 @@
 
           ? `
 
-              <img
-                src="${game.imagem}"
-                alt="Capa de ${game.nome}"
-                loading="lazy"
-                onerror="this.style.display='none'"
-              >
+            <img
+              src="${game.imagem}"
+              alt="Capa de ${game.nome}"
+              loading="lazy"
+            >
 
-            `
+          `
 
-          : (
-
-              icons[
-                game.genero
-              ] || ''
-
-            );
+          : icons[
+              game.genero
+            ];
 
 
       const coverStyle =
@@ -4121,21 +3612,22 @@
 
           : `
 
-              style="
-                background:
-                  linear-gradient(
-                    135deg,
-                    ${c1},
-                    ${c2}
-                  );
-              "
+            style="
+              background:
+                linear-gradient(
+                  135deg,
+                  ${c1},
+                  ${c2}
+                );
+            "
 
-            `;
+          `;
 
 
       return `
 
         <article class="card">
+
 
           <div
             class="card-cover"
@@ -4157,6 +3649,7 @@
 
 
           <div class="card-body">
+
 
             <h3>
               ${game.nome}
@@ -4211,23 +3704,18 @@
 
 
           const matchSearch =
+
             !searchTerm ||
 
             game.nome
               .toLowerCase()
-              .includes(
-                searchTerm
-              ) ||
+              .includes(searchTerm) ||
 
-            (
-              genreLabels[
-                game.genero
-              ] || ''
-            )
+            genreLabels[
+              game.genero
+            ]
               .toLowerCase()
-              .includes(
-                searchTerm
-              );
+              .includes(searchTerm);
 
 
           return (
@@ -4260,12 +3748,8 @@
         );
 
 
-      if (
-        totalPages <= 1
-      ) {
-
+      if (totalPages <= 1) {
         return;
-
       }
 
 
@@ -4308,8 +3792,11 @@
             render();
 
             window.scrollTo({
+
               top: 0,
+
               behavior: 'smooth'
+
             });
 
           }
@@ -4374,8 +3861,11 @@
 
 
             window.scrollTo({
+
               top: 0,
+
               behavior: 'smooth'
+
             });
 
           }
@@ -4429,8 +3919,11 @@
             render();
 
             window.scrollTo({
+
               top: 0,
+
               behavior: 'smooth'
+
             });
 
           }
@@ -4494,7 +3987,6 @@
           false;
 
         return;
-
       }
 
 
@@ -4502,7 +3994,7 @@
         true;
 
 
-      /* ÍNDICES */
+      /* 6 JOGOS POR PÁGINA */
 
       const startIndex =
         (
@@ -4523,8 +4015,6 @@
         );
 
 
-      /* CARDS */
-
       grid.innerHTML =
         pageGames
           .map(
@@ -4532,8 +4022,6 @@
           )
           .join('');
 
-
-      /* PAGINAÇÃO */
 
       renderPagination(
         filtered.length
