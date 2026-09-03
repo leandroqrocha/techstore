@@ -250,6 +250,7 @@
       display: grid;
 
       grid-template-columns:
+        auto
         1fr
         auto;
 
@@ -263,7 +264,7 @@
 
 
     /* =========================================================
-       LOGO - CENTRALIZADO
+       LOGO
     ========================================================= */
 
     .brand {
@@ -271,8 +272,6 @@
       display: flex;
 
       align-items: center;
-
-      justify-content: center;
 
       gap: 10px;
 
@@ -289,8 +288,6 @@
       white-space: nowrap;
 
       color: var(--blue);
-
-      width: 100%;
     }
 
 
@@ -366,6 +363,8 @@
       max-width: 460px;
 
       width: 100%;
+
+      justify-self: center;
 
       background: var(--surface-2);
 
@@ -450,8 +449,6 @@
       gap: 14px;
 
       flex-shrink: 0;
-
-      justify-self: end;
     }
 
 
@@ -567,6 +564,11 @@
 
     .mascot-video {
 
+      /*
+        REDUZIDO UM POUCO EM RELAÇÃO À VERSÃO ANTERIOR,
+        MAS AINDA GRANDE EM RELAÇÃO AO TÍTULO.
+      */
+
       width: 300px;
 
       height: 300px;
@@ -589,8 +591,17 @@
 
       background: transparent;
 
+      /*
+        Remove qualquer aparência de borda
+        ou fundo criado pelo próprio elemento.
+      */
+
       box-shadow: none;
 
+      /*
+        O vídeo fica acima da composição do tema.
+        O fundo da página nunca deve escurecer o peixe.
+      */
       position: relative;
       z-index: 5;
       isolation: isolate;
@@ -604,7 +615,7 @@
     .fish-light {
 
       display: block;
-      
+
       mix-blend-mode: normal;
       position: relative;
       z-index: 5;
@@ -619,6 +630,10 @@
 
       display: none;
 
+      /*
+        Sem blend-mode: o tema não altera
+        as cores originais do peixe.
+      */
       mix-blend-mode: normal;
       position: relative;
       z-index: 5;
@@ -629,6 +644,10 @@
 
       display: block;
 
+      /*
+        Mantém o peixe com suas cores originais
+        e acima da composição visual do tema.
+      */
       mix-blend-mode: normal;
       position: relative;
       z-index: 5;
@@ -1394,13 +1413,11 @@
 
       .marquee-bar .brand {
 
-        margin-left: 0;
+        margin-left: 4px;
 
         font-size: 18px;
 
         gap: 8px;
-
-        justify-content: center;
       }
 
 
@@ -1926,7 +1943,7 @@
     <div class="wrap marquee-bar">
 
 
-      <!-- LOGO - CENTRALIZADO -->
+      <!-- LOGO -->
 
       <a
         href="#top"
@@ -1959,6 +1976,47 @@
 
 
       <!-- BUSCA -->
+
+      <div class="header-search">
+
+        <svg
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+
+          <circle
+            cx="11"
+            cy="11"
+            r="7"
+          ></circle>
+
+          <line
+            x1="21"
+            y1="21"
+            x2="16.65"
+            y2="16.65"
+          ></line>
+
+        </svg>
+
+
+        <input
+          id="searchInput"
+          type="search"
+          placeholder="Buscar por nome ou gêneros"
+          aria-label="Buscar jogos"
+        >
+
+      </div>
+
+
+      <!-- AÇÕES -->
 
       <div class="header-actions">
 
@@ -1999,47 +2057,6 @@
 
       </div>
 
-    </div>
-
-    <!-- BARRA DE PESQUISA FORA DO GRID -->
-    <div class="wrap" style="padding: 0 24px 12px;">
-      <div class="header-search" style="max-width: 100%;">
-
-        <svg
-          width="20"
-          height="20"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        >
-
-          <circle
-            cx="11"
-            cy="11"
-            r="7"
-          ></circle>
-
-          <line
-            x1="21"
-            y1="21"
-            x2="16.65"
-            y2="16.65"
-          ></line>
-
-        </svg>
-
-
-        <input
-          id="searchInput"
-          type="search"
-          placeholder="Buscar por nome ou gêneros"
-          aria-label="Buscar jogos"
-        >
-
-      </div>
     </div>
 
   </header>
